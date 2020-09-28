@@ -1,7 +1,7 @@
 def info(message) {
-    echo "(-_-): ${message}"
+    echo "INFO: ${message}"
 }
 
 def warning(message) {
-    echo "Guten Tag: ${message}"
+    echo "WARNING: ${message}"
 }

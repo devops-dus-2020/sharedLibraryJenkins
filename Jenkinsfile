@@ -4,8 +4,8 @@ pipeline {
         stage('build') {
             steps {
                 sh 'echo hello world'
-                simple.info 'Starting'
-                simple.warning 'Nothing to do!'
+                simple.info '(-_-)'
+                simple.warning 'I'm watching you'
             }
         }
     }
