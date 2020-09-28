@@ -45,9 +45,7 @@ pipeline {
                     sevcan.info 'Ich hinterlasse trotzdem provisorisch eine Nachricht'
                 }    
             }
-        }
-
-    }        
+        }       
     
 }
 
