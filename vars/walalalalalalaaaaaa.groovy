@@ -1,7 +1,7 @@
-def info(message) {
-    echo "INFO: ${message}"
+def info(nanananana) {
+    echo "INFO: ${ich bin müde :///}"
 }
 
-def warning(message) {
-    echo "WARNING: ${message}"
+def warning(warum?!) {
+    echo "WARNING: ${ey ohhhh}"
 }
