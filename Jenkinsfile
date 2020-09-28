@@ -15,7 +15,7 @@ pipeline {
             }
         }
 
-        stage('build') {
+        stage('manuela') {
             steps {
                 sh 'echo hello world'
                 script {
