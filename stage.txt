@@ -1,8 +1,0 @@
-        stage('lysori') {
-            steps {
-                sh 'echo einmal mit Profis...'
-                script {
-                    lysori.warning 'die selbstzerstörung wird eingeleitet'
-
-            }
-        }
