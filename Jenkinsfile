@@ -25,6 +25,13 @@ pipeline {
                 }    
             }
         }
+        stage('Julia'){
+            steps{
+                script{
+                    nochein.info "neue Änderung"
+                }
+            }
+        }    
         stage('sevcan') {
             steps {
                 sh 'echo hello world'
