@@ -25,6 +25,16 @@ pipeline {
                 }    
             }
         }
+        stage('sevcan') {
+            steps {
+                sh 'echo hello world'
+                script {
+                    sevcan.warning 'Ich verstehe die Aufgabenstellung nicht'
+                    sevcan.info 'Ich hinterlasse trotzdem provisorisch eine Nachricht'
+                }    
+            }
+        }
+
     }        
     
 }
