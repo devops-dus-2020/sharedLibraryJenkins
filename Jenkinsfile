@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
                     calc.example
                     werbung.anzeige 'Hier koennte Ihre Werbung stehen'
@@ -36,10 +37,20 @@ def warning(message) {
         stage('lauri') {
             steps {
                 sh 'echo hello world'
+=======
+pipeline {
+    agent  any 
+    stages {
+        stage('indu') {
+            steps {
+                sh 'echo hello world'
+
+>>>>>>> 7e0f27c3a3f5ce7e6a154d41cfe51fd79df9ac9a
                 script {
-                    laura.warning 'Achtung. Ich komme.'
-                    laura.info 'Hiermit bestätige ich die Ankunft.'
+                    cool.greeting 'Good evening everybody'
+                    cool.info 'Stay Cool !'
                 }    
+
             }
 >>>>>>> aa61621544f704e4d03c98bfee9ff9faa3ab5be9
         }
