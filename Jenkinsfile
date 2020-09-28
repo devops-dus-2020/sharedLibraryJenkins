@@ -7,7 +7,7 @@ pipeline {
                 script {
                     simple.info 'Starting'
                     simple.warning 'Nothing to do!'
-                    calc.example
+                    calc.calculation
                     werbung.anzeige 'Hier koennte Ihre Werbung stehen'
                 }    
             }
