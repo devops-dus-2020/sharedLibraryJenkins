@@ -9,7 +9,7 @@ pipeline {
                 script {
                     simple.info 'Starting'
                     simple.warning 'Nothing to do!'
-                    sd-calc.example
+                    calc.example
                     werbung.anzeige 'Hier koennte Ihre Werbung stehen'
                 }    
             }
