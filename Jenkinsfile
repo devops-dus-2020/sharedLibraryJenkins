@@ -29,6 +29,14 @@ pipeline {
                 }    
             }
         }
-
+        stage('lauri') {
+            steps {
+                sh 'echo hello world'
+                script {
+                    laura.warning 'Achtung. Ich komme.'
+                    laura.info 'Hiermit bestätige ich die Ankunft.'
+                }    
+            }
+        }
     }
 }
