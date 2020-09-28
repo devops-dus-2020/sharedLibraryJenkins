@@ -1,51 +1,29 @@
 pipeline {
     agent  any 
     stages {
-        stage('indu') {
+        stage('all') {
             steps {
-                sh 'echo hello world'
                 script {
+                    calc.calculation 'calc'
+                    complex.warning 'complex'
                     cool.greeting 'Good evening everybody'
-                    cool.info 'Stay Cool !'
+                    diesegut.greeting 'diesegut'
+                    groovyray.statement 'groovy ray'
+                    group.groups
+                    janais.info 'janais'
+                    karina.warning 'karina'
+                    laura.warning 'laura'
+                    lysori.warning 'lysori'
+                    manuela.frage 'frage'
+                    moritz.beobachte 'obacht'
+                    nochein.info 'nochein'
+                    rainer.info 'lasst uns pause machen'
+                    sevcan.warning 'sevcan'
+                    simple.warning 'simple'
+                    walalalalalalaaaaaa.warning 'walalalalalalaaaaaa'
+                    werbung.anzeige 'hier könnte ihre Werbung stehen'
                 }
             }
         }
-        stage('sebastian'){
-            steps{
-                script{
-                    calc.calculation
-                }
-            }
-        }    
-        stage('groovyray') {
-            steps {
-                script {
-                    groovyray.message 'Funky'
-                    groovyray.warning 'CRITICAL'
-                }    
-            }
-        }
-
     }
 }
-
-
-        stage('Julia'){
-            steps{
-                script{
-                    nochein.info "neue Änderung"
-                }
-            }
-        }    
-        stage('sevcan') {
-            steps {
-                sh 'echo hello world'
-                script {
-                    sevcan.warning 'Ich verstehe die Aufgabenstellung nicht'
-                    sevcan.info 'Ich hinterlasse trotzdem provisorisch eine Nachricht'
-                }    
-            }
-        }       
-    
-}
-
