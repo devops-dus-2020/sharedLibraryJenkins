@@ -7,8 +7,8 @@ pipeline {
             steps {
                 sh 'echo hello world'
                 script {
-                    simple.info 'Starting'
-                    simple.warning 'Nothing to do!'
+                    cool.greeting 'Good evening everybody'
+                    cool.info 'Stay Cool !'
                 }    
             }
         }
