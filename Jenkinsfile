@@ -6,7 +6,19 @@
         }
 
         stage('post build') {
-            steps {
+            steps {def info(message) {
+    echo "INFO: ${message}"
+}
+
+def warning(message) {
+    echo "WARNING: ${message}"
+}def info(message) {
+    echo "INFO: ${message}"
+}
+
+def warning(message) {
+    echo "WARNING: ${message}"
+}
                 sh 'echo post build'
                 script {
                     complex.info 'Starting'
