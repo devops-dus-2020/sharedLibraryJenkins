@@ -3,7 +3,7 @@
 pipeline {
     agent  any 
     stages {
-        stage('build') {
+        stage('indu') {
             steps {
                 sh 'echo hello world'
                 script {
@@ -14,3 +14,4 @@ pipeline {
         }
     }
 }
+          
