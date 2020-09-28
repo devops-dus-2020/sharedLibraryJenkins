@@ -35,6 +35,12 @@ pipeline {
                     complex.warning 'Nobildthing to do!'
                 sh 'echo Ralf hat fertig'
 
+                }
+            }
+        }
+
+
+
         stage('manuela') {
             steps {
                 sh 'echo hello world'
@@ -44,6 +50,7 @@ pipeline {
                 }    
             }
         }
+
         stage('lauri') {
             steps {
                 sh 'echo hello world'
@@ -53,5 +60,15 @@ pipeline {
                 }    
             }
         }
+
+       stage('build') {
+            steps {
+                sh 'echo hello world'
+                script {
+                    jana.frage 'Hello na duuuuu?'
+                }
+
     }
 }
+       }
+    }
