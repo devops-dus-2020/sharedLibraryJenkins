@@ -10,6 +10,7 @@ pipeline {
                     simple.info 'Starting'
                     simple.warning 'Nothing to do!'
                     sd-calc.example
+                    werbung.anzeige 'Hier koennte Ihre Werbung stehen'
                 }    
             }
         }
