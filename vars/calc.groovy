@@ -5,3 +5,4 @@ def beobachtung(message) {
 def warnung(message) {
     echo "Vorsicht: ${message}"
 }
+
