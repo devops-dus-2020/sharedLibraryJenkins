@@ -5,16 +5,24 @@ pipeline {
             steps {
                 sh 'echo hello world'
 
-                  script {
-                    simple.beobachtung '(-_-)'
-                    simple.warnung 'I'm watching you!'
-                } 
                 script {
                     simple.info 'Starting'
                     simple.warning 'Nothing to do!'
                     calc.example
                     werbung.anzeige 'Hier koennte Ihre Werbung stehen'
                 }    
+
+            }
+        }
+
+        stage('Beobachter M.M') {
+            steps {
+                sh 'echo AW ACADEMY!!!!'
+
+                  script {
+                    simple.beobachtung '(-_-)'
+                    simple.warnung 'I'm watching you!'
+                } 
 
             }
         }
