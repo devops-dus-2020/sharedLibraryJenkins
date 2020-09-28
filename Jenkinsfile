@@ -8,6 +8,8 @@ pipeline {
                     cool.greeting 'Good evening everybody'
                     cool.info 'Stay Cool !'
                 }
+            }
+        }
         stage('sebastian'){
             steps{
                 script{
@@ -15,7 +17,14 @@ pipeline {
                 }
             }
         }    
+        stage('groovyray') {
+            steps {
+                script {
+                    groovyray.message 'Funky'
+                    groovyray.warning 'CRITICAL'
+                }    
             }
         }
     }
 }
+
