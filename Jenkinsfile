@@ -23,11 +23,20 @@ pipeline {
                 sh 'echo Ralf hat fertig'
 
 
+
+                }
+            }
+        }
+
+
+
+
         stage('manuela') {
             steps {
                 sh 'echo hello world'
                 script {
                     manuela.frage 'Was machen wir heute Abend?'
+
 
                 }    
             }
@@ -38,9 +47,29 @@ pipeline {
                 sh 'echo hello lysori'
                 script {
                     lysori.warning 'die selbstzerstörung wird eingeleitet'
+
                 }    
             }
         }
 
+        stage('lauri') {
+            steps {
+                sh 'echo hello world'
+                script {
+                    laura.warning 'Achtung. Ich komme.'
+                    laura.info 'Hiermit bestätige ich die Ankunft.'
+                }    
+            }
+        }
+
+       stage('jana') {
+            steps {
+                sh 'echo hello world'
+                script {
+                    jana.frage 'Hello na duuuuu?'
+                }
+
     }
 }
+       }
+    }
