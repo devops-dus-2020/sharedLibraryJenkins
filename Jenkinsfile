@@ -12,5 +12,16 @@ pipeline {
                 }    
             }
         }
+        stage('post build') {
+            steps {
+                sh 'echo post build'
+                script {
+                    complex.info 'Starting'
+                    complex.warning 'Nobildthing to do!'
+                sh 'echo Ralf hat fertig'
+                }    
+            }
+        }
+
     }
 }
