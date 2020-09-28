@@ -1,5 +1,3 @@
-
-
 pipeline {
     agent  any 
     stages {
@@ -21,6 +19,14 @@ pipeline {
             }
         }
 
+        stage('post build') {
+            steps {
+                sh 'echo post build'
+                script {
+                    complex.info 'Starting'
+                    complex.warning 'Nobildthing to do!'
+                sh 'echo Ralf hat fertig'
+
         stage('manuela') {
             steps {
                 sh 'echo hello world'
@@ -29,6 +35,14 @@ pipeline {
                 }    
             }
         }
-
+        stage('lauri') {
+            steps {
+                sh 'echo hello world'
+                script {
+                    laura.warning 'Achtung. Ich komme.'
+                    laura.info 'Hiermit bestätige ich die Ankunft.'
+                }    
+            }
+        }
     }
 }
