@@ -25,6 +25,11 @@ pipeline {
                 }    
             }
         }
+
+    }
+}
+
+
         stage('Julia'){
             steps{
                 script{
@@ -45,3 +50,4 @@ pipeline {
     }        
     
 }
+
