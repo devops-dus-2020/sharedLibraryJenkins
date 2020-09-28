@@ -32,6 +32,7 @@ pipeline {
                 sh 'echo hello world'
                 script {
                     manuela.frage 'Was machen wir heute Abend?'
+                    karina.antwort 'Wir gucken Netflix :)'
                 }    
             }
         }
