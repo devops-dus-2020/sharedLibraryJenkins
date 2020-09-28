@@ -1,12 +1,34 @@
+
+
 pipeline {
     agent  any 
     stages {
         stage('build') {
             steps {
                 sh 'echo hello world'
-                simple.info '(-_-)'
-                simple.warning 'I'm watching you'
+
+                  script {
+                    simple.beobachtung '(-_-)'
+                    simple.warnung 'I'm watching you!'
+                } 
+                script {
+                    simple.info 'Starting'
+                    simple.warning 'Nothing to do!'
+                    calc.example
+                    werbung.anzeige 'Hier koennte Ihre Werbung stehen'
+                }    
+
             }
         }
+
+        stage('manuela') {
+            steps {
+                sh 'echo hello world'
+                script {
+                    manuela.frage 'Was machen wir heute Abend?'
+                }    
+            }
+        }
+
     }
 }
