@@ -1,5 +1,3 @@
-
-
 pipeline {
     agent  any 
     stages {
@@ -7,9 +5,9 @@ pipeline {
             steps {
                 sh 'echo hello world'
                 script {
+                    
                     simple.info 'Starting'
-                    simple.warning 'Nothing to do!'
-                }    
+                    simple.warning 'Nothing to do!'}
             }
         }
     }
