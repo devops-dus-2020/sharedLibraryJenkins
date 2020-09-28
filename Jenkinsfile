@@ -1,7 +1,7 @@
 pipeline {
     agent  any 
     stages {
-        stage('build') {
+        stage('indu') {
             steps {
                 sh 'echo hello world'
                 script {
@@ -48,19 +48,9 @@ pipeline {
                 script {
                     lysori.warning 'die selbstzerstörung wird eingeleitet'
 
-                }    
             }
         }
 
-        stage('lauri') {
-            steps {
-                sh 'echo hello world'
-                script {
-                    laura.warning 'Achtung. Ich komme.'
-                    laura.info 'Hiermit bestätige ich die Ankunft.'
-                }    
-            }
-        }
 
        stage('jana') {
             steps {
@@ -71,5 +61,3 @@ pipeline {
 
     }
 }
-       }
-    }
