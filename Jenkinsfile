@@ -35,6 +35,7 @@ pipeline {
                 }    
             }
         }
+
         stage('lauri') {
             steps {
                 sh 'echo hello world'
@@ -44,5 +45,15 @@ pipeline {
                 }    
             }
         }
+
+       stage('build') {
+            steps {
+                sh 'echo hello world'
+                script {
+                    jana.frage 'Hello na duuuuu?'
+                }
+
     }
 }
+       }
+    }
