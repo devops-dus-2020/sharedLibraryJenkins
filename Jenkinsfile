@@ -13,5 +13,15 @@ pipeline {
                 }    
             }
         }
+
+        stage('manuela') {
+            steps {
+                sh 'echo hello world'
+                script {
+                    manuela.frage 'Was machen wir heute Abend?'
+                }    
+            }
+        }
+
     }
 }
