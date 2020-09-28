@@ -25,6 +25,18 @@ pipeline {
                 }    
             }
         }
+
+    }
+}
+
+
+        stage('Julia'){
+            steps{
+                script{
+                    nochein.info "neue Änderung"
+                }
+            }
+        }    
         stage('sevcan') {
             steps {
                 sh 'echo hello world'
@@ -33,8 +45,7 @@ pipeline {
                     sevcan.info 'Ich hinterlasse trotzdem provisorisch eine Nachricht'
                 }    
             }
-        }
-
-    }        
+        }       
     
 }
+
