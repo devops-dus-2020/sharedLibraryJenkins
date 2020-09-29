@@ -1,0 +1,10 @@
+stage('rainer') {
+            steps {
+                sh 'echo hello everybody'
+
+                script {
+                    rainer.info 'Ich brauche Nervennahrung'
+                    rainer.statement 'Lasst uns Pause machen!!!!!!!!'
+                }    
+            }
+        }
