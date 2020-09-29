@@ -1,29 +1,29 @@
-
-
 pipeline {
     agent  any 
     stages {
-        stage('build') {
+        stage('all') {
             steps {
-                sh 'echo hello world'
                 script {
-                    simple.info 'Starting'
-                    simple.warning 'Nothing to do!'
-                    sd-calc.example
-                    werbung.anzeige 'Hier koennte Ihre Werbung stehen'
-                }    
+                    calc.calculation 'calc'
+                    complex.warning 'complex'
+                    cool.greeting 'Good evening everybody'
+                    diesegut.greeting 'diesegut'
+                    groovyray.statement 'groovy ray'
+                    group.groups()
+                    janais.info 'janais'
+                    karina.warning 'karina'
+                    laura.warning 'laura'
+                    lysori.warning 'lysori'
+                    manuela.frage 'frage'
+                    moritz.beobachtung 'obacht'
+                    nochein.info 'nochein'
+                    rainer.info 'lasst uns pause machen'
+                    sevcan.warning 'sevcan'
+                    simple.warning 'simple'
+                    walalalalalalaaaaaa.warning 'walalalalalalaaaaaa'
+                    werbung.warning 'hier könnte ihre Werbung stehen'
+                }
             }
         }
-
-        stage('manuela') {
-            steps {
-                sh 'echo hello world'
-                script {
-                    manuela.frage 'Was machen wir heute Abend?'
-                    karina.antwort 'Wir gucken Netflix :)'
-                }    
-            }
-        }
-
     }
 }
