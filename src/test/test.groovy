@@ -1,6 +1,6 @@
 package tests
 
-import org.junit.jupiter.api.*
+import org.junit.api.*
 import devopsdus2020.*
 import dockerConnections.*
 
