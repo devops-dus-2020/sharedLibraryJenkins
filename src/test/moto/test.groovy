@@ -10,7 +10,7 @@ class MyHelloTest {
   void checksCredentials() {
       def moto = [checkHello: { 'Hello World' }] as HelloService
       MyHello uut = new MyHello(moto)
-      String isEqual = uut.checkHello()
+      //String isEqual = uut.checkHello()
       //Assertions.assertEquals(isEqual)
       assert uut.checkHello() == 'Hello World'
   }
