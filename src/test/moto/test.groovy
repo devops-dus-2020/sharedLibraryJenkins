@@ -6,8 +6,7 @@ import moto.HelloConnections.*
 
 class MyHelloTest {
 
-  @Test
-  void checksCredentials() {
+ def motos() {
       def moto = [checkHello: { 'Hello World' }] as HelloService
       MyHello uut = new MyHello(moto)
       String isEqual = uut.checkHello()
