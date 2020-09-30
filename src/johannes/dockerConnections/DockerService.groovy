@@ -1,6 +1,6 @@
-package dockerConnections
+package johannes.dockerConnections
 
-import devopsdus2020.*
+import johannes.devopsdus2020.*
 
 class DockerService implements IDockerService
 {
