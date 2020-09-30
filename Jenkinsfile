@@ -22,7 +22,7 @@ pipeline {
                     simple.warning 'simple'
                     walalalalalalaaaaaa.warning 'walalalalalalaaaaaa'
                     werbung.warning 'hier könnte ihre Werbung stehen'
-					test.moto()
+					test.motos()
                 }
             }
         }
