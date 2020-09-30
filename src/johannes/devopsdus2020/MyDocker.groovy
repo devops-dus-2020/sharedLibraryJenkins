@@ -1,4 +1,4 @@
-package devopsdus2020
+package johannes.devopsdus2020
 
 class MyDocker {
     IDockerService service
