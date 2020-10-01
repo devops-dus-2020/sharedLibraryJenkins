@@ -21,7 +21,8 @@ pipeline {
                     sevcan.warning 'sevcan'
                     simple.warning 'simple'
                     walalalalalalaaaaaa.warning 'walalalalalalaaaaaa'
-                    lysoriHello.helloWorld 'testlauf'
+                    lysoriHello.helloWorld()
+                    lysoriHello.generell 'test3'
         
                 }
             }
