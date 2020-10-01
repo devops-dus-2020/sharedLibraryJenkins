@@ -4,7 +4,7 @@ import ray.connection.ExtServ
 
     def greeting(message) {
     ExtServ extserv = new ExtServ()
-    echo (println extserv.call() + "${message}")
-
+    String msg = extserv.call() + "${message}"
+    echo msg
     }
 
