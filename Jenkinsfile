@@ -21,7 +21,7 @@ pipeline {
                     sevcan.warning 'sevcan'
                     simple.warning 'simple'
                     walalalalalalaaaaaa.warning 'walalalalalalaaaaaa'
-                    werbung.warning()
+                    lysoriHello.helloWorld()
                 }
             }
         }

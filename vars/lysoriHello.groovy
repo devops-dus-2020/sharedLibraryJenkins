@@ -1,9 +1,9 @@
 
 import lysori.helloWorldConnections.*
 
-def warning(message){
+def helloWorld(){
     HelloWorldService service = new HelloWorldService()
-    String hello = service.echoHelloWorld() + " ${message}"
+    String hello = service.echoHelloWorld()
 
     echo hello
 }
