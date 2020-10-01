@@ -1,0 +1,12 @@
+pipeline {
+    agent  any 
+    stages {
+        stage('all') {
+            steps {
+                script {
+                    greeting.greet 'High five!!!'
+                }
+            }
+        }
+    }
+}
