@@ -4,8 +4,8 @@ pipeline {
         stage('all') {
             steps {
                 script {
-                    group.groups()
-                    andreas.greet 'High five!!!'
+                    lysori.warning 'lysori'
+                    //andreas.greet 'High five!!!'
                 }
             }
         }
