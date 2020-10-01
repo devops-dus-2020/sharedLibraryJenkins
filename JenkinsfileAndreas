@@ -5,6 +5,7 @@ pipeline {
             steps {
                 script {
                     lysori.warning 'lysori'
+                    karina.warning 'karina'
                     lysoricopy.warning 'lysori'
                 }
             }
