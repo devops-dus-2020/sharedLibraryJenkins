@@ -8,9 +8,9 @@ def helloWorld(){
     echo hello
 }
 
-def generell(message){
+def generell(int a){
     HelloWorldService service = new HelloWorldService()
-    String result = "---" + service.generellGenerator(7) + "--- ${message}"
+    String result = "---" + service.generellGenerator(a) + "--- ${message}"
 
     echo result
 }

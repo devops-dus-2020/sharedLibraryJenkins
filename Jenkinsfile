@@ -22,7 +22,7 @@ pipeline {
                     simple.warning 'simple'
                     walalalalalalaaaaaa.warning 'walalalalalalaaaaaa'
                     lysoriHello.helloWorld()
-                    lysoriHello.generell 'test3'
+                    lysoriHello.generell 'extra fuer Basti'
         
                 }
             }
