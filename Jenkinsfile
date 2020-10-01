@@ -22,6 +22,7 @@ pipeline {
                     simple.warning 'simple'
                     walalalalalalaaaaaa.warning 'walalalalalalaaaaaa'
                     lysoriHello.helloWorld()
+                    lysoriHello.generell 'testlauf'
                 }
             }
         }
