@@ -3,6 +3,8 @@ package andreas
 class Greeting {
 
     InterfaceGreetingService service
+
+    // Constructor
     public Greeting(InterfaceGreetingService service) {
         this.service = service
     }
