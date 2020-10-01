@@ -4,7 +4,6 @@ pipeline {
         stage('all') {
             steps {
                 script {
-                    lysori.warning 'lysori'
                     testgreeting.warning 'High five!!!'
                 }
             }
