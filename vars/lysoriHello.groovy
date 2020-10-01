@@ -10,7 +10,7 @@ def helloWorld(){
 
 def generell(message){
     HelloWorldService service = new HelloWorldService()
-    String result = "---" + service.generellGenerator(7) + " ${message}"
+    String result = "Bastis Generell-Generator: " + service.generellGenerator(5) + " ${message}"
 
     echo result
 }
