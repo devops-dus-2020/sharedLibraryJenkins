@@ -8,7 +8,7 @@ class MyDockerTest {
 
   @Test
   void checksCredentials() {
-      def service = [checkCredentials: { true }] as DockerService
+      def service = [checkCredentials: { true }] as IDockerService
       MyDocker uut = new MyDocker(service)
       Boolean isOk = uut.checkCredentials()
       Assertions.assertTrue(isOk)
