@@ -5,7 +5,7 @@ pipeline {
             steps {
                 script {
                     lysori.warning 'lysori'
-                    testgreeting.greet 'High five!!!'
+                    testgreeting.warning 'High five!!!'
                 }
             }
         }
