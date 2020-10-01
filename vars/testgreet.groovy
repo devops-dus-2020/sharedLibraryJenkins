@@ -1,5 +1,3 @@
-import andreas.*
-
 def greet(ouput) {
     println "In vars/greeting.greet"
     println "${output}"
