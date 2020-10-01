@@ -8,9 +8,11 @@ def helloWorld(){
     echo hello
 }
 
-def generell(int a){
+def generell(){
     HelloWorldService service = new HelloWorldService()
-    String result = "---" + service.generellGenerator(a) + "test"
+    String result = "Bastis Generell-Generator:\n---"
+                     + service.generellGenerator(5) 
+                        + "---\n"
 
     echo result
 }
