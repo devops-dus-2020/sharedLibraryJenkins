@@ -4,7 +4,8 @@ pipeline {
         stage('all') {
             steps {
                 script {
-                    greeting.greet 'High five!!!'
+                    group.groups()
+                    //greeting.greet 'High five!!!'
                 }
             }
         }
