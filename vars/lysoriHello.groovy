@@ -10,7 +10,7 @@ def helloWorld(){
 
 def generell(int a){
     HelloWorldService service = new HelloWorldService()
-    String result = "---" + service.generellGenerator(a) + "--- ${message}"
+    String result = "---" + service.generellGenerator(a) + "test"
 
     echo result
 }
