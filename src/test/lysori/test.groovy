@@ -30,6 +30,20 @@ class HelloWorldTest {
     Assertions.assertEquals(expected, actual)    
   }
 
+  @Test
+  void checkGenerellGenerator(){
+    int i = 2
+    String expected ="generellgenerell"
+    String actual
+    def service = [checkSetup: { true }, 
+           echoHelloWorld: { expected }, 
+           generellGenerator: (int a) -> {expected}] as HelloWorldInterface 
+    HelloWorld uut = new HelloWorld(service)
+    actual = uut.generellGenerator(i)
+
+    
+    Assertions.assertEquals(expected, actual)    
+  }
 
 }
 

@@ -13,4 +13,13 @@ class HelloWorldService implements HelloWorldInterface {
         return "Hello World"
     }
 
+    String generellGenerator(int a){
+        String result = "" 
+        
+        for(int i = 0; i < a; ++i){
+            result +=generell
+        }
+
+        return result
+    }
 }

@@ -19,4 +19,8 @@ class HelloWorld {
         service.echoHelloWorld()
     }
 
+    String generellGenerator(int a){
+        service.generellGenerator(a)
+    }
+
 }

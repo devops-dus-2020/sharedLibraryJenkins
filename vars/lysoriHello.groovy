@@ -7,3 +7,10 @@ def helloWorld(){
 
     echo hello
 }
+
+def generell(message){
+    HelloWorldService service = new HelloWorldService()
+    String result = service.generellGenerator(3) + "${message}"
+
+    echo result
+}
