@@ -17,7 +17,7 @@ class HelloWorldService implements HelloWorldInterface {
         String result = "" 
         
         for(int i = 0; i < a; ++i){
-            result +=generell
+            result += "generell"
         }
 
         return result
