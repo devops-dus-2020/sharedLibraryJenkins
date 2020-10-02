@@ -19,7 +19,7 @@ pipeline {
                     rainer.info 'lasst uns pause machen'
                     sevcan.warning 'sevcan'
                     simple.warning 'simple'
-                    walalalalalalaaaaaa.warning 'walalalalalalaaaaaa'
+                    walalalalalalaaaaaa.service 'walalalalalalaaaaaa'
                     lysoriHello.helloWorld()
                     lysoriHello.generell 'Feierabend fuer heute'
                     werbung.warning()
