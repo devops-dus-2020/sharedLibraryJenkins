@@ -1,7 +1,7 @@
 package ray.connection
-import ray.core.InterfaceServ
+import ray.core.MyInterface
 
-class ExtServ implements InterfaceServ {
+class MyExtService implements MyInterface {
 
     String call() {
         

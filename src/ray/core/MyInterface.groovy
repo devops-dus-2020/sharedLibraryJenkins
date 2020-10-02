@@ -1,5 +1,5 @@
 package ray.core
 
-interface InterfaceServ {
+interface MyInterface {
     String call()
 }

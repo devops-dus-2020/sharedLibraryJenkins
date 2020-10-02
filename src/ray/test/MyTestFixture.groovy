@@ -1,18 +1,18 @@
 package ray.test
 
 import org.junit.jupiter.api.*
-import ray.core.Hello
-import ray.core.InterfaceServ
+import ray.core.MyBusiness
+import ray.core.MyInterface
 
-class TestHello {
+class MyTestFixture {
 
-
+  /*  first two tests, deprecated because names changed
   @Test
   void aMethod() {
     Assertions.assertTrue(true)    
   }
 
-  /* 
+
   @Test
   void bMethod() {
     Hello hello = new Hello()
@@ -22,9 +22,9 @@ class TestHello {
 
   @Test
   void cMethod() {
-    def stub = [call: {"Hello"}] as InterfaceServ
-    Hello hello = new Hello(stub)
-    assert hello.shout() == "Hello"
+    def stub = [call: {"Hello"}] as MyInterface
+    MyBusiness mb = new MyBusiness(stub)
+    assert mb.invokeCall() == "Hello"
   }
 
 }
