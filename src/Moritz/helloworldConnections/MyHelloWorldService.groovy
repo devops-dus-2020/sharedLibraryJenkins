@@ -3,15 +3,13 @@ package Moritz.helloworldConnections  //= externe Klasse außerhalb des cores
 import Moritz.moritzdevops.*
 
 import groovy.util.logging.Log
-import java.util.logging.FileHandler
-import java.util.logging.SimpleFormatter
 
 @Log
 class MyHelloWorldService implements HelloWorldInterface   //6.
 {
 
     Closure logger
-MyHelloWorldService (Closure logger){
+    MyHelloWorldService (Closure logger){
     this.logger = logger
 }
 
@@ -22,8 +20,8 @@ MyHelloWorldService (Closure logger){
     
     String echoMyHelloWorld()
     {
-        logger("huhhah")
-        return "Hello World es grüßt Moritz"
+        logger("1: Moritz sagt: Hello World")
+        return "Hello World sagt: SCHWEIG!"
         
     }
 

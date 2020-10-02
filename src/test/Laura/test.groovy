@@ -1,7 +1,6 @@
 package laura.test
 
 import org.junit.jupiter.api.*
-import static groovy.test.GroovyAssert.shouldFail
 import laura.devopsdus2020.*
 import laura.details.*
 
@@ -24,7 +23,7 @@ class NumberGeneratorTest{
         Assertions.assertEquals(expected, actual)
     }
 
-    @Test
+   @Test
     void checkCalculation() {
         int expected = 4
         int actual

@@ -1,15 +1,30 @@
 import Moritz.moritzdevops.*
 import Moritz.helloworldConnections.*
+import Moritz.logs.*
+import groovy.util.logging.*
 
 def MoritzHelloWorld(){
-    MyHelloWorldService service = new MyHelloWorldService()
+       Closure logger = {String message -> println message}
+
+    MyHelloWorldService service = new MyHelloWorldService(logger)
+    
+    logger("2: "+ service.echoMyHelloWorld())
+
     String helloworldstring ="Moritz: "+ service.echoMyHelloWorld()
+    logger("3: "+ helloworldstring)
+    logger("4: "+ helloworldstring)
+    logger("5: "+ helloworldstring)
 
-    Closure logger = (String msg) -> {println msg}
-
-    logger(helloworldstring)
 
 }
+
+def main()
+{
+MainClass geheimeNachricht = new MainClass()
+geheimeNachricht.writefile()
+}
+
+
 
 
 /*def beobachtung(message) {

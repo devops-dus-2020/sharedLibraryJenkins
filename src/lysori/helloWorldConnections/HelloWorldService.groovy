@@ -5,17 +5,21 @@ import groovy.util.logging.Log
 
 @Log
 class HelloWorldService implements HelloWorldInterface {
+    
+    Closure logger
+    
+    public HelloWorldService (Closure logger){
+         this.logger = logger
+    }
 
     Boolean checkSetup() {
         return true
     }
 
     String echoHelloWorld(){
-        String result = "Hello World"
-        println result
-        log.info(result)
-
-        return "Hello World"
+        
+        //logger("Hilfe - ich wurde einem logger uebergeben")
+        return "Hello World - Hilfe - ich wurde einem logger uebergeben"
     }
 
     String generellGenerator(int a){

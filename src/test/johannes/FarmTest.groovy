@@ -6,12 +6,12 @@ import johannes.core.*
 
 class FarmTest {
 
-  dataConnection stub
+  dataConnection stub //erzeuge einen Stub mit Null
 
 
   Farm makeFarm()
   {
-    return new Farm(stub)
+    return new Farm(stub)  
   }
 
   @Test
@@ -23,7 +23,7 @@ class FarmTest {
   void shouldStoreAnimal() {
     String expected = "berta"
     String actual
-    stub = 
+    stub =  //Stub von oben wird überschrieben für test
     [ storeAnimal : (String name) -> { actual = name } ] 
     as dataConnection
     Farm uut = makeFarm()
@@ -36,7 +36,7 @@ class FarmTest {
     int expected = 0
     int actual = 0;
     stub = 
-    [ storeAnimal : (String name) -> { ++expected },
+    [ storeAnimal : (String name) -> { ++expected }, //vorheriger stub wird überschrieben
       countAnimals : { expected }] 
     as dataConnection
     Farm uut = makeFarm()

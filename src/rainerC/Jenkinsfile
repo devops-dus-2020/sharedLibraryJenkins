@@ -1,0 +1,12 @@
+pipeline {
+    agent any 
+    stages {
+        stage('testing the groove') {
+            steps {
+                script {
+                    rainerlaunch.greeting ' yeah !'
+                }
+            }
+        }
+    }
+}

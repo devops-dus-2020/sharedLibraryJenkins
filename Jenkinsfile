@@ -11,8 +11,7 @@ pipeline {
                     groovyray.statement 'groovy ray'
                     group.groups()
                     janais.info 'janais'
-                    karina.warning 'karina'
-                    laura.checkGeneratorService()
+                    karina.info 'karina'
                     lysori.warning 'lysori'
                     manuela.count()
                     moritz.MoritzHelloWorld()
@@ -20,10 +19,14 @@ pipeline {
                     rainer.info 'lasst uns pause machen'
                     sevcan.warning 'sevcan'
                     simple.warning 'simple'
-                    walalalalalalaaaaaa.warning 'walalalalalalaaaaaa'
+                    walalalalalalaaaaaa.service 'walalalalalalaaaaaa'
                     lysoriHello.helloWorld()
-                    lysoriHello.generell 'Feierabend fuer heute'
+                    laura.checkGeneratorService()
+                    lysoriHello.generell 'die selbstzerstoerung wird eingeleitet'
                     werbung.warning()
+                    helloworldlaunchfile.greeting 'geschafft'
+                    hellolaunch.greeting ' World ! From Indu'
+                    
                 }
             }
         }
