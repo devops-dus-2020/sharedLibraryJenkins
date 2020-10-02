@@ -1,16 +1,18 @@
-
+import lysori.devopsdus2020.*
 import lysori.helloWorldConnections.*
 
 def helloWorld(){
-    HelloWorldService service = new HelloWorldService()
-    String hello = service.echoHelloWorld()
+    def service = new HelloWorldService()
+    HelloWorld h = new HelloWorld(service)
+    String hello = h.echoHelloWorld()
 
     echo hello
 }
 
 def generell(message){
-    HelloWorldService service = new HelloWorldService()
-    String result = "Bastis Generell-Generator: " + service.generellGenerator(5) + " ${message}"
+    def service = new HelloWorldService()
+    HelloWorld h = new HelloWorld(service)
+    String result = "Bastis Generell-Generator: " + h.generellGenerator(5) + " ${message}"
 
     echo result
 }

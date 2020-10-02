@@ -15,14 +15,14 @@ pipeline {
                     laura.warning 'laura'
                     lysori.warning 'lysori'
                     manuela.frage 'frage'
-                    moritz.beobachtung 'obacht'
+                    moritz.MoritzHelloWorld()
                     nochein.info 'nochein'
                     rainer.info 'lasst uns pause machen'
                     sevcan.warning 'sevcan'
                     simple.warning 'simple'
                     walalalalalalaaaaaa.warning 'walalalalalalaaaaaa'
                     lysoriHello.helloWorld()
-                    lysoriHello.generell 'Feierabend fuer heute'
+                    lysoriHello.generell 'LG lysori'
                     werbung.warning()
                 }
             }
