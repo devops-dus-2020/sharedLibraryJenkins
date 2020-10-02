@@ -1,10 +1,10 @@
 pipeline {
     agent any 
     stages {
-        stage('testing my groove') {
+        stage('testing the groove') {
             steps {
                 script {
-                    testthis.greeting 'World'
+                    groovylaunchfile.greeting ' World !'
                 }
             }
         }
