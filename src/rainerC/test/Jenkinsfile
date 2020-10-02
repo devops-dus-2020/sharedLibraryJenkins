@@ -4,7 +4,7 @@ pipeline {
         stage('testing the groove') {
             steps {
                 script {
-                    groovylaunchfile.greeting ' World !'
+                    rainerLaunch.greeting ' yeah !'
                 }
             }
         }
