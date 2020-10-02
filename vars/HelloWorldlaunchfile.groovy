@@ -1,4 +1,4 @@
-import julia.Connection
+import julia.Connection.*
 import julia.core.*
 
 
