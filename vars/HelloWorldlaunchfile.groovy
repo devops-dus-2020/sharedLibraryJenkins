@@ -3,7 +3,7 @@ import julia.core.*
 
 
 def greeting(message) {
-    HelloWorldConnection HWC = new HelloWorldConnection
+    HelloWorldConnection HWC = new HelloWorldConnection()
     HelloWorldClass HC = new HelloWorldClass(HWC)
 
     String stringneu = HC.invokeCall() + "${message}"
