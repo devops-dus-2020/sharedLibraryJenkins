@@ -26,7 +26,7 @@ pipeline {
                     werbung.warning()
                     helloworldlaunchfile.greeting 'geschafft'
                     hellolaunch.greeting ' World ! From Indu'
-                    moritz.main()
+                    
                 }
             }
         }
