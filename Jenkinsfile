@@ -12,7 +12,6 @@ pipeline {
                     group.groups()
                     janais.info 'janais'
                     karina.info 'karina'
-                    laura.warning 'laura'
                     lysori.warning 'lysori'
                     manuela.frage 'frage'
                     moritz.MoritzHelloWorld()
