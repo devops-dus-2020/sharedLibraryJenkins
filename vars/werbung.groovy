@@ -5,5 +5,5 @@ import maik.core.*
 def warning() {
     def s = new EchoService()
     Echo uut = new Echo(s)
-    uut.Name();
+    echo uut.Name();
 }
