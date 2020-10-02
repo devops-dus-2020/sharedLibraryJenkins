@@ -1,4 +1,4 @@
-package maik.devopsdusmaik
+package maik.core
 
 class Echo {
 

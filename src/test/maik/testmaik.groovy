@@ -1,4 +1,4 @@
-import maik.devopsdusmaik.*
+import maik.core.*
 import org.junit.jupiter.api.*
 
 class MaikEchoTest {

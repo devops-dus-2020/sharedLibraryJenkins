@@ -1,6 +1,6 @@
-package maik.Echo
+package maik.devopsdusmaik
 
-import maik.devopsdusmaik.*
+import maik.core.*
 
 class EchoService implements IEchoService
 {
