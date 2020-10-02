@@ -7,8 +7,8 @@ import java.util.logging.Logger
 def warning() {
     def s = new EchoService()
     Echo uut = new Echo(s)
-    Logger logger = Logger.getLogger("")
-    logger.info ("I am a test info log")
-    uut.Name()
+    Logger logger = Logger.getLogger()
+    logger.info (uut.Name())
+    
      
 }
