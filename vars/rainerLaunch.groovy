@@ -1,4 +1,4 @@
-import rainerC.connection.RainerExtService.*
+import rainerC.connection.RainerExtService
 import rainerC.core.Jeppie.*
  
 
