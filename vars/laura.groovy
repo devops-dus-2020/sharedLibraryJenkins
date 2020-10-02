@@ -1,7 +1,7 @@
-def info(message) {
-    echo "INFO: ${message}"
+def checkGeneratorService() {
+
+    GeneratorService service = new GeneratorService();
+    int ret = service.generateNumber();
+    return ret
 }
 
-def warning(message) {
-    echo "WARNING: ${message}"
-}
