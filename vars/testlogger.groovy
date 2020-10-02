@@ -11,7 +11,7 @@ def log(variable) {
     String output = 'Logging works!'
 
     def binding = getBinding()
-    print binding.hasVariable('out')
+    def bindingout = binding.getProperty('out')
 
     JenkinsLogger logger = new JenkinsLogger(bindingout)
     logger.print(output)
