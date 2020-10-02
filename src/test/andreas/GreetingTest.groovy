@@ -39,19 +39,19 @@ class GreetingTest {
 
     }
 
-    @Test
-    void shouldRedicertEcho()
-    {
-        String expected = "msg"
-        String actual = null
+    // @Test
+    // void shouldRedicertEcho()
+    // {
+    //     String expected = "msg"
+    //     String actual = null
      
-        // Mock interface
-        def myecho = (String greeting) -> {actual = greeting}
+    //     // Mock interface
+    //     def myecho = (String greeting) -> {actual = greeting}
  
-        Greeting uut = new Greeting(null)
-        uut.redirectEcho(expected, myecho)
+    //     Greeting uut = new Greeting(null)
+    //     uut.redirectEcho(expected, myecho)
 
-        assert expected == actual
-    }
+    //     assert expected == actual
+    // }
 
 }
