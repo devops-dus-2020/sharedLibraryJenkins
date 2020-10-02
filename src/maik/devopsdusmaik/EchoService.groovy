@@ -6,6 +6,7 @@ class EchoService implements IEchoService
 {
     String Name()
     {
-       println "this is my external code"
+       return "this is my external code"
+       
     }
 }
