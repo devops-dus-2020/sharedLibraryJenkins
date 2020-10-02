@@ -10,10 +10,9 @@ def log(variable) {
 
     String output = 'Logging works!'
 
-    Closure myecho = {String msg -> print msg}
-    //myGreeting.redirectEcho("redirected", myecho)
+    // Initiate JenkinsLogger
+    JenkinsLogger logger = new JenkinsLogger({String msg -> println msg})
 
-    //JenkinsLogger logger = new JenkinsLogger(myecho)
-    JenkinsLogger logger = new JenkinsLogger()
+    // Print to Jenkins console
     logger.println(output)
 }
