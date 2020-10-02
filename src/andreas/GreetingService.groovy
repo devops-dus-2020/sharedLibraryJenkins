@@ -8,7 +8,7 @@ class GreetingService implements InterfaceGreetingService {
         this.logger = logger
     }
 
-    void println(String output) {
+    void greet(String output) {
         logger.println('In GreetingService.greet()')
         logger.println(output)
     }
