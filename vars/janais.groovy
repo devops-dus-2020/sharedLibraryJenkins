@@ -5,9 +5,10 @@ import jana.dockerConnections.*
 def info(message){
     IFlaeche berechner = new FlaecheService()
      Flaecheberechner uut = new Flaecheberechner(berechner)
-    int flaeche = uut.FlaecheVonRechteck(1,1)
+    int flaeche = uut.FlaecheVonRechteck(3,5)
 
     println (flaeche)
+    println ("Jana")
 }
 
 
