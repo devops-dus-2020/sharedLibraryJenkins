@@ -5,10 +5,10 @@ pipeline {
             steps {
                 script {
                     testlogger.log 'Go, baby!'
-                    testgreet.greet 'High five!!!'
-                    lysori.warning 'lysori'
-                    karina.warning 'karina'
-                    lysoricopy.warning 'lysori'
+//                    testgreet.greet 'High five!!!'
+//                    lysori.warning 'lysori'
+//                    karina.warning 'karina'
+//                    lysoricopy.warning 'lysori'
                 }
             }
         }

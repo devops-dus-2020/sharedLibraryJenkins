@@ -15,5 +15,5 @@ def log(variable) {
 
     JenkinsLogger logger = new JenkinsLogger(myecho)
     logger.print(output)
-    logger.prinln(output)
+    logger.println(output)
 }
