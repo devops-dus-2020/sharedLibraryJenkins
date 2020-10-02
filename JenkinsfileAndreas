@@ -4,6 +4,7 @@ pipeline {
         stage('all') {
             steps {
                 script {
+                    testlogger.log 'Go, baby!'
                     testgreet.greet 'High five!!!'
                     lysori.warning 'lysori'
                     karina.warning 'karina'
