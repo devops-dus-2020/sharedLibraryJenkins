@@ -38,5 +38,20 @@ class GreetingTest {
         GroovyAssert.shouldFail (NullPointerException) { uut.greet(actual) }
 
     }
-}
 
+    @Test
+    void shouldRedicertEcho()
+    {
+        String expected = "msg"
+        String actual = null
+     
+        // Mock interface
+        def myecho = (String greeting) -> {actual = greeting}
+ 
+        Greeting uut = new Greeting(null)
+        uut.redirectEcho(expected, myecho)
+
+        assert expected == actual
+    }
+
+}

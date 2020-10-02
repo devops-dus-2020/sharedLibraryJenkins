@@ -5,11 +5,13 @@ def greet(variable) {
 
 
     //String output = "${variable}"
-    String output = 'This test works'
     println "In vars/testgreet"
-    
+
+    String output = 'This test works'
+
     GreetingService service = new GreetingService()
     Greeting myGreeting = new Greeting(service)
+    myGreeting.redirectEcho("redirected", (String msg) -> {println msg})
 
     myGreeting.greet(output)
 

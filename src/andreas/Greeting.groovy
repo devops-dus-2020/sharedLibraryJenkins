@@ -14,4 +14,10 @@ class Greeting {
         println 'In Greeting.greet()'
         service.greet(greeting)
     }
+
+    void redirectEcho(String msg, Closure myecho)
+    {
+        myecho(msg)
+    }
+
 }
