@@ -22,7 +22,7 @@ pipeline {
                     walalalalalalaaaaaa.service 'walalalalalalaaaaaa'
                     lysoriHello.helloWorld()
                     laura.checkGeneratorService()
-                    lysoriHello.generell 'Feierabend fuer heute'
+                    lysoriHello.generell 'die selbstzerstoerung wird eingeleitet'
                     werbung.warning()
                     helloworldlaunchfile.greeting 'geschafft'
                     hellolaunch.greeting ' World ! From Indu'
