@@ -22,7 +22,7 @@ pipeline {
                     simple.warning 'simple'
                     walalalalalalaaaaaa.warning 'walalalalalalaaaaaa'
                     lysoriHello.helloWorld()
-                    lysoriHello.generell 'LG lysori'
+                    lysoriHello.generell 'Feierabend fuer heute'
                     werbung.warning()
                 }
             }
