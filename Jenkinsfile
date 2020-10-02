@@ -24,7 +24,6 @@ pipeline {
                     lysoriHello.helloWorld()
                     lysoriHello.generell 'Feierabend fuer heute'
                     werbung.warning()
-                    moritz.MoritzHelloWorld()
                 }
             }
         }
