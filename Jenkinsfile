@@ -23,11 +23,9 @@ pipeline {
                     lysoriHello.helloWorld()
                     lysoriHello.generell 'Feierabend fuer heute'
                     werbung.warning()
-<<<<<<< Updated upstream
                     HelloWorldlaunchfile.greeting 'geschafft'
-=======
                     hellolaunch.greeting ' World'
->>>>>>> Stashed changes
+                    moritz.main()
                 }
             }
         }
