@@ -8,4 +8,3 @@ def info (message) {
     String stringneu = HW.writeHelloWorld() + "${message}"
     echo stringneu
 }
-}
