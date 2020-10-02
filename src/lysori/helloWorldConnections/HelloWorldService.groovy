@@ -18,8 +18,7 @@ class HelloWorldService implements HelloWorldInterface {
 
     String echoHelloWorld(){
         
-        String result = "Hello World"
-        println result
+        logger("Ninja")
         return "Hello World"
     }
 
