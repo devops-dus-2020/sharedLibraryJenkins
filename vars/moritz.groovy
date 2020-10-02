@@ -1,5 +1,6 @@
 import Moritz.moritzdevops.*
 import Moritz.helloworldConnections.*
+import groovy.util.logging.*
 
 def MoritzHelloWorld(){
     MyHelloWorldService service = new MyHelloWorldService()
