@@ -2,9 +2,7 @@ package Moritz.helloworldConnections  //= externe Klasse außerhalb des cores
 
 import Moritz.moritzdevops.*
 
-import groovy.util.logging.Log
-import java.util.logging.FileHandler
-import java.util.logging.SimpleFormatter
+import groovy.util.logging.*
 
 @Log
 class MyHelloWorldService implements HelloWorldInterface   //6.
