@@ -6,7 +6,7 @@ import ray.core.MyBusiness
     MyExtService myEx = new MyExtService()
     MyBusiness mb = new MyBusiness(myEx)
 
-    String hello = MyBusiness.invokeCall() + "${message}"
+    String hello = mb.invokeCall() + "${message}"
     echo hello
     // println hello
     }
