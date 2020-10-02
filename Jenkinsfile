@@ -17,7 +17,7 @@ pipeline {
                     moritz.MoritzHelloWorld()
                     nochein.info 'nochein'
                     rainer.info 'lasst uns pause machen'
-                    sevcan.warning 'sevcan'
+                    sevcan.info
                     simple.warning 'simple'
                     walalalalalalaaaaaa.service 'walalalalalalaaaaaa'
                     lysoriHello.helloWorld()

@@ -7,7 +7,7 @@ class NumberService implements IDataConnection
 
         public int generate()
     {
-     x = Math.abs( new Random().nextInt() % (10 - 5)) + 5
+     int x = Math.abs( new Random().nextInt() % (10 - 5)) + 5
          return(x) 
     }
 }
