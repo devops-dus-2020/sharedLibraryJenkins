@@ -1,5 +1,5 @@
 //TODO import statements
-import src.maik.devopsdusmaik.*
+import maik.devopsdusmaik.*
 
 def warning() {
     def s = new EchoService()
