@@ -10,6 +10,7 @@ class Greeting {
     }
 
     void greet(String greeting) {
+        println 'In Greeting.greet()'
         service.greet(greeting)
     }
 }
