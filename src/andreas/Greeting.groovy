@@ -5,12 +5,10 @@ class Greeting {
     InterfaceGreetingService service
     // Constructor
     public Greeting(InterfaceGreetingService service) {
-        echo("In Greeting constructor")
         this.service = service
     }
 
     void greet(String greeting) {
-        echo("In Greeting.greet()")
         service.greet(greeting)
     }
 
