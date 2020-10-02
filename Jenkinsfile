@@ -24,6 +24,7 @@ pipeline {
                     lysoriHello.generell 'Feierabend fuer heute'
                     werbung.warning()
                     helloworldlaunchfile.greeting 'geschafft'
+                    moritz.main()
                 }
             }
         }
