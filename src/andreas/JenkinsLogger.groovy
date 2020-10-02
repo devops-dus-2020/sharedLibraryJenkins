@@ -1,12 +1,12 @@
 package andreas
 
 class JenkinsLogger {
-    Closure out = {String msg -> println msg}
+    Closure out
 
     // Constructor
-//    JenkinsLogger(Closure closure) {
-//        out = closure
-//    }
+    JenkinsLogger(Closure closure) {
+        out = closure
+    }
     
     void println(String output) {
         out(output)
