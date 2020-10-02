@@ -21,7 +21,8 @@ pipeline {
                     simple.warning 'simple'
                     walalalalalalaaaaaa.service 'walalalalalalaaaaaa'
                     lysoriHello.helloWorld()
-                    lysoriHello.generell 'Feierabend fuer heute'
+                    laura.checkGeneratorService()
+                    lysoriHello.generell 'die selbstzerstoerung wird eingeleitet'
                     werbung.warning()
                     helloworldlaunchfile.greeting 'geschafft'
                     hellolaunch.greeting ' World ! From Indu'
