@@ -1,6 +1,6 @@
 package indu.core
 
 interface HelloInterface {
-    call()
+    String call()
 
 }
