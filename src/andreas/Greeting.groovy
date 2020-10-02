@@ -6,6 +6,7 @@ class Greeting {
 
     // Constructor
     public Greeting(InterfaceGreetingService service) {
+        println "In Greeting constructor"
         this.service = service
     }
 
