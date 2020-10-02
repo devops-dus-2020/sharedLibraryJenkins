@@ -12,7 +12,6 @@ pipeline {
                     group.groups()
                     janais.info 'janais'
                     karina.info 'karina'
-                    laura.warning 'laura'
                     lysori.warning 'lysori'
                     manuela.frage 'frage'
                     moritz.MoritzHelloWorld()
@@ -24,6 +23,9 @@ pipeline {
                     lysoriHello.helloWorld()
                     lysoriHello.generell 'Feierabend fuer heute'
                     werbung.warning()
+                    HelloWorldlaunchfile.greeting 'geschafft'
+                    moritz.main()
+
                 }
             }
         }

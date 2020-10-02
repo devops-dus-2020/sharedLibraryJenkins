@@ -1,5 +1,5 @@
 package julia.core
 
 interface HelloWorldInterface {
-    call()
+    String call()
 }
