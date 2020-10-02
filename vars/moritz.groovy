@@ -17,13 +17,13 @@ def MoritzHelloWorld(){
 
 
 }
-
+/*
 def main()
 {
 MainClass geheimeNachricht = new MainClass()
 geheimeNachricht.writefile()
 }
-
+*/
 
 
 
