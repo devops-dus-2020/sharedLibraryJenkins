@@ -21,7 +21,9 @@ pipeline {
                     sevcan.warning 'sevcan'
                     simple.warning 'simple'
                     walalalalalalaaaaaa.warning 'walalalalalalaaaaaa'
-                    werbung.warning 'hier könnte ihre Werbung stehen'
+                    lysoriHello.helloWorld()
+                    lysoriHello.generell 'Feierabend fuer heute'
+                    werbung.warning()
                     moritz.MoritzHelloWorld()
                 }
             }
