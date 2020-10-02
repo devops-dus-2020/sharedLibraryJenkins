@@ -7,7 +7,6 @@ def MoritzHelloWorld(){
 
     echo helloworldstring
 }
-}
 
 
 /*def beobachtung(message) {
