@@ -1,10 +1,10 @@
 import andreas.*
 
 def greet(variable) {
-    echo "${output}"
+    echo '${variable}'
 
 
-    String output = ${variable}
+    String output = '${variable}'
     println "In vars/greeting.greet"
     
     GreetingService service = new GreetingService()
