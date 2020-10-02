@@ -23,7 +23,7 @@ pipeline {
                     walalalalalalaaaaaa.warning 'walalalalalalaaaaaa'
                     lysoriHello.helloWorld()
                     lysoriHello.generell 'Feierabend fuer heute'
-        
+                    werbung.warning()
                 }
             }
         }
