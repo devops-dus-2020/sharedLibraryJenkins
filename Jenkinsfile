@@ -14,7 +14,7 @@ pipeline {
                     karina.warning 'karina'
                     laura.checkGeneratorService()
                     lysori.warning 'lysori'
-                    manuela.frage 'frage'
+                    manuela.count()
                     moritz.MoritzHelloWorld()
                     nochein.info 'nochein'
                     rainer.info 'lasst uns pause machen'
