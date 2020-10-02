@@ -1,4 +1,4 @@
-import lysori.devopsdus.*
+import lysori.devopsdus2020.*
 import lysori.helloWorldConnections.*
 
 def helloWorld(){
