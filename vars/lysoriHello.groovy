@@ -5,7 +5,7 @@ import groovy.util.logging.*
 
 def helloWorld(){
     
-    Closure logger = {(String s) -> {println s}}
+    Closure logger = {String s -> println s}
     def service = new HelloWorldService(logger)
     HelloWorld h = new HelloWorld(service)
     
