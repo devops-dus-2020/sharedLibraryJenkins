@@ -1,6 +1,6 @@
 package andreas
 
-JenkinsLogger implements InterfaceJenkinsLogger {
+class JenkinsLogger implements InterfaceJenkinsLogger {
     def out
 
     // Constructor
