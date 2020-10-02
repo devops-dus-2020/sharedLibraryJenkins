@@ -1,5 +1,10 @@
 import andreas.*
 
+def myecho(String msg)
+{
+    println msg
+}
+
 def greet(variable) {
     echo "${variable}"
 
@@ -11,8 +16,7 @@ def greet(variable) {
 
     GreetingService service = new GreetingService()
     Greeting myGreeting = new Greeting(service)
-    def closure = (String msg) -> {println msg}
-    myGreeting.redirectEcho("redirected", closure)
+    myGreeting.redirectEcho("redirected", myecho)
 
     myGreeting.greet(output)
 
