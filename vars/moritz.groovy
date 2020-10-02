@@ -5,12 +5,15 @@ import groovy.util.logging.*
 def MoritzHelloWorld(){
        Closure logger = {String message -> println message}
 
-    
-   
     MyHelloWorldService service = new MyHelloWorldService(logger)
-    String helloworldstring ="Moritz: "+ service.echoMyHelloWorld()
+    
+    logger("2: "+ service.echoMyHelloWorld())
 
-    logger(helloworldstring)
+    String helloworldstring ="Moritz: "+ service.echoMyHelloWorld()
+    logger("3: "+ helloworldstring)
+    logger("4: "+ helloworldstring)
+    logger("5: "+ helloworldstring)
+
 
 }
 
