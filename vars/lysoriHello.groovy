@@ -4,9 +4,7 @@ import lysori.helloWorldConnections.*
 def helloWorld(){
     def service = new HelloWorldService()
     HelloWorld h = new HelloWorld(service)
-    String hello = h.echoHelloWorld()
-
-    echo hello
+    h.echoHelloWorld()
 }
 
 def generell(message){
