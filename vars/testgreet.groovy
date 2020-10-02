@@ -10,7 +10,8 @@ def greet(variable) {
 
     String output = 'This test works!'
 
-    def bindingout = getBinding().out
+    binding.setProperty("out",new PrintWriter(stdout,true))
+    def bindingout = getBinding().getProperty('out')
     JenkinsLogger logger = new JenkinsLogger(bindingout)
     GreetingService service = new GreetingService(logger)
     Greeting myGreeting = new Greeting(service)
