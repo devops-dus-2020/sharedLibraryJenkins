@@ -11,7 +11,8 @@ def greet(variable) {
 
     GreetingService service = new GreetingService()
     Greeting myGreeting = new Greeting(service)
-    myGreeting.redirectEcho("redirected", (String msg) -> {println msg})
+    def closure = (String msg) -> {println msg}
+    myGreeting.redirectEcho("redirected", closure)
 
     myGreeting.greet(output)
 
