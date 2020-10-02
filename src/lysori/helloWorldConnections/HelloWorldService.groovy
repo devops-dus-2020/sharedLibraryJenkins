@@ -1,7 +1,9 @@
 package lysori.helloWorldConnections
 
 import lysori.devopsdus2020.*
+import groovy.util.logging.Log
 
+@Log
 class HelloWorldService implements HelloWorldInterface {
 
     Boolean checkSetup() {
@@ -9,6 +11,9 @@ class HelloWorldService implements HelloWorldInterface {
     }
 
     String echoHelloWorld(){
+        String result = "Hello World"
+        println result
+        log.info(result)
 
         return "Hello World"
     }
