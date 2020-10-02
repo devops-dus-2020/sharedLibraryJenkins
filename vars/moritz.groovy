@@ -10,7 +10,7 @@ def MoritzHelloWorld(){
     String helloworldstring ="Moritz: "+ service.echoMyHelloWorld()
 
     logger(service.echoMyHelloWorld())
-    logger(helloworldstring)
+    logger(helloworldstring +"1")
     logger(helloworldstring)
     logger(helloworldstring)
 
