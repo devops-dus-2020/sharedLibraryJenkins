@@ -20,8 +20,8 @@ class MyHelloWorldService implements HelloWorldInterface   //6.
     
     String echoMyHelloWorld()
     {
-        logger("huhhah")
-        return "Hello World es grüßt Moritz"
+        logger("Moritz sagt: Hello World")
+        return "Hello World sagt: SCHWEIG!"
         
     }
 
