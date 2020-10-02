@@ -13,7 +13,7 @@ pipeline {
                     janais.info 'janais'
                     karina.info 'karina'
                     lysori.warning 'lysori'
-                    manuela.frage 'frage'
+                    manuela.count()
                     moritz.MoritzHelloWorld()
                     nochein.info 'nochein'
                     rainer.info 'lasst uns pause machen'
@@ -26,7 +26,7 @@ pipeline {
                     werbung.warning()
                     helloworldlaunchfile.greeting 'geschafft'
                     hellolaunch.greeting ' World ! From Indu'
-                    moritz.main()
+                    
                 }
             }
         }
