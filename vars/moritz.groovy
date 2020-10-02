@@ -6,13 +6,13 @@ def MoritzHelloWorld(){
        Closure logger = {String message -> println message}
 
     MyHelloWorldService service = new MyHelloWorldService(logger)
+    
+    logger("2: "+ service.echoMyHelloWorld())
 
     String helloworldstring ="Moritz: "+ service.echoMyHelloWorld()
-
-    logger(service.echoMyHelloWorld())
-    logger("1: "+ helloworldstring)
-    logger("2: "+ helloworldstring)
     logger("3: "+ helloworldstring)
+    logger("4: "+ helloworldstring)
+    logger("5: "+ helloworldstring)
 
 
 }
