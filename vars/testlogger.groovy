@@ -10,16 +10,10 @@ def log(variable) {
 
     String output = 'Logging works!'
 
-    def binding = getBinding()
-    def bindingvars = binding.getVariables()
-    def out = getBinding().out
+    Closure myecho = {String msg -> print msg}
+    //myGreeting.redirectEcho("redirected", myecho)
 
-    println bindingvars
-
-    binding.setProperty("out",new PrintWriter(stdout,true));
-    def bindingout = binding.getProperty('out')
-
-    JenkinsLogger logger = new JenkinsLogger(bindingout)
+    JenkinsLogger logger = new JenkinsLogger(myecho)
     logger.print(output)
     logger.prinln(output)
 }

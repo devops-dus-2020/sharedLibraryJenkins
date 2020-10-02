@@ -1,18 +1,18 @@
 package andreas
 
-class JenkinsLogger implements InterfaceJenkinsLogger {
-    def out
+class JenkinsLogger {
+    Closure out
 
     // Constructor
-    JenkinsLogger(def bindingout) {
-        this.out = bindingout
+    JenkinsLogger(Closure closure) {
+        this.out = closure
     }
     
     void print(String output) {
-        out.print(output)
+        out(output)
     }
 
     void println(String output) {
-        out.println(output)
+        out(output + '\n')
     }
 }
