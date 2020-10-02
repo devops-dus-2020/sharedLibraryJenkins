@@ -7,7 +7,7 @@ import org.junit.jupiter.api.*
 class HelloWorldTest {
 
     @Test
-    void writeHelloWorld () {
+    void writeHelloWorld() {
 
     def service = [writeHelloWorld: { String name }] as HelloWorldService
 
@@ -16,7 +16,7 @@ class HelloWorldTest {
     String expectation = "Hello World"
     HelloWorld uut = new HelloWorld()
     //Boolean isOK = hello.writeHelloWorld()
-    Assertions.assertEquals (actual, expectation)x
+    Assertions.assertEquals (actual, expectation)
     }
 
 }
