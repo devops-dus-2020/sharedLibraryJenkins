@@ -5,7 +5,7 @@ def MoritzHelloWorld(){
     MyHelloWorldService service = new MyHelloWorldService()
     String helloworldstring ="Moritz: "+ service.echoMyHelloWorld()
 
-    Closure logger = [ (String msg) -> {println msg} ]
+    Closure logger = [(String message) -> {println message}]
 
     logger(helloworldstring)
 
