@@ -18,7 +18,7 @@ class HelloWorldService implements HelloWorldInterface {
 
     String echoHelloWorld(){
         
-        logger("Ninja")
+        logger("Hilfe - ich wurde einem logger uebergeben")
         return "Hello World"
     }
 
