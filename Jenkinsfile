@@ -12,7 +12,7 @@ pipeline {
                     group.groups()
                     janais.info 'janais'
                     karina.warning 'karina'
-                    laura.checkGeneratorService()
+                    
                     lysori.warning 'lysori'
                     manuela.frage 'frage'
                     moritz.MoritzHelloWorld()
