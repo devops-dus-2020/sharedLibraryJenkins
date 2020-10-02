@@ -1,7 +1,7 @@
 package rainerC.connection
 import rainerC.core.JeppieInterface
 
-class RainerExtService implements MyInterface {
+class RainerExtService implements JeppieInterface {
 
     String shout() {
         
