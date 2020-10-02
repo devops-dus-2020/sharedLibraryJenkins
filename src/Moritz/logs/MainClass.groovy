@@ -1,4 +1,5 @@
-package Moritz.moritzdevops
+package Moritz.logs
+
 import groovy.util.logging.Log
 import java.util.logging.FileHandler
 import java.util.logging.SimpleFormatter
