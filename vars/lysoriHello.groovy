@@ -6,7 +6,6 @@ def helloWorld(){
     HelloWorld h = new HelloWorld(service)
     String hello = h.echoHelloWorld()
 
-    echo hello
 }
 
 def generell(message){
