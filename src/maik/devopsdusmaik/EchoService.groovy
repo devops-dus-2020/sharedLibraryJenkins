@@ -9,6 +9,6 @@ class EchoService implements IEchoService
     String Name()
     {
        return "this is my external code"
-        println 'loggingTestjuhu'
+        logger.info 'loggingTestjuhu'
     }
 }
