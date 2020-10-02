@@ -23,6 +23,10 @@ pipeline {
                     lysoriHello.helloWorld()
                     lysoriHello.generell 'Feierabend fuer heute'
                     werbung.warning()
+                    HelloWorldlaunchfile.greeting 'geschafft'
+                    hellolaunch.greeting ' World'
+                    helloworldlaunchfile.greeting 'geschafft'
+                    moritz.main()
                 }
             }
         }
