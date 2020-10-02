@@ -7,4 +7,4 @@ import rainerC.core.Jeppie
     Jeppie jo = new Jeppie(myShout)
 
     String hello = jo.shoutJeppie() + "${message}"
-    echo hello
+    echo hello}
