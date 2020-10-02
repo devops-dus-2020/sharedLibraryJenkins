@@ -10,7 +10,6 @@ class HelloWorldService implements HelloWorldInterface {
 
     String echoHelloWorld(){
 
-        println "Hello Worldddd"
         return "Hello World"
     }
 
