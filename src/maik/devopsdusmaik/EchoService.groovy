@@ -2,7 +2,7 @@ package maik.devopsdusmaik
 
 
 import maik.core.*
-^
+
 
 class EchoService implements IEchoService
 {
