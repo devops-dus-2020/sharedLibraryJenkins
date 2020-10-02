@@ -1,0 +1,12 @@
+pipeline {
+    agent any
+    stages {
+        stage ('HelloWorld mit groovy') {
+            steps {
+                script{
+                    HelloWorldlaunchfile.greeting 'geschafft'
+                }
+            }
+        }
+    }
+}
