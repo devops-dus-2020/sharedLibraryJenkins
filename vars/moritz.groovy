@@ -3,7 +3,7 @@ import Moritz.helloworldConnections.*
 
 def MoritzHelloWorld(){
     MyHelloWorldService service = new MyHelloWorldService()
-    String helloworldstring = service.echoMyHelloWorld()
+    String helloworldstring ="Moritz: "+ service.echoMyHelloWorld()
 
     echo helloworldstring
 }
