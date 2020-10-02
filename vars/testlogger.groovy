@@ -2,13 +2,7 @@ import andreas.*
 
 
 def log(variable) {
-    echo "${variable}"
-
-
-    //String output = "${variable}"
-    println "In vars/testlogger"
-
-    String output = 'Logging works!'
+    String output = "${variable}"
 
     // Initiate JenkinsLogger
     JenkinsLogger logger = new JenkinsLogger({String msg -> println msg})
