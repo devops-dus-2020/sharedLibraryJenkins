@@ -21,6 +21,6 @@ class NumberGenerator {
 
     public int calculateNumbers() {
         return x;
-    }
+    } 
 
 }
