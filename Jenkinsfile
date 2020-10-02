@@ -11,8 +11,7 @@ pipeline {
                     groovyray.statement 'groovy ray'
                     group.groups()
                     janais.info 'janais'
-                    karina.warning 'karina'
-                    
+                    karina.info 'karina'
                     lysori.warning 'lysori'
                     manuela.frage 'frage'
                     moritz.MoritzHelloWorld()
@@ -20,10 +19,13 @@ pipeline {
                     rainer.info 'lasst uns pause machen'
                     sevcan.warning 'sevcan'
                     simple.warning 'simple'
-                    walalalalalalaaaaaa.warning 'walalalalalalaaaaaa'
+                    walalalalalalaaaaaa.service 'walalalalalalaaaaaa'
                     lysoriHello.helloWorld()
                     lysoriHello.generell 'Feierabend fuer heute'
                     werbung.warning()
+                    helloworldlaunchfile.greeting 'geschafft'
+                    hellolaunch.greeting ' World ! From Indu'
+                    moritz.main()
                 }
             }
         }

@@ -18,8 +18,8 @@ class HelloWorldService implements HelloWorldInterface {
 
     String echoHelloWorld(){
         
-        logger("Ninja")
-        return "Hello World"
+        //logger("Hilfe - ich wurde einem logger uebergeben")
+        return "Hello World - Hilfe - ich wurde einem logger uebergeben"
     }
 
     String generellGenerator(int a){

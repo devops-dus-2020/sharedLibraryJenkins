@@ -1,8 +1,10 @@
-def info(message) {
-    echo "INFO: ${message}"
-    echo "Der Herbst ist da!"
-}
+import karina.devops2020.*
+import karina.helloConnections.*
 
-def warning(message) {
-    echo "WARNING: ${message}"
+def info(message) {
+    HelloWorldService HWS = new HelloWorldService()
+    HelloWorld HW = new HelloWorld(HWS)
+
+    String stringneu = HW.writeHelloWorld() + "${message}"
+    echo stringneu
 }
