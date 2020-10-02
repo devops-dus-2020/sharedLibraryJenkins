@@ -17,7 +17,7 @@ void checkHelloworldVerbindung(){
 
 
 
-
+/*
   @Test
   void checkString(){
     String expected = "Hello World"
@@ -27,5 +27,5 @@ void checkHelloworldVerbindung(){
     actual = uut.echoMyHelloWorld()
     Assertions.assertEquals(expected, actual)    
      
-}
+}*/
 }
