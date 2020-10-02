@@ -12,6 +12,9 @@ def log(variable) {
 
     def binding = getBinding()
     def bindingvars = binding.getVariables()
+
+    println bindingvars
+
     binding.setProperty("out",new PrintWriter(stdout,true));
     def bindingout = binding.getProperty('out')
 
