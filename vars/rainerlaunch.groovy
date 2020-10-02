@@ -1,10 +1,10 @@
 import rainerC.connection.RainerExtService
-import rainerC.core.Jeppie.*
+import rainerC.core.Jeppie
  
 
     def greeting(message) {
     RainerExtService myShout = new RainerExtService()
-    Jeppie bla = new Jeppie(myShout)
+    Jeppie jo = new Jeppie(myShout)
 
-    String hello = bla.shoutJeppie() + "${message}"
-    echo hello
+    String hello = jo.shoutJeppie() + "${message}"
+    echo hello}

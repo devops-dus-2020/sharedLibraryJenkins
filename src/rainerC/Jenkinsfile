@@ -4,7 +4,7 @@ pipeline {
         stage('testing the groove') {
             steps {
                 script {
-                    rainerLaunch.greeting ' yeah !'
+                    rainerlaunch.greeting ' yeah !'
                 }
             }
         }

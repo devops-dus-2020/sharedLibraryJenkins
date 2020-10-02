@@ -13,20 +13,20 @@ pipeline {
                     janais.info 'janais'
                     karina.info 'karina'
                     lysori.warning 'lysori'
-                    manuela.frage 'frage'
+                    manuela.count()
                     moritz.MoritzHelloWorld()
                     nochein.info 'nochein'
                     rainer.info 'lasst uns pause machen'
                     sevcan.warning 'sevcan'
                     simple.warning 'simple'
-                    walalalalalalaaaaaa.warning 'walalalalalalaaaaaa'
+                    walalalalalalaaaaaa.service 'walalalalalalaaaaaa'
                     lysoriHello.helloWorld()
-                    lysoriHello.generell 'Feierabend fuer heute'
+                    laura.checkGeneratorService()
+                    lysoriHello.generell 'die selbstzerstoerung wird eingeleitet'
                     werbung.warning()
-                    HelloWorldlaunchfile.greeting 'geschafft'
-                    hellolaunch.greeting ' World'
                     helloworldlaunchfile.greeting 'geschafft'
-                    moritz.main()
+                    hellolaunch.greeting ' World ! From Indu'
+                    
                 }
             }
         }

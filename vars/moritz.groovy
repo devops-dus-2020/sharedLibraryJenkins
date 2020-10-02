@@ -1,5 +1,6 @@
 import Moritz.moritzdevops.*
 import Moritz.helloworldConnections.*
+import Moritz.logs.*
 import groovy.util.logging.*
 
 def MoritzHelloWorld(){
