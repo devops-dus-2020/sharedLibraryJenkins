@@ -1,0 +1,12 @@
+pipeline{
+    agent any
+    stages {
+        stage('hello world test'){
+            steps{
+                script{
+                    hellolaunch.greeting ' World !'
+                }
+            }
+        }
+    }
+}
