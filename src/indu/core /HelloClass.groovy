@@ -1,5 +1,7 @@
 package indu.core
 
+import indu.Connection.*
+
 public class HelloClass{
 
     HelloInterface hi
