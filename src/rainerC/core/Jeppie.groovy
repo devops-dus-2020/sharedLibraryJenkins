@@ -1,19 +1,16 @@
 package rainerC.core
+import rainerC.core.JeppieInterface
 
 class Jeppie {
 
-    JeppieInterface ji
+    public JeppieInterface ji
 
-
-    public Jeppie(JeppieInterface bla){    
-
-            this.ji = bla
-
+    Jeppie (JeppieInterface ji) {    
+        this.ji = ji
     }
     
     public String shoutJeppie(){
-
-         return ji.shoutJeppie()
+        return ji.shout()
      } 
         
 }
