@@ -8,7 +8,7 @@ class HelloWorld {
         this.service = service
     }
    
-    String writeHelloWorld () {
+    String writeHelloWorld() {
         service.writeHelloWorld()
     }
 
