@@ -5,16 +5,21 @@ import groovy.util.logging.Log
 
 @Log
 class HelloWorldService implements HelloWorldInterface {
+    
+    Closure logger
+    
+    public HelloWorldService (Closure logger){
+         this.logger = logger
+    }
 
     Boolean checkSetup() {
         return true
     }
 
     String echoHelloWorld(){
+        
         String result = "Hello World"
         println result
-        log.info(result)
-
         return "Hello World"
     }
 
