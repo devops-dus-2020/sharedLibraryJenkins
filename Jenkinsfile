@@ -11,7 +11,7 @@ pipeline {
                     groovyray.statement 'groovy ray'
                     group.groups()
                     janais.info 'janais'
-                    karina.warning 'karina'
+                    karina.info 'karina'
                     laura.warning 'laura'
                     lysori.warning 'lysori'
                     manuela.frage 'frage'
