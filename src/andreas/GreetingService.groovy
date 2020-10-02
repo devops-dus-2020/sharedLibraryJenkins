@@ -1,19 +1,15 @@
 package andreas
 
 class GreetingService implements InterfaceGreetingService {
-    InterfaceJenkinsLogger logger
+    JenkinsLogger logger
 
     // Constructor
-    GreetingService(InterfaceJenkinsLogger bindingout) {
-        this.logger = bindingout
+    GreetingService(JenkinsLogger logger) {
+        this.logger = logger
     }
 
-    void print(String output) {
-        logger.println('In GreetingService.greet()')
-        logger.print(output)
-    }
     void println(String output) {
         logger.println('In GreetingService.greet()')
-        logger.print(output)
+        logger.println(output)
     }
 }

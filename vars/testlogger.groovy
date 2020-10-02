@@ -13,7 +13,8 @@ def log(variable) {
     Closure myecho = {String msg -> print msg}
     //myGreeting.redirectEcho("redirected", myecho)
 
-    JenkinsLogger logger = new JenkinsLogger(myecho)
+    //JenkinsLogger logger = new JenkinsLogger(myecho)
+    JenkinsLogger logger = new JenkinsLogger()
     logger.print(output)
     logger.print(output)
     logger.println(output)
