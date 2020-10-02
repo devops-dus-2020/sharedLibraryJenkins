@@ -10,8 +10,8 @@ def log(variable) {
 
     String output = 'Logging works!'
 
-    bindingout = config['out']
     def binding = getBinding()
+    def bindingvars = binding.getVariables()
     binding.setProperty("out",new PrintWriter(stdout,true));
     def bindingout = binding.getProperty('out')
 
