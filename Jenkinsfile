@@ -11,17 +11,22 @@ pipeline {
                     groovyray.statement 'groovy ray'
                     group.groups()
                     janais.info 'janais'
-                    karina.warning 'karina'
-                    laura.warning 'laura'
+                    karina.info 'karina'
                     lysori.warning 'lysori'
-                    manuela.frage 'frage'
-                    moritz.beobachtung 'obacht'
+                    manuela.count()
+                    moritz.MoritzHelloWorld()
                     nochein.info 'nochein'
                     rainer.info 'lasst uns pause machen'
-                    sevcan.warning 'sevcan'
+                    sevcan.info
                     simple.warning 'simple'
-                    walalalalalalaaaaaa.warning 'walalalalalalaaaaaa'
+                    walalalalalalaaaaaa.service 'walalalalalalaaaaaa'
+                    lysoriHello.helloWorld()
+                    laura.checkGeneratorService()
+                    lysoriHello.generell 'die selbstzerstoerung wird eingeleitet'
                     werbung.warning()
+                    helloworldlaunchfile.greeting 'geschafft'
+                    hellolaunch.greeting ' World ! From Indu'
+                    
                 }
             }
         }

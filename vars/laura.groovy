@@ -1,7 +1,11 @@
-def info(message) {
-    echo "INFO: ${message}"
-}
+import laura.devopsdus2020.*
+import laura.details.*
 
-def warning(message) {
-    echo "WARNING: ${message}"
+def checkGeneratorService() {
+    IGeneratorService service = new GeneratorService();
+    NumberGenerator generator = new NumberGenerator(service);
+    int number = generator.generateNumber()
+
+    println(number);
+    println("laura");
 }
