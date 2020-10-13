@@ -12,7 +12,16 @@ package test
 
     // println "test/maven_compile".execute().err.text
 
-    println "ls ../my-app".execute().text
+    // delete target folder
+    //"Test/deleteTarget".execute().text
+
+    // print ls command in my-app folder
+    println "Test/lsCommand".execute().text
+
+    
+    //println "ls ../my-app".execute().text
+
+
 
            // String mvnCompileError = "test/maven_compile".execute().err.text
 

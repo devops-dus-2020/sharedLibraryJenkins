@@ -2,9 +2,10 @@ package test
 
 import org.junit.jupiter.api.*
 import core.*
+import connection.*
 
 class TestMavenCompile {
-    /*
+/* 
     @Test
     void initialTest() {
         Assertions.assertTrue(true)
@@ -29,7 +30,7 @@ class TestMavenCompile {
         String success = cmp.compile()
         Assertions.assertEquals("Maven Compile Successful!", success)
     }
-    */
+    
     @Test 
     void printSuccessFromStub() {
         def successfulStub = [compileMessage: {"Maven Compile Successful!"}] as InterfaceMavenCompile
@@ -37,12 +38,25 @@ class TestMavenCompile {
         assert cmp.compileMessage() == "Maven Compile Successful!"
     }
 
-    /*
+    @Test
+    void testIfStringContainsSubstring() {
+        String rammstein = "du ... du hast ... du hast mich ... dädädä"
+        Assertions.assertTrue(rammstein.contains("mich"))
+    }
+*/
+    
     @Test
     void ifTargetFolderWillBeCreatedInMyApp() {
-        
+            ConnectionMavenCompile connect = new ConnectionMavenCompile()
+            CoreMavenCompile cmp = new CoreMavenCompile(connect)
+            cmp.mavenCompile()
+            String lsCommand = "Test/lsCommand".execute().text
+            Assertions.assertTrue(lsCommand.contains("target"))
+            "Test/deleteTarget".execute().text
+
     }
-    */
+    
+    
 
 
 }

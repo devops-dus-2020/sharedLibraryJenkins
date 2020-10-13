@@ -8,7 +8,7 @@ class ConnectionMavenCompile implements InterfaceMavenCompile {
     }
 
     void mavenCompile() {
-
+        "test/maven_compile".execute().text
     }
 }
 
