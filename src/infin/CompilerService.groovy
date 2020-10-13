@@ -11,8 +11,8 @@ class CompilerService implements InterfaceCompilerService {
         this.logger = logger
     }
     
-    def compile() {
-        println "mvn compile".execute().text
+    String compile() {
+        return "mvn compile".execute().text
     }
 
     String version(){

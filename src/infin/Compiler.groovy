@@ -9,7 +9,7 @@ class Compiler {
         this.service = service
     }
 
-    def compile() {
+    String compile() {
         service.compile()
     }
 

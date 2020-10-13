@@ -1,6 +1,6 @@
 package infin
 
 interface InterfaceCompilerService extends Serializable {
-    def compile()
+    String compile()
     String version()
 }

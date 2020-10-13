@@ -6,6 +6,6 @@ def compile() {
     CompilerService service = new CompilerService(logger)
     Compiler myCompiler = new Compiler(service)
 
-    logger(myCompiler.version())
+    logger(myCompiler.compile())
     //println "mvn -v".execute().text
 }
