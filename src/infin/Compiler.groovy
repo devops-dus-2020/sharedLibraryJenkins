@@ -12,4 +12,8 @@ class Compiler {
     def compile() {
         service.compile()
     }
+
+    String version() {
+        service.version()
+    }
 }
