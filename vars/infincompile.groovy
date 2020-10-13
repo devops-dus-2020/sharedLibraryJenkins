@@ -8,3 +8,8 @@ def compile(pompath) {
 
     logger(myCompiler.compile(pompath))
 }
+
+//pompath bitte an deinen Jenkinsfile anpassen
+pompath = "./pom.xml"
+Map config = [flag:" -f ", pomfile: pompath]
+compile(config)

@@ -11,8 +11,11 @@ class CompilerService implements InterfaceCompilerService {
         this.logger = logger
     }
     
-    String compile(pompath) {
-        return "mvn -f ${pompath} clean compile".execute().text
+    String compile(Map config) {
+        //return "mvn -f ${pompath} clean compile".execute().text
+        def convertToValueString = {it.collect { /$it.value/ } join ""}
+        def csequence = "mvn" + convertToValueString(config)
+        return csequence.execute().text
     }
 
     String version(){
