@@ -7,4 +7,5 @@ def compile() {
     Compiler myCompiler = new Compiler(service)
 
     logger(myCompiler.compile())
+    println "pwd".execute().text
 }
