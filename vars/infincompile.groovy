@@ -9,7 +9,7 @@ def compile(Map config) {
     logger(myCompiler.compile(config))
 }
 
-//pompath bitte an deinen Jenkinsfile anpassen
-//pompath = "./pom.xml"
-//Map config = [flag:" -f ", pomfile: pompath]
-//compile(config)
+//lokaler Test auskommentiert
+// pompath = "./pom.xml"
+// Map config = [flag:" -f ", pomfile: pompath]
+// compile(config)
