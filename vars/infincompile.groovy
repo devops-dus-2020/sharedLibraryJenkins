@@ -1,12 +1,12 @@
 import infin.*
 import groovy.util.logging.*
 
-def compile(pompath) {
+def compile(Map config) {
     Closure logger = {String message -> println message}
     CompilerService service = new CompilerService(logger)
     Compiler myCompiler = new Compiler(service)
 
-    logger(myCompiler.compile(pompath))
+    logger(myCompiler.compile(config))
 }
 
 //pompath bitte an deinen Jenkinsfile anpassen
