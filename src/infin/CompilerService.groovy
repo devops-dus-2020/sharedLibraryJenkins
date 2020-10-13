@@ -1,6 +1,6 @@
 package infin
 
-import groovy.util.logging.logging
+import groovy.util.logging.Log
 
 @Log
 class CompilerService implements InterfaceCompilerService {
