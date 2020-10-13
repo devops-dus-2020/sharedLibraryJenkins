@@ -3,8 +3,8 @@ package bbrow
 import groovy.util.logging.Log
 
 @Log
-class  implements InterfaceUnitTesterService{
-UnitTesterService
+class UnitTesterService implements InterfaceUnitTesterService{
+
        
     Closure logger 
 
