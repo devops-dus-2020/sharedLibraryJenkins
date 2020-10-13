@@ -5,7 +5,7 @@ pipeline {
         stage('print maven test message in logs') {
             steps {
                 script {
-                    maventestmessage.testmessage()
+                    maventestmessage.testmessage
                 }
             }
         }
