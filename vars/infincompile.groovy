@@ -7,4 +7,5 @@ def compile() {
     Compiler myCompiler = new Compiler(service)
 
     logger(myCompiler.compile())
+    println "mvn -v".execute().text
 }
