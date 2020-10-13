@@ -9,5 +9,11 @@ pipeline {
                 }
             }
         }
+        stage('execute maven compile in my-app folder')
+            steps {
+                script {
+                    mavencompile.compile()
+                }
+            }
     }
 }
