@@ -3,7 +3,7 @@ package infin
 import org.junit.jupiter.api.*
 import groovy.test.GroovyAssert.*
 
-class GreetingTest {
+class CompilerTest {
 
     @Test
     void instantiateCompiler() {
