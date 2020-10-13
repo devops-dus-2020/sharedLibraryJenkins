@@ -1,8 +1,10 @@
 import infin.*
+import groovy.util.logging.*
 
 def compile() {
-    CompilerService service = new CompilerService()
+    Closure logger = {String message -> println message}
+    CompilerService service = new CompilerService(logger)
     Compiler myCompiler = new Compiler(service)
 
-    myCompiler.compile()
+    logger(myCompiler.compile())
 }
