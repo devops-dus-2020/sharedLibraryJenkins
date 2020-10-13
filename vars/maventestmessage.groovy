@@ -7,8 +7,8 @@ def testmessage() {
     CoreMavenCompile cmp = new CoreMavenCompile(connect)
 
     String success = cmp.compileMessage()
-    //return success
+    // return success
     echo success
 }
 
-//println mavenCompile()
+//println testmessage()

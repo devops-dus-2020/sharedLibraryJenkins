@@ -1,6 +1,6 @@
 package test
 
-  // String dings = "mvn -v".execute().text
+  //println "mvn -v".execute().text
   // println dings
 
    //String mVersion ="mvn -v | grep -i apache".execute().text
@@ -8,9 +8,11 @@ package test
   // String dongs = "bash maven_grep.sh".execute().text
    //println dongs
 
-   println "test/maven_grep".execute().text
+ //println "test/maven_grep".execute().text
 
-   // println "test/maven_compile".execute().text
+    // println "test/maven_compile".execute().err.text
+
+    println "ls ../my-app".execute().text
 
            // String mvnCompileError = "test/maven_compile".execute().err.text
 

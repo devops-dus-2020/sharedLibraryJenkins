@@ -40,7 +40,7 @@ class TestMavenCompile {
     /*
     @Test
     void ifTargetFolderWillBeCreatedInMyApp() {
-        def compileStub = [compile]
+        
     }
     */
 
