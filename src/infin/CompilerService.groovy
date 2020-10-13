@@ -9,6 +9,6 @@ class CompilerService implements InterfaceCompilerService {
         this.logger = logger
     }
    def compile() {
-        println "mvn compile".execute().text
+        println "mvn -v".execute().text
     }
 }
