@@ -9,8 +9,8 @@ class Compiler {
         this.service = service
     }
 
-    String compile() {
-        service.compile()
+    String compile(pompath) {
+        service.compile(pompath)
     }
 
     String version() {

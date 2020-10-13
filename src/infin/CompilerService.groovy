@@ -11,8 +11,8 @@ class CompilerService implements InterfaceCompilerService {
         this.logger = logger
     }
     
-    String compile() {
-        return "mvn -f /var/jenkins_home/workspace/BBROW/pom.xml compile".execute().text
+    String compile(pompath) {
+        return "mvn -f ${pompath} compile".execute().text
     }
 
     String version(){
