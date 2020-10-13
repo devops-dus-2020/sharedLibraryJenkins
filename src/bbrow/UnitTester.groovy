@@ -8,7 +8,7 @@ class UnitTester{
         this.service = service
     }
 
-    String test(pompath){
-        service.test(pomath)
+    String maventest(pompath){
+        service.maventest(pomath)
     }
 }

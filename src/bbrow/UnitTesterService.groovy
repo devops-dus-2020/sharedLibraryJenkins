@@ -12,7 +12,7 @@ class UnitTesterService implements InterfaceUnitTesterService{
         this.logger = logger
     }
     
-    String test(pompath) {
+    String maventest(pompath) {
         return "mvn -f ${pompath} test".execute().text
     }
 }
