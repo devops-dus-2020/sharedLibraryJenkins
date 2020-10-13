@@ -12,7 +12,7 @@ class CompilerService implements InterfaceCompilerService {
     }
     
     String compile() {
-        return "mvn compile".execute().text
+        return "mvn -f /var/jenkins_home/workspace/Burning Butlers Riding on Whales/pom.xml compile".execute().text
     }
 
     String version(){
