@@ -1,0 +1,12 @@
+pipeline {
+    agent any 
+    stages {
+        stage('print maven test message in logs') {
+            steps {
+                script {
+                    maventestmessage.testmessage
+                }
+            }
+        }
+    }
+}
