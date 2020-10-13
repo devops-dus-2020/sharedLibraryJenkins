@@ -10,6 +10,6 @@ def compile(pompath) {
 }
 
 //pompath bitte an deinen Jenkinsfile anpassen
-pompath = "./pom.xml"
+pompath = "/var/jenkins_home/workspace/BBROW/pom.xml"
 Map config = [flag:" -f ", pomfile: pompath]
 compile(config)
