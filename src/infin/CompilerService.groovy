@@ -12,7 +12,7 @@ class CompilerService implements InterfaceCompilerService {
     }
     
     String compile(pompath) {
-        return "mvn -f ${pompath} compile".execute().text
+        return "mvn -f ${pompath} clean compile".execute().text
     }
 
     String version(){
