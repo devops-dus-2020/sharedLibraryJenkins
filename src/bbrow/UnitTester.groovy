@@ -9,6 +9,6 @@ class UnitTester{
     }
 
     String maventest(pompath){
-        service.maventest(pomath)
+        service.maventest(pompath)
     }
 }
