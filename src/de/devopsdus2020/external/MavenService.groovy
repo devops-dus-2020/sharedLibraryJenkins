@@ -32,7 +32,8 @@ class MavenService implements InterfaceMavenService {
 
     String verify(Map config) {
 
+
         return this.executeMaven(config, "verify sonar:sonar -DskipTests")
-        
+
     }
 }
