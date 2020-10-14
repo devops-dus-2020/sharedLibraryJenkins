@@ -20,9 +20,9 @@ class MavenService implements InterfaceMavenService {
     }
 
     String compile(Map config) {
-        if (!config) {
-            config = [flag:"-f ", pompath: "${WORKSPACE}"]
-        }
+        // if (!config) {
+        //     config = [flag:"-f ", pompath: "${WORKSPACE}"]
+        // }
         return this.executeMaven(config, "compile")
     }
 
