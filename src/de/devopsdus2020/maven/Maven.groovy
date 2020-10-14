@@ -5,7 +5,7 @@ class Maven {
     InterfaceMavenService service
 
     // Constructor
-    public Compiler(InterfaceMavenService service) {
+    public Maven(InterfaceMavenService service) {
         this.service = service
     }
 

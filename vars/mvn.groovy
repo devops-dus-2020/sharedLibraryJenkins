@@ -1,15 +1,21 @@
-import infin.*
+import de.devopsdus2020.maven.*
+import de.devopsdus2020.external.*
 import groovy.util.logging.*
+
+def compile() {
+    Map config = [flag:" -f ", pomfile: "${WORKSPACE}"]
+    compile(config)
+}
 
 def compile(Map config) {
     Closure logger = {String message -> println message}
-    CompilerService service = new CompilerService(logger)
-    Compiler myCompiler = new Compiler(service)
+    MavenService service = new MavenService(logger)
+    Maven myMaven = new Maven(service)
 
-    logger(myCompiler.compile(config))
+    logger(myMaven.compile(config))
 }
 
-//lokaler Test auskommentiert
+// lokaler Test auskommentiert
 // pompath = "./pom.xml"
 // Map config = [flag:" -f ", pomfile: pompath]
 // compile(config)
