@@ -14,7 +14,7 @@ class CompilerService implements InterfaceCompilerService {
     String compile(Map config) {
         //return "mvn -f ${pompath} clean compile".execute().text
         def convertToValueString = {it.collect { /$it.value/ } join ""}
-        def csequence = "mvn compile" + convertToValueString(config)
+        def csequence = "mvn clean compile" + convertToValueString(config)
         return csequence.execute().text
     }
 
