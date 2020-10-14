@@ -39,6 +39,6 @@ class MavenService implements InterfaceMavenService {
     }
 
     String deploy(Map config) {
-        return this.executeMaven(config, "clean deploy --settings=/home/aypahyo/settings.xml -DskipTests")
+        return this.executeMaven(config, "clean deploy --settings=/var/jenkins_home/settings.xml -DskipTests")
     }
 }
