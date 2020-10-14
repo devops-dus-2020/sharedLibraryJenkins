@@ -6,7 +6,7 @@ import groovy.transform.Field
 @Field final Closure logger = {String message -> println message}
 @Field final MavenService service = new MavenService(logger)
 @Field final Maven myMaven = new Maven(service)
-@Field final Map config = [flag:" -f ", pomfile: "${WORKSPACE}"]
+@Field final Map config = [flag:" -f ", pomfile: "./"]
 
 def compile() {  
     logger(myMaven.compile(config))
@@ -18,9 +18,14 @@ def test() {
 
 def verify() {
     logger(myMaven.verify(config))
-} 
+}
+
+// def package() {
+//     logger(myMaven.package(config))
+// } 
+
 
 // lokaler Test auskommentiert
 // pompath = "./pom.xml"
 // Map config = [flag:" -f ", pomfile: pompath]
-// compile(config)
+compile()
