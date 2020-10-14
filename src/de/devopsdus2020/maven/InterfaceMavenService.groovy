@@ -4,4 +4,5 @@ interface InterfaceMavenService extends Serializable {
     String compile(Map config)
     String version()
     String test(Map config)
+    String verify(Map config)
 }

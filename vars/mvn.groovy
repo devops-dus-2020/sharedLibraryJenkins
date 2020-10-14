@@ -16,6 +16,10 @@ def test() {
     logger(myMaven.test(config))
 }
 
+def verify() {
+    logger(myMaven.test(config))
+} 
+
 // lokaler Test auskommentiert
 // pompath = "./pom.xml"
 // Map config = [flag:" -f ", pomfile: pompath]

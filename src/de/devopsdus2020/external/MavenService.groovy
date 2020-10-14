@@ -29,4 +29,8 @@ class MavenService implements InterfaceMavenService {
     String test(Map config) {
         return this.executeMaven(config, "test")
     }
+
+    String verify(Map config) {
+        return this.executeMaven(config, "verify sonar:sonar")
+    }
 }
