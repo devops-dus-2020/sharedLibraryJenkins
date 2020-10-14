@@ -22,6 +22,10 @@ def verify() {
 
 def artifactpackage() {
     logger(myMaven.artifactpackage(config))
+}
+
+def deploy() {
+    logger(myMaven.deploy(config))
 } 
 
 

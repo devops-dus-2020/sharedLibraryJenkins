@@ -29,4 +29,8 @@ class Maven {
     String artifactpackage(Map config) {
         service.artifactpackage(config)
     }
+
+    String deploy(Map config) {
+        service.deploy(config)
+    }
 }

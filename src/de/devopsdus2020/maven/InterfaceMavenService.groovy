@@ -6,4 +6,5 @@ interface InterfaceMavenService extends Serializable {
     String test(Map config)
     String verify(Map config)
     String artifactpackage(Map config)
+    String deploy(Map config)
 }
