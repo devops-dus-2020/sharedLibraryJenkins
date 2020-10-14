@@ -16,13 +16,10 @@ class MavenService implements InterfaceMavenService {
         def convertToValueString = {it.collect { /$it.value/ } join ""}
         def csequence = "mvn " + convertToValueString(config) + " " + phase
         logger("In executeMave " + csequence)
-        //return csequence.execute().text
+        return csequence.execute().text
     }
 
     String compile(Map config) {
-        // if (!config) {
-        //     config = [flag:"-f ", pompath: "${WORKSPACE}"]
-        // }
         return this.executeMaven(config, "compile")
     }
 
