@@ -2,10 +2,10 @@ import de.devopsdus2020.maven.*
 import de.devopsdus2020.external.*
 import groovy.util.logging.*
 
-def compile() {
-    Map config = [flag:" -f ", pomfile: "${WORKSPACE}"]
-    compile(config)
-}
+// def compile() {
+//     Map config = [flag:" -f ", pomfile: "${WORKSPACE}"]
+//     compile(config)
+// }
 
 def compile(Map config) {
     Closure logger = {String message -> println message}
