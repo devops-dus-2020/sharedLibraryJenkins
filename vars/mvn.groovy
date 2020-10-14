@@ -8,19 +8,21 @@ import groovy.util.logging.*
 // }
 
 def compile() {
-    Closure logger = {String message -> println message}
-    MavenService service = new MavenService(logger)
-    Maven myMaven = new Maven(service)
+    Maven myMaven = mvn.makeMaven()
     Map config = [flag:" -f ", pomfile: "${WORKSPACE}"]
     
     logger(myMaven.compile(config))
 }
-
-def compile(Map config) {
+Maven makeMaven() { 
     Closure logger = {String message -> println message}
     MavenService service = new MavenService(logger)
-    Maven myMaven = new Maven(service)
+    return new Maven(service)
 
+}
+
+
+def compile(Map config) {
+    mvn.makeMaven()
     logger(myMaven.compile(config))
 }
 

@@ -12,11 +12,13 @@ class MavenService implements InterfaceMavenService {
         this.logger = logger
     }
     
-    String executeMaven(Map config, String phase) {
+    Integer executeMaven(Map config, String phase) {
         def convertToValueString = {it.collect { /$it.value/ } join ""}
         def csequence = "mvn " + convertToValueString(config) + " " + phase
         logger("In executeMave " + csequence)
-        return csequence.execute().text
+        def process = csequence.execute()
+        logger(process.text)
+        return process.exitValue() 
     }
 
     String compile(Map config) {
