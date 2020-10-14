@@ -1,11 +1,11 @@
-package infin
+package de.devopsdus2020.maven
 
-class Compiler {
+class Maven {
 
-    InterfaceCompilerService service
+    InterfaceMavenService service
 
     // Constructor
-    public Compiler(InterfaceCompilerService service) {
+    public Compiler(InterfaceMavenService service) {
         this.service = service
     }
 
