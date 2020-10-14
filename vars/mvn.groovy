@@ -26,7 +26,7 @@ def artifactpackage() {
 
 def deploy() {
     logger(myMaven.deploy(config))
-} 
+}
 
 
 // lokaler Test auskommentiert
