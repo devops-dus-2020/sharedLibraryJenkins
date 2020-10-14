@@ -17,7 +17,7 @@ def test() {
 }
 
 def verify() {
-    logger(myMaven.test(config))
+    logger(myMaven.verify(config))
 } 
 
 // lokaler Test auskommentiert
