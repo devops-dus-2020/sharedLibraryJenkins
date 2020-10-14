@@ -28,4 +28,4 @@ def artifactpackage() {
 // lokaler Test auskommentiert
 // pompath = "./pom.xml"
 // Map config = [flag:" -f ", pomfile: pompath]
-artifactpackage()
+//artifactpackage()
