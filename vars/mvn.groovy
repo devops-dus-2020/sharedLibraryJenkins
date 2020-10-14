@@ -20,12 +20,12 @@ def verify() {
     logger(myMaven.verify(config))
 }
 
-// def package() {
-//     logger(myMaven.package(config))
-// } 
+def package() {
+    logger(myMaven.package(config))
+} 
 
 
 // lokaler Test auskommentiert
 // pompath = "./pom.xml"
 // Map config = [flag:" -f ", pomfile: pompath]
-compile()
+package()
