@@ -17,7 +17,7 @@ def test() {
 }
 
 def verify() {
-    logger(myMaven.artifactverify(config))
+    logger(myMaven.verify(config))
 }
 
 def artifactpackage() {
