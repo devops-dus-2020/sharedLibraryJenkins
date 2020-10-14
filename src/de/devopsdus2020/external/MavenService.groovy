@@ -13,7 +13,7 @@ class MavenService implements InterfaceMavenService {
     }
     
     String executeMaven(Map config, String phase) {
-        def convertToValueString = {it.collect { /$it.value/ } join ""}
+        def convertToValueString = {it.collect { / -$it.key $it.value/ } join ""}
         def csequence = "mvn " + convertToValueString(config) + " " + phase
         return csequence.execute().text
     }
