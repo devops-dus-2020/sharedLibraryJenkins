@@ -16,4 +16,9 @@ class Maven {
     String version() {
         service.version()
     }
+
+    
+    String test(Map config) {
+        service.compile(config)
+    }
 }

@@ -25,4 +25,8 @@ class MavenService implements InterfaceMavenService {
     String version(){
         return "mvn -v".execute().text
     }
+
+    String test(Map config) {
+        return this.executeMaven(config, "test")
+    }
 }
