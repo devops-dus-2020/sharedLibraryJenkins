@@ -19,6 +19,6 @@ class Maven {
 
     
     String test(Map config) {
-        service.compile(config)
+        service.test(config)
     }
 }
