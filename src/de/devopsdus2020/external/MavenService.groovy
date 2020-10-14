@@ -31,6 +31,6 @@ class MavenService implements InterfaceMavenService {
     }
 
     String verify(Map config) {
-        return this.executeMaven(config, "verify sonar:sonar -DskipTests")
+        return this.executeMaven(config, "verify sonar:sonar -DskipTests -Dsonar.host.url=http://sonarqube:8084 -Dsonar.login=admin -Dsonar.password=KFZjk4Xw2wtZ4zm")
     }
 }
