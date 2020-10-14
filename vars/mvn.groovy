@@ -17,15 +17,15 @@ def test() {
 }
 
 def verify() {
-    logger(myMaven.verify(config))
+    logger(myMaven.artifactverify(config))
 }
 
-def package() {
-    logger(myMaven.package(config))
+def artifactpackage() {
+    logger(myMaven.artifactpackage(config))
 } 
 
 
 // lokaler Test auskommentiert
 // pompath = "./pom.xml"
 // Map config = [flag:" -f ", pomfile: pompath]
-package()
+artifactpackage()

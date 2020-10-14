@@ -26,7 +26,7 @@ class Maven {
         service.verify(config)
     }
 
-    String package(Map config) {
-        service.package(config)
+    String artifactpackage(Map config) {
+        service.artifactpackage(config)
     }
 }
