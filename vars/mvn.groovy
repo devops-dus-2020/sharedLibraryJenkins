@@ -8,13 +8,12 @@ import groovy.transform.Field
 @Field final Maven myMaven = new Maven(service)
 @Field final Map config = [flag:" -f ", pomfile: "${WORKSPACE}"]
 
-def compile() {
-    //Closure logger = {String message -> println message}
-    //MavenService service = new MavenService(logger)
-    //Maven myMaven = new Maven(service)
-    //Map config = [flag:" -f ", pomfile: "${WORKSPACE}"]
-    
+def compile() {  
     logger(myMaven.compile(config))
+}
+
+def test() {  
+    logger(myMaven.test(config))
 }
 
 // lokaler Test auskommentiert
