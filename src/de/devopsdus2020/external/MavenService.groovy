@@ -19,7 +19,7 @@ class MavenService implements InterfaceMavenService {
     }
 
     String compile(Map config) {
-        return this.executeMaven(config, "compile")
+        return this.executeMaven(config, "clean compile")
     }
 
     String version(){
