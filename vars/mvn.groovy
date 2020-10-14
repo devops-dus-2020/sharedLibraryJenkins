@@ -25,9 +25,7 @@ def artifactpackage() {
 }
 
 def deploy() {
-    withCredentials([usernamePassword(credentialsId: 'nexus', usernameVariable: 'NEXUS_USER', passwordVariable: 'NEXUS_PASSWORD')]) {
     logger(myMaven.deploy(config))
-    }
 }
 
 
