@@ -16,14 +16,6 @@ def compile() {
     logger(myMaven.compile(config))
 }
 
-def compile(Map config) {
-    Closure logger = {String message -> println message}
-    MavenService service = new MavenService(logger)
-    Maven myMaven = new Maven(service)
-
-    logger(myMaven.compile(config))
-}
-
 // lokaler Test auskommentiert
 // pompath = "./pom.xml"
 // Map config = [flag:" -f ", pomfile: pompath]
