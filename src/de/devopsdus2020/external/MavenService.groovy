@@ -39,6 +39,6 @@ class MavenService implements InterfaceMavenService {
     }
 
     String deploy(Map config) {
-        return this.executeMaven(config, '--settings=${WORKSPACE}/settings.xml deploy -DskipTests')
+        return this.executeMaven(config, '--settings=[f: "${WORKSPACE}"]/settings.xml deploy -DskipTests')
     }
 }
