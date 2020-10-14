@@ -33,7 +33,7 @@ class MavenService implements InterfaceMavenService {
     String verify(Map config) {
 
 
-        return this.executeMaven(config, "verify sonar:sonar -DskipTests")
+        return this.executeMaven(config, "verify sonar:sonar -DskipTests -Dsonar.host.url=http://sonarqube:9000")
 
     }
 }
