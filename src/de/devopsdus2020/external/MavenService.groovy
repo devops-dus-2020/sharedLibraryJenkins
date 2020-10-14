@@ -39,6 +39,6 @@ class MavenService implements InterfaceMavenService {
     }
 
     String deploy(Map config) {
-        return this.executeMaven(config, 'clean deploy -DaltDeploymentRepository=nexus-snapshots::default::http://nexus:8081/repository/maven-snapshots -DskipTests')
+        return this.executeMaven(config, '-gs $MAVEN_GLOBAL_SETTINGS clean deploy -DskipTests')
     }
 }
