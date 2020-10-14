@@ -16,7 +16,7 @@ Artifactpackage
 Funktion zum aufrufen von "maven clean package", musste als "Artifactpackage" benannt werden, weil
 groovy eine eigene package() Funktion besitzt.
 
-Verwendung der Map config bei Eingabe muss folgendermasse erfolgen, wenn Map verwendet werden soll:
+Verwendung der Map config bei Eingabe muss folgendermassen erfolgen, wenn Map verwendet werden soll:
 compile([flag:Paramter]) z.B. compile([s:settings.xml])
 !!!!Wichtig Minuszeichen bei der Flag weglassen!!!!
 
