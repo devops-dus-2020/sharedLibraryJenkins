@@ -20,10 +20,9 @@ class MavenService implements InterfaceMavenService {
         logger("cmd: ${csequence}")
         logger("exitValue: ${process.exitValue()}")
         logger("err.text: ${process.err.text}")
-        logger("text: ${process.text}")
-
-
-        return process.text
+        def buffer = process.text
+        logger("text: ${buffer}")
+        return buffer
     }
 
     String compile(Map config) {
