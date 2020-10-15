@@ -31,6 +31,10 @@ def deploy() {
     logger(myMaven.deploy(config))
 }
 
+def tomcat() {
+    logger(myMaven.tomcat(config))
+}
+
 
 // lokaler Test auskommentiert
 // pompath = "./pom.xml"
