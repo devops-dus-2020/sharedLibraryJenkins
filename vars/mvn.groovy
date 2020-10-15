@@ -9,15 +9,15 @@ Maven makeMaven() {
 }
 
 def compile() {
-    Maven myMaven = mvn.makeMaven()
+    Maven myMaven = makeMaven()
     Map config = [flag:" -f ", pomfile: "${WORKSPACE}"]
     
     myMaven.compile(config)
 }
 
 def compile(Map config) {
-    mvn.makeMaven()
-    
+    Maven myMaven = makeMaven()
+
     myMaven.compile(config)
 }
 
