@@ -15,25 +15,14 @@ class AnsibleService implements InterfaceAnsibleService {
 
     //InputStream  configFile = streamFileFromWorkspace('data/config.yml')
 
-    String executeAnsiblePush(Map config, String credentials) {
-        def convertToValueString = {it.collect { / -$it.key $it.value/ } join ""}
-        def csequenceansible = "ansible-playbook " + convertToValueString(config) + credentials
-        return csequenceansible.execute().text
-    }
-
-      String executeAnsibleBuild(Map config) {
-        def convertToValueString = {it.collect { / -$it.key $it.value/ } join ""}
-        def csequenceansible = "ansible-playbook " + convertToValueString(config)
+    String executeAnsiblePush(String config) {
+        def csequenceansible = "ansible-playbook " + config
         return csequenceansible.execute().text
     }
 
 
-    String imagebuild(Map config) {
+    String imagebuild(String config) {
         return this.executeAnsibleBuild(config)
-    }
-
-    String imagepush(Map config, String credentials){
-        return this.executeAnsiblePush(config, credentials)
     }
 
 }

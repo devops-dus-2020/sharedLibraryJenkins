@@ -4,7 +4,7 @@ import groovy.util.logging.*
 import groovy.transform.Field
 
 
-@Field final Map config = [f: "${WORKSPACE}/${YMLPATH}"] 
+@Field final String config = "/var/jenkins_home/workspace/BBROW_Multi_master"
 
 
 //Factory pattern
@@ -19,8 +19,4 @@ MyAnsible makeMyAnsible(){
 //credentialString = "-e USERNAME=${USERNAME} PASSWORD=${PASSWORD}"
 def imagebuild() { 
     logger(makeMyAnsible().imagebuild(config))
-}
-
-def imagepush(credentialString) {  
-    logger(makeMyAnsible().imagepush(config, credentialString))
 }
