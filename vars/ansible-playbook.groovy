@@ -4,7 +4,7 @@ import groovy.util.logging.*
 import groovy.transform.Field
 
 
-@Field final Map config = [f: "${WORKSPACE}/${path}"] 
+@Field final Map config = [f: "${WORKSPACE}/${YMLPATH}"] 
 
 
 //Factory pattern
