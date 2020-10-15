@@ -9,7 +9,7 @@ class MyAnsible {
         this.service = service
     }
 
-    String buildImage(String config) {
+    String buildImage(config) {
         service.buildImage(config)
     }
 }
