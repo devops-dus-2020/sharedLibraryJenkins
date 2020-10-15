@@ -51,6 +51,6 @@ class MavenService implements InterfaceMavenService {
     }
     
     String tomcat(Map config) {
-        return this.executeMaven(config, "tomcat7:redeploy -DskipTests")
+        return this.executeMaven(config, "tomcat7:redeploy --settings=/var/jenkins_home/workspace/gryns_mostafa/settings.xml -DskipTests")
     }
 }
