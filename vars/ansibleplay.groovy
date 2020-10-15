@@ -4,7 +4,7 @@ import groovy.util.logging.*
 import groovy.transform.Field
 
 
-@Field final String config = "/var/jenkins_home/workspace/BBROW_Multi_master/buildImage.yml"
+
 
 
 //anhang ansible-playbook xxx.yml ...
@@ -14,5 +14,5 @@ def buildImage() {
     AnsibleService service = new AnsibleService(logger)
     MyAnsible myAnsible = new MyAnsible(service)
     
-    myAnsible.buildImage(config)
+    myAnsible.buildImage("/var/jenkins_home/workspace/BBROW_Multi_master/buildImage.yml")
 }
