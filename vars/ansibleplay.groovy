@@ -14,5 +14,5 @@ def buildImage() {
     AnsibleService service = new AnsibleService(logger)
     MyAnsible myAnsible = new MyAnsible(service)
     
-    myAnsible.buildImage("/var/jenkins_home/workspace/BBROW_Multi_master/buildImage.yml")
+    logger(myAnsible.buildImage("/var/jenkins_home/workspace/BBROW_Multi_master/buildImage.yml"))
 }
