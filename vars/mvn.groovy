@@ -6,10 +6,10 @@ import groovy.transform.Field
 @Field final Map config = [f: "${WORKSPACE}"]
 
 def makeMyMaven(){
-        Closure logger = {String message -> println message}
-        MavenService service = new MavenService(logger)
-        Maven myMaven = new Maven(service)
-        return myMaven
+    Closure logger = {String message -> println message}
+    MavenService service = new MavenService(logger)
+    Maven myMaven = new Maven(service)
+    return myMaven
 }
 
 def compile() {
