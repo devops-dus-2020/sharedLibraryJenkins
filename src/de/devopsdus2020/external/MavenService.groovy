@@ -15,14 +15,7 @@ class MavenService implements InterfaceMavenService {
     String executeMaven(Map config, String phase) {
         def convertToValueString = {it.collect { / -$it.key $it.value/ } join ""}
         def csequence = "mvn " + convertToValueString(config) + " " + phase
-        def process = csequence.execute()
-        process.waitFor()
-        logger("cmd: ${csequence}")
-        logger("exitValue: ${process.exitValue()}")
-        logger("err.text: ${process.err.text}")
-        def buffer = process.text
-        logger("text: ${buffer}")
-        return buffer
+        return csequence.execute().text
     }
 
     String compile(Map config) {
@@ -46,6 +39,6 @@ class MavenService implements InterfaceMavenService {
     }
 
     String deploy(Map config) {
-        return this.executeMaven(config, "clean deploy --settings=${config.WORKSPACE}/settings.xml -DskipTests")
+        return this.executeMaven(config, "clean deploy --settings=${WORKSPACE}/settings.xml -DskipTests")
     }
 }
