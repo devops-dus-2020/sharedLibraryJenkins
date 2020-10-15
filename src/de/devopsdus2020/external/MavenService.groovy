@@ -25,9 +25,16 @@ class MavenService implements InterfaceMavenService {
         else {
             csequence = "mvn " + phase
         }
+
+        logger("cmd: ${csequence}")
         def process = csequence.execute()
-        logger(process.text)
-        return process.exitValue() 
+        process.waitFor()
+        Integer exitValue = process.exitValue()
+        logger("exitValue: ${exitValue}")
+        logger("err.text: ${process.err.text}")
+        def buffer = process.text
+        logger("text:\n${buffer}")
+        return exitValue 
     }
 
     Integer version(Map config){
