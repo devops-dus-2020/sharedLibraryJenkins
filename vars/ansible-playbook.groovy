@@ -6,12 +6,14 @@ import groovy.transform.Field
 @Field final Closure logger = {String message -> println message}
 @Field final AnsibleService service = new AnsibleService(logger)
 @Field final Ansible myAnsible = new Ansible(service)
-@Field final Map config = [f: "${WORKSPACE}"]
+@Field final Map config = [f: "${WORKSPACE}/${path}"] 
 
-def imagebuild() {  
+//anhang ansible-playbook xxx.yml ...
+//credentialString = "-e USERNAME=${USERNAME} PASSWORD=${PASSWORD}"
+def imagebuild() { 
     logger(myAnsible.imagebuild(config))
 }
 
-def imagepush() {  
-    logger(myAnsible.imagepush(config))
+def imagepush(credentialString) {  
+    logger(myAnsible.imagepush(config, credentialString))
 }

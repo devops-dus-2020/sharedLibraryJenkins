@@ -6,30 +6,34 @@ import groovy.util.logging.Log
 @Log
 class AnsibleService implements InterfaceAnsibleService {
     
-    Closure loggeransible 
+    Closure logger
 
-    AnsibleService (Closure loggeransible){
-        this.loggeransible = loggeransible
+    AnsibleService (Closure logger){
+        this.logger = logger
     }
     
 
     //InputStream  configFile = streamFileFromWorkspace('data/config.yml')
 
-    String executeAnsible(Map config, String phase) {
+    String executeAnsiblePush(Map config, String credentials) {
         def convertToValueString = {it.collect { / -$it.key $it.value/ } join ""}
-        def csequenceansible = "ansible-playbook " + convertToValueString(config) + " " + configFile
+        def csequenceansible = "ansible-playbook " + convertToValueString(config) + credentials
         return csequenceansible.execute().text
     }
 
-    
+      String executeAnsibleBuild(Map config) {
+        def convertToValueString = {it.collect { / -$it.key $it.value/ } join ""}
+        def csequenceansible = "ansible-playbook " + convertToValueString(config)
+        return csequenceansible.execute().text
+    }
 
 
     String imagebuild(Map config) {
-        return this.executeAnsible(config,)
+        return this.executeAnsibleBuild(config)
     }
 
-    String imagepush(Map config){
-        return this.executeAnsible(config)
+    String imagepush(Map config, String credentials){
+        return this.executeAnsiblePush(config, credentials)
     }
 
 }
