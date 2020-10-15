@@ -3,17 +3,24 @@ import de.devopsdus2020.ansible.*
 import groovy.util.logging.*
 import groovy.transform.Field
 
-@Field final Closure logger = {String message -> println message}
-@Field final AnsibleService service = new AnsibleService(logger)
-@Field final Ansible myAnsible = new Ansible(service)
+
 @Field final Map config = [f: "${WORKSPACE}/${path}"] 
+
+
+//Factory pattern
+MyAnsible makeMyAnsible(){
+        Closure logger = {String message -> println message}
+        AnsibleService service = new AnsibleService(logger)
+        return myAnsible = new Ansible(service)
+}
+
 
 //anhang ansible-playbook xxx.yml ...
 //credentialString = "-e USERNAME=${USERNAME} PASSWORD=${PASSWORD}"
 def imagebuild() { 
-    logger(myAnsible.imagebuild(config))
+    logger(makeMyAnsible().imagebuild(config))
 }
 
 def imagepush(credentialString) {  
-    logger(myAnsible.imagepush(config, credentialString))
+    logger(makeMyAnsible().imagepush(config, credentialString))
 }

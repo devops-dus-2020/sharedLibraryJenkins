@@ -3,29 +3,33 @@ import de.devopsdus2020.external.*
 import groovy.util.logging.*
 import groovy.transform.Field
 
-@Field final Closure logger = {String message -> println message}
-@Field final MavenService service = new MavenService(logger)
-@Field final Maven myMaven = new Maven(service)
 @Field final Map config = [f: "${WORKSPACE}"]
 
+MyMaven makeMyMaven(){
+        Closure logger = {String message -> println message}
+        MavenService service = new MavenService(logger)
+        return myMaven = new Maven(service)
+}
+
+
 def compile() {  
-    logger(myMaven.compile(config))
+    logger(makeMyMaven().compile(config))
 }
 
 def test() {  
-    logger(myMaven.test(config))
+    logger(makeMyMaven().test(config))
 }
 
 def verify() {
-    logger(myMaven.verify(config))
+    logger(makeMyMaven().verify(config))
 }
 
 def artifactpackage() {
-    logger(myMaven.artifactpackage(config))
+    logger(makeMyMaven().artifactpackage(config))
 }
 
 def deploy() {
-    logger(myMaven.deploy(config))
+    logger(makeMyMaven().deploy(config))
 }
 
 
