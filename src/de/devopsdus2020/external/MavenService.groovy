@@ -12,19 +12,21 @@ class MavenService implements InterfaceMavenService {
         this.logger = logger
     }
     
-    def getConfig(def key) {
-
-        def convertToValueString = {it.collect { / -$it.key $it.value/ } join ""}
+    String assembleMavenCommand(Map config, String phase) {
+        String csequence = "mvn"
+        if (config && config.containsKey('mvn_args') &&
+                config.mvn_args && config.mvn_args instanceof String) {
+            csequence += " " + config.mvn_args
+        }
+        if (phase) { // non-empty string
+            csequence += " " + phase
+        }
+        
+        return csequence
     }
 
     Integer executeMaven(Map config, String phase) {
-        String csequence = ''
-        if (config.containsKey('mvn_args')) {
-            csequence = "mvn " + config.mvn_args + " " + phase 
-        }
-        else {
-            csequence = "mvn " + phase
-        }
+        String csequence = assembleMavenCommand(config, phase)
 
         logger("cmd: ${csequence}")
         def process = csequence.execute()
