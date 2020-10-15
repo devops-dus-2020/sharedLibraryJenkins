@@ -15,7 +15,7 @@ class AnsibleService implements InterfaceAnsibleService {
 
     //InputStream  configFile = streamFileFromWorkspace('data/config.yml')
 
-    String executeAnsiblePush(config) {
+    String executeAnsibleBuild(config) {
         def csequenceansible = "ansible-playbook " + ${config}
         return csequenceansible.execute().text
     }
