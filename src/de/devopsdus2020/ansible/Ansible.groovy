@@ -12,8 +12,4 @@ class Ansible {
     String imagebuild(Map config) {
         service.imagebuild(config)
     }
-
-     String imagepush(Map config, String credentials) {
-        service.imagepush(config, credentials)
-    }
 }
