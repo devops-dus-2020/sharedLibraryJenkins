@@ -4,7 +4,7 @@ import groovy.util.logging.*
 import groovy.transform.Field
 
 @Field final Closure logger = {String message -> println message}
-@Field final MavenService service = new MavenService(logger)
+@Field final MavenService service = new MavenService({String message -> println message})
 @Field final Maven myMaven = new Maven(service)
 @Field final Map config = [f: "${WORKSPACE}"]
 
@@ -25,6 +25,9 @@ def artifactpackage() {
 }
 
 def deploy() {
+    config.WORKSPACE="${WORKSPACE}"
+    config.NEXUS_USER="${NEXUS_USER}"
+    config.NEXUS_PASSWORD="${NEXUS_PASSWORD}"
     logger(myMaven.deploy(config))
 }
 
