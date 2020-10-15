@@ -19,5 +19,5 @@ def makeMyAnsible(){
 //anhang ansible-playbook xxx.yml ...
 //credentialString = "-e USERNAME=${USERNAME} PASSWORD=${PASSWORD}"
 def buildImage() { 
-    makeMyAnsible().imagebuild(config)
+    makeMyAnsible().buildImage(config)
 }

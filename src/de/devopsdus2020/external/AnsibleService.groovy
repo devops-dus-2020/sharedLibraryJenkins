@@ -21,7 +21,7 @@ class AnsibleService implements InterfaceAnsibleService {
     }
 
 
-    String imagebuild(String config) {
+    String buildImage(String config) {
         return this.executeAnsibleBuild(config)
     }
 
