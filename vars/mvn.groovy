@@ -12,23 +12,23 @@ MyMaven makeMyMaven(){
 }
 
 def compile() {
-    myMaven.compile(config)
+    makeMyMaven().compile(config)
 }
 
 def test() {  
-    myMaven.test(config)
+    makeMyMaven().test(config)
 }
 
 def verify() {
-    myMaven.verify(config)
+    makeMyMaven().verify(config)
 }
 
 def artifactpackage() {
-    myMaven.artifactpackage(config)
+    makeMyMaven().artifactpackage(config)
 }
 
 def deploy() {
-    myMaven.deploy(config)
+    makeMyMaven().deploy(config)
 
 }
 
