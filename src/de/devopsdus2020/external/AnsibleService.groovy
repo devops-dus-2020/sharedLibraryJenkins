@@ -8,7 +8,7 @@ class AnsibleService implements InterfaceAnsibleService {
     
     Closure logger
 
-    AnsibleService (Closure logger){
+    public AnsibleService (Closure logger){
         this.logger = logger
     }
     
