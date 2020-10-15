@@ -13,6 +13,8 @@ def makeMyMaven(){
 }
 
 def compile() {
+    echo "Compiling"
+    echo "mvn -v".execute().text
     return makeMyMaven().compile(config)
 }
 
