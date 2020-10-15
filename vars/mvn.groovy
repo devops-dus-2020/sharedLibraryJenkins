@@ -25,9 +25,9 @@ def artifactpackage() {
 }
 
 def deploy() {
-    config.WORKSPACE="${WORKSPACE}"
-    config.NEXUS_USER="${NEXUS_USER}"
-    config.NEXUS_PASSWORD="${NEXUS_PASSWORD}"
+    //config.WORKSPACE="${WORKSPACE}"
+    //config.NEXUS_USER="${NEXUS_USER}"
+    //config.NEXUS_PASSWORD="${NEXUS_PASSWORD}"
     logger(myMaven.deploy(config))
 }
 
