@@ -20,7 +20,7 @@ class MavenService implements InterfaceMavenService {
     Integer executeMaven(Map config, String phase) {
         String csequence = ''
         if (config.containsKey('mvn_args')) {
-            csequence = "mvn " + config['mvn_args'] + phase 
+            csequence = "mvn " + config['mvn_args'] + ' ' + phase 
         }
         else {
             csequence = "mvn " + phase
