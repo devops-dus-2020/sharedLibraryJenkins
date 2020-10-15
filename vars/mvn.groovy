@@ -9,10 +9,6 @@ import groovy.transform.Field
 @Field final Map config = [f: "${WORKSPACE}"]
 
 def compile(Map config) {
-    myMaven.version(config)
-}
-
-def compile(Map config) {
     myMaven.compile(config)
 }
 
