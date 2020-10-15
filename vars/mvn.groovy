@@ -12,19 +12,19 @@ def compile(Map config) {
     myMaven.compile(config)
 }
 
-def test() {  
+def test(Map config) {  
     myMaven.test(config)
 }
 
-def verify() {
+def verify(Map config) {
     myMaven.verify(config)
 }
 
-def artifactpackage() {
+def artifactpackage(Map config) {
     myMaven.artifactpackage(config)
 }
 
-def deploy() {
+def deploy(Map config) {
     myMaven.deploy(config)
 }
 
