@@ -15,7 +15,14 @@ class MavenService implements InterfaceMavenService {
     String executeMaven(Map config, String phase) {
         def convertToValueString = {it.collect { / -$it.key $it.value/ } join ""}
         def csequence = "mvn " + convertToValueString(config) + " " + phase
-        return csequence.execute().text
+        def process = csequence.execute()
+        logger("cmd: ${csequence}")
+        logger("exitValue: ${process.exitValue()}")
+        logger("err.text: ${process.err.text}")
+        logger("text: ${process.text}")
+
+
+        return process.text
     }
 
     String compile(Map config) {
