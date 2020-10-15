@@ -8,8 +8,8 @@ import groovy.transform.Field
 @Field final Maven myMaven = new Maven(service)
 @Field final Map config = [f: "${WORKSPACE}"]
 
-def compile() {  
-    logger(myMaven.compile(config))
+def compile(Map config) {
+    myMaven.compile(config)
 }
 
 def test() {  
@@ -27,7 +27,6 @@ def artifactpackage() {
 def deploy() {
     logger(myMaven.deploy(config))
 }
-
 
 // lokaler Test auskommentiert
 // pompath = "./pom.xml"
