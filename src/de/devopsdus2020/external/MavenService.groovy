@@ -13,7 +13,7 @@ class MavenService implements InterfaceMavenService {
     }
     
     String executeMaven(Map config, String phase) {
-        def convertToValueString = {it.collect { / -$it.key $it.value/ } join ""}
+        def convertToValueString = {it.collect { / $it.key $it.value/ } join ""}
         def csequence = "mvn " + convertToValueString(config) + " " + phase
         def process = csequence.execute()
         process.waitFor()
@@ -46,6 +46,6 @@ class MavenService implements InterfaceMavenService {
     }
 
     String deploy(Map config) {
-        return this.executeMaven(config, "clean deploy --settings=/var/jenkins_home/workspace/gryns_mostafa/settings.xml -DskipTests")
+        return this.executeMaven(config, "clean deploy --settings=${config.WORKSPACE}/settings.xml -DskipTests")
     }
 }
