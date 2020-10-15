@@ -16,6 +16,7 @@ class AnsibleService implements InterfaceAnsibleService {
     String executeAnsibleBuild(Map config) {
     def convertToValueString = {it.collect { / -$it.key $it.value/ } join ""}
     def csequenceansible = "ansible-playbook " + convertToValueString(config)
+    logger("cmd: ${csequence}")
     return csequenceansible.execute().text
     }
 
