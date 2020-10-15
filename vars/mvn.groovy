@@ -9,23 +9,27 @@ import groovy.transform.Field
 @Field final Map config = [f: "${WORKSPACE}"]
 
 def compile(Map config) {
+    myMaven.version(config)
+}
+
+def compile(Map config) {
     myMaven.compile(config)
 }
 
 def test() {  
-    logger(myMaven.test(config))
+    myMaven.test(config)
 }
 
 def verify() {
-    logger(myMaven.verify(config))
+    myMaven.verify(config)
 }
 
 def artifactpackage() {
-    logger(myMaven.artifactpackage(config))
+    myMaven.artifactpackage(config)
 }
 
 def deploy() {
-    logger(myMaven.deploy(config))
+    myMaven.deploy(config)
 }
 
 // lokaler Test auskommentiert

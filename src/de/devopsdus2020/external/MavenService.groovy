@@ -20,27 +20,28 @@ class MavenService implements InterfaceMavenService {
         return process.exitValue() 
     }
 
+    Integer version(Map config){
+        config.put(['v':''])
+        return this.executeMaven([v:""], "")
+    }
+
     Integer compile(Map config) {
         return this.executeMaven(config, "compile")
     }
 
-    String version(){
-        return "mvn -v".execute().text
-    }
-
-    String test(Map config) {
+    Integer test(Map config) {
         return this.executeMaven(config, "test")
     }
 
-    String verify(Map config) {
+    Integer verify(Map config) {
         return this.executeMaven(config, "verify sonar:sonar -DskipTests -Dsonar.host.url=http://sonarqube:9000")
     }
 
-     String artifactpackage(Map config) {
+    Integer artifactpackage(Map config) {
         return this.executeMaven(config, "clean package -DskipTests")
     }
 
-    String deploy(Map config) {
+    Integer deploy(Map config) {
         return this.executeMaven(config, "clean deploy  -DskipTests")
     }
 }
