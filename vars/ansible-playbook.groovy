@@ -8,7 +8,7 @@ import groovy.transform.Field
 
 
 //Factory pattern
-MyAnsible makeMyAnsible(){
+def makeMyAnsible(){
         Closure logger = {String message -> println message}
         AnsibleService service = new AnsibleService(logger)
         return myAnsible = new Ansible(service)
