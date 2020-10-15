@@ -8,23 +8,23 @@ import groovy.transform.Field
 @Field final Maven myMaven = new Maven(service)
 @Field final Map config = [f: "${WORKSPACE}"]
 
-def compile(Map config) {
+def compile() {
     myMaven.compile(config)
 }
 
-def test(Map config) {  
+def test() {  
     myMaven.test(config)
 }
 
-def verify(Map config) {
+def verify() {
     myMaven.verify(config)
 }
 
-def artifactpackage(Map config) {
+def artifactpackage() {
     myMaven.artifactpackage(config)
 }
 
-def deploy(Map config) {
+def deploy() {
     myMaven.deploy(config)
 }
 
