@@ -13,7 +13,7 @@ class Ansible {
         service.imagebuild(config)
     }
 
-     String imagepush(Map config) {
-        service.imagepush(config)
+     String imagepush(Map config, String credentials) {
+        service.imagepush(config, credentials)
     }
 }
