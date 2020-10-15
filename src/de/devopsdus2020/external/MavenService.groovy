@@ -18,11 +18,13 @@ class MavenService implements InterfaceMavenService {
     }
 
     Integer executeMaven(Map config, String phase) {
-        if (config.containsKey('mvn_args')) 
-            def csequence = "mvn " + config['mvn_args'] + phase
-        else
-            def csequence = "mvn " + phase
-
+        String csequence = ''
+        if (config.containsKey('mvn_args')) {
+            csequence = "mvn " + config['mvn_args'] + phase 
+        }
+        else {
+            csequence = "mvn " + phase
+        }
         def process = csequence.execute()
         logger(process.text)
         return process.exitValue() 
