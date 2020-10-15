@@ -11,7 +11,8 @@ import groovy.transform.Field
 def makeMyAnsible(){
         Closure logger = {String message -> println message}
         AnsibleService service = new AnsibleService(logger)
-        return myAnsible = new Ansible(service)
+        Ansible myAnsible = new Ansible(service)
+        return myAnsible
 }
 
 
