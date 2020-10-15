@@ -16,6 +16,7 @@ class MavenService implements InterfaceMavenService {
         def convertToValueString = {it.collect { / -$it.key $it.value/ } join ""}
         def csequence = "mvn " + convertToValueString(config) + " " + phase
         def process = csequence.execute()
+        process.waitFor()
         logger("cmd: ${csequence}")
         logger("exitValue: ${process.exitValue()}")
         logger("err.text: ${process.err.text}")
