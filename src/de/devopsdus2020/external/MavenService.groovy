@@ -21,7 +21,7 @@ class MavenService implements InterfaceMavenService {
         return process.exitValue() 
     }
 
-    String compile(Map config) {
+    Integer compile(Map config) {
         return this.executeMaven(config, "compile")
     }
 
