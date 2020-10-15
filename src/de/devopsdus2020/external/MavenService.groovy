@@ -19,7 +19,7 @@ class MavenService implements InterfaceMavenService {
 
     Integer executeMaven(Map config, String phase) {
         if (config.containsKey('mvn_args')) 
-            def csequence = "mvn " + config[mvn_args] + phase
+            def csequence = "mvn " + config['mvn_args'] + phase
         else
             def csequence = "mvn " + phase
 
