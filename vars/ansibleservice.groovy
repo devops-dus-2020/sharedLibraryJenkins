@@ -6,21 +6,12 @@ import groovy.transform.Field
 
 @Field final Map config = [f: "${WORKSPACE}/${YMLPATH}"] 
 
-
-//Factory pattern
-def makeMyAnsible(){
-        Closure logger = {String message -> println message}
-        AnsibleService service = new AnsibleService(logger)
-        return myAnsible = new Ansible(service)
-}
-
-
 //anhang ansible-playbook xxx.yml ...
 //credentialString = "-e USERNAME=${USERNAME} PASSWORD=${PASSWORD}"
 def imagebuild() { 
-    logger(makeMyAnsible().imagebuild(config))
-}
+    Closure logger = {String message -> println message}
+    AnsibleService service = new AnsibleService(logger)
+    Ansible myAnsible = new Ansible(service)
 
-def imagepush(credentialString) {  
-    logger(makeMyAnsible().imagepush(config, credentialString))
+    logger(myAnsible.imagebuild(config))
 }
