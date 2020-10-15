@@ -6,7 +6,7 @@ import groovy.transform.Field
 @Field final Closure logger = {String message -> println message}
 @Field final MavenService service = new MavenService(logger)
 @Field final Maven myMaven = new Maven(service)
-@Field final Map config = [f: "${WORKSPACE}"]
+@Field final Map config = [mvn_args: "-f ${WORKSPACE}"]
 
 def compile() {
     myMaven.compile(config)
