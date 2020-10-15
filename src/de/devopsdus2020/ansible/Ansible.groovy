@@ -1,11 +1,11 @@
 package de.devopsdus2020.ansible
 
-class Ansible {
+class MyAnsible {
 
     InterfaceAnsibleService service
 
     // Constructor
-    public Ansible(InterfaceAnsibleService service) {
+    public MyAnsible(InterfaceAnsibleService service) {
         this.service = service
     }
 
