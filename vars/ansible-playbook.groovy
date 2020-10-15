@@ -4,7 +4,7 @@ import groovy.util.logging.*
 import groovy.transform.Field
 
 
-@Field final String config = "/var/jenkins_home/workspace/BBROW_Multi_master"
+@Field final String config = "/var/jenkins_home/workspace/BBROW_Multi_master/buildImage.yml"
 
 
 //Factory pattern
