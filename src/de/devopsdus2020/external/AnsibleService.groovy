@@ -17,7 +17,7 @@ class AnsibleService implements InterfaceAnsibleService {
 
     String buildImage(String config) {
         String csequenceansible = "ansible-playbook " + ${config}
-        return csequenceansible.execute().text
+        return "csequenceansible".execute().text
     }
 
 }
