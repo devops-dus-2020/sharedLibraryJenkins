@@ -7,13 +7,17 @@ import groovy.transform.Field
 @Field final String config = "/var/jenkins_home/workspace/BBROW_Multi_master/buildImage.yml"
 
 
+//Factory pattern
+def makeMyAnsible(){
+        Closure logger = {String message -> println message}
+        AnsibleService service = new AnsibleService(logger)
+        Ansible myAnsible = new Ansible(service)
+        return myAnsible
+}
+
 
 //anhang ansible-playbook xxx.yml ...
 //credentialString = "-e USERNAME=${USERNAME} PASSWORD=${PASSWORD}"
 def imagebuild() { 
-    Closure logger = {String message -> println message}
-    AnsibleService service = new AnsibleService(logger)
-    Ansible myAnsible = new Ansible(service)
-
-    myAnsible.imagebuild(config)
+    makeMyAnsible().imagebuild(config))
 }
