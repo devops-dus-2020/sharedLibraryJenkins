@@ -14,5 +14,5 @@ def buildImage() {
     AnsibleService service = new AnsibleService(logger)
     MyAnsible myAnsible = new MyAnsible(service)
     
-    myAnsible().buildImage(config)
+    myAnsible.buildImage(config)
 }
