@@ -20,7 +20,7 @@ groovy eine eigene package() Funktion besitzt.
 
 Die config map kann benutzt werden, um beliebige Werte von Jenkins an die groovy Methoden weiterzureichen. Eine Map besteht immer aus einer Liste von Key-Value Paaren. `[key1: value1, key2: value2]`
 
-Weitere Argumente und Optionen, die an Maven weitergereicht werden sollen, müssen mit dem key `mvn_args` als String übergeben werden. In `mvn.groovy` wird config Map bereits bereits mit dem korrekten Workspace für Maven initialisiert, d.h. `config = [mvn_args: "-f ${WORKSPACE}]`, wobei `WORKSPACE` eine Umgebungsvariable ist, die von Jenkins automatisch auf den korrekten Pfad gesetzt wird.
+Weitere Argumente und Optionen, die an Maven weitergereicht werden sollen, müssen mit dem key `mvn_args` als String übergeben werden. In `mvn.groovy` wird die config Map bereits bereits mit dem korrekten Workspace für Maven initialisiert, d.h. `config = [mvn_args: "-f ${WORKSPACE}]`, wobei `WORKSPACE` eine Umgebungsvariable ist, die von Jenkins automatisch auf den korrekten Pfad gesetzt wird.
 
 Weitere Optionen können an diesen String angehängt werden, z.B. `config.mvn_args += " --settings mysettings.xml"`. *Bitte Leerzeichen am Anfang nicht vergessen!*
 
