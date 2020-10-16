@@ -14,7 +14,15 @@ class MavenService implements InterfaceMavenService {
     
     String assembleMavenCommand(Map config, String phase) {
         String csequence = "mvn"
-        logger("In assembleMavenCommand: ${config.mvn_args}, ${phase}")        
+        logger("In assembleMavenCommand: ${config.mvn_args}, ${phase}")
+        if (config)
+            logger("config true")
+        if (config.containsKey('mvn_args'))
+            logger("containsKey true")        
+        if (config.mvn_args)
+            logger("config.mvn_args true")        
+        if (config.mvn_args instanceof String)
+            logger("config.mvn_args instanceof String true")        
         if (config && config.containsKey('mvn_args') &&
                 config.mvn_args && config.mvn_args instanceof String) {
             csequence += " " + config.mvn_args
