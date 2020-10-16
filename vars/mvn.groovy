@@ -33,6 +33,10 @@ def artifactpackage() {
 }
 
 def deploy() {
+    println WORKSPACE.class()
+    echo "${WORKSPACE}"
+    echo "${NEXUS_USER}"
+    echo "${NEXUS_PASSWORD}"
     config.workspace = "${WORKSPACE}"
     config.nexususer = "${NEXUS_USER}"
     config.nexuspassword = "${NEXUS_PASSWORD}"
