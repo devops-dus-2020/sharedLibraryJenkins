@@ -39,8 +39,8 @@ class MavenService implements InterfaceMavenService {
         return exitValue 
     }
 
-    Integer version(Map config){
-        config.mvn_args = "-v"
+    Integer version(){
+        Map config = [mvn_args: "-v"]
         return this.executeMaven(config, "")
     }
 

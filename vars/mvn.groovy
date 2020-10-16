@@ -13,7 +13,7 @@ def makeMyMaven(){
 }
 
 def version() {
-    return makeMyMaven().version(config)
+    return makeMyMaven().version()
 }
 
 def compile() {
