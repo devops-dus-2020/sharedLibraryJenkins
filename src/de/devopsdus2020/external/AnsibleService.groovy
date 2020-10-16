@@ -33,7 +33,7 @@ class AnsibleService implements InterfaceAnsibleService {
     //TODO: ersetzen convertToValueString -> siehe map configpush
     
     def convertToValueString = {it.collect { / $it.value/ } join ""}
-    def csequenceansible = "ansible-playbook" + convertToValueString(configbuild)
+    def csequenceansible = "ansible-playbook" + convertToValueString(configpush)
     logger("cmd: ${csequenceansible}")
     def process = csequenceansible.execute()
     process.waitFor()
