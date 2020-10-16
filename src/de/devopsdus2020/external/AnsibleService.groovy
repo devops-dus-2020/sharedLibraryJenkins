@@ -17,7 +17,7 @@ class AnsibleService implements InterfaceAnsibleService {
     def convertToValueString = {it.collect { / $it.value/ } join ""}
     def csequenceansible = "ansible-playbook" + convertToValueString(config)
     logger("cmd: ${csequenceansible}")
-    def process = csequence.execute()
+    def process = csequenceansible.execute()
     process.waitFor()
     Integer exitValue = process.exitValue()
     logger("exitValue: ${exitValue}")
