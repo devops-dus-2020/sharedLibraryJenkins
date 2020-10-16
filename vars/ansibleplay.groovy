@@ -7,8 +7,7 @@ import groovy.transform.Field
 @Field final Map configbuild = [f: "${WORKSPACE}/${BUILDYML}"]
 
 //credentialString = "-e USERNAME=${USERNAME} PASSWORD=${PASSWORD}"
-@Field final String a = "ansible-playbook "
-@Field final Map configpush = [a: "${WORKSPACE}/${PUSHYML}"]
+@Field final Map configpush = [("ansible-playbook "): "${WORKSPACE}/${PUSHYML}"]
 
 
 def makeMyAnsible(){
