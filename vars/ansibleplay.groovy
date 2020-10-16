@@ -4,14 +4,18 @@ import groovy.util.logging.*
 import groovy.transform.Field
 
 
-@Field final Map config = [f: "${WORKSPACE}/${YMLPATH}"] 
+@Field final Map config = [f: "${WORKSPACE}/${BUILDYML}"] 
+
+def makeMyAnsible(){
+    Closure logger = {String message -> println message}
+    AnsibleService service = new AnsibleService(logger)
+    Ansible myAnsible = new Ansible(service)
+    return myAnsible
+}
 
 //anhang ansible-playbook xxx.yml ...
 //credentialString = "-e USERNAME=${USERNAME} PASSWORD=${PASSWORD}"
 def imagebuild() { 
-    Closure logger = {String message -> println message}
-    AnsibleService service = new AnsibleService(logger)
-    Ansible myAnsible = new Ansible(service)
-
-    logger(myAnsible.imagebuild(config))
+    
+    makeMyAnsible().imagebuild(config)
 }
