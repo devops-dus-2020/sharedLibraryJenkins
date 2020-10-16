@@ -26,14 +26,14 @@ class AnsibleService implements InterfaceAnsibleService {
     return exitValue 
     }
 
-    Integer executeAnsiblePush(Map configpush){
+    Integer executeAnsiblePush(String configpush){
     //Map configpush = [f: "${WORKSPACE}/${PUSHYML}", e: "USER=${USER} PASSWORD=${PASSWORD}"] 
     //value: "${WORKSPACE}/${PUSHYML}" + key + value: "USER=${USER} PASSWORD=${PASSWORD}"
 
     //TODO: ersetzen convertToValueString -> siehe map configpush
     
-    def convertToValueString = {it.collect { / $it.key $it.value/ } join ""}
-    def csequenceansible = convertToValueString(configpush)
+
+    def csequenceansible = configpush
     logger("cmd: ${csequenceansible}")
     def process = csequenceansible.execute()
     process.waitFor()
@@ -51,7 +51,7 @@ class AnsibleService implements InterfaceAnsibleService {
         return this.executeAnsibleBuild(configbuild)
     }
 
-    Integer imagepush(Map configpush) {
+    Integer imagepush(String configpush) {
         return this.executeAnsiblePush(configpush)
     }
 }
