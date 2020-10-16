@@ -26,8 +26,8 @@ class MavenService implements InterfaceMavenService {
     }
 
     Integer executeMaven(Map config, String phase) {
+        logger("${config.mvn_args}")
         String csequence = assembleMavenCommand(config, phase)
-
         logger("cmd: ${csequence}")
         def process = csequence.execute()
         process.waitFor()
