@@ -24,7 +24,7 @@ class MavenService implements InterfaceMavenService {
         if (config.mvn_args instanceof String)
             logger("config.mvn_args instanceof String true")        
         if (config && config.containsKey('mvn_args') &&
-                config.mvn_args && config.mvn_args instanceof String) {
+                config.mvn_args) {
             csequence += " " + config.mvn_args
         }
         if (phase) { // non-empty string

@@ -3,7 +3,7 @@ import de.devopsdus2020.external.*
 import groovy.util.logging.*
 import groovy.transform.Field
 
-@Field final Map config = [mvn_args: String "-f ${WORKSPACE}"]
+@Field final Map config = [mvn_args: "-f ${WORKSPACE}"]
 
 def makeMyMaven(){
     Closure logger = {String message -> println message}
