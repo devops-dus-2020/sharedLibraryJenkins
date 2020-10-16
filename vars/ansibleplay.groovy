@@ -1,17 +1,10 @@
 import de.devopsdus2020.ansible.*
 import de.devopsdus2020.external.*
 import groovy.util.logging.*
-import groovy.transform.Field
 
 
-@Field final Map configbuild = [f: "${WORKSPACE}/${BUILDYML}"]
 
-//credentialString = "-e USERNAME=${USERNAME} PASSWORD=${PASSWORD}"
-@Field final Map configpush = [("ansible-playbook"): "${WORKSPACE}/${PUSHYML}", ("-e"): "USER=${USER} -ePASSWORD=${PASSWORD}"]
-
-
-def makeMyAnsible(){
-
+def makeMyAnsible(BUILDYML){
     Closure logger = {String message -> println message}
     AnsibleService service = new AnsibleService(logger)
     Ansible myAnsible = new Ansible(service)
@@ -20,12 +13,12 @@ def makeMyAnsible(){
 
 
 def imagebuild() { 
-    
+    Map configbuild = [f: "${WORKSPACE}/${BUILDYML}"]
     makeMyAnsible().imagebuild(configbuild)
 }
 
 
 def imagepush() { 
-    
+    Map configpush = [("ansible-playbook"): "${WORKSPACE}/${PUSHYML}", ("-e"): "USER=${USER} -ePASSWORD=${PASSWORD}"]
     makeMyAnsible().imagepush(configpush)
 }
