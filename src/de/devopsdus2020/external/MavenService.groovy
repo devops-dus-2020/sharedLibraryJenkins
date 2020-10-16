@@ -13,15 +13,19 @@ class MavenService implements InterfaceMavenService {
     }
     
     String assembleMavenCommand(Map config, String phase) {
+        // Build mvn command with configuration and phase
+
         String csequence = "mvn"
+
+        // Check whether config.mvn_args exists and is a non-empty String (or GString)
         if (config && config.containsKey('mvn_args') &&
-                config.mvn_args) {
+                config.mvn_args &&
+                (config.mvn_args instanceof String|| config.mvn_args instanceof GString)) {
             csequence += " " + config.mvn_args
         }
-        if (phase) { // non-empty string
+        if (phase) { // non-empty string?
             csequence += " " + phase
-        }
-        
+        }        
         return csequence
     }
 
