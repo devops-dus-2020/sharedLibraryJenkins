@@ -50,7 +50,7 @@ class AnsibleService implements InterfaceAnsibleService {
         return this.executeAnsibleBuild(configbuild)
     }
 
-     Integer imagepush(Map configpush) {
-        return this.executeAnsiblePusch(configpush)
+    Integer imagepush(Map configpush) {
+        return this.executeAnsiblePush(configpush)
     }
 }
