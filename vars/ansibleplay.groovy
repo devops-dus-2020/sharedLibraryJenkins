@@ -4,8 +4,10 @@ import groovy.util.logging.*
 import groovy.transform.Field
 
 
-@Field final Map config = [f: "${WORKSPACE}/${BUILDYML}"]
-@Field final Map pushconfig = [f: "${WORKSPACE}/${BUILDYML}", e: "USERNAME=${USERNAME} PASSWORD=${PASSWORD}"] 
+@Field final Map configbuild = [f: "${WORKSPACE}/${BUILDYML}"]
+
+//credentialString = "-e USERNAME=${USERNAME} PASSWORD=${PASSWORD}"
+@Field final Map configpush = [f: "${WORKSPACE}/${PUSHYML}", e: "USERNAME=${USERNAME} PASSWORD=${PASSWORD}"] 
 
 def makeMyAnsible(){
     Closure logger = {String message -> println message}
@@ -15,13 +17,13 @@ def makeMyAnsible(){
 }
 
 //anhang ansible-playbook xxx.yml ...
-//credentialString = "-e USERNAME=${USERNAME} PASSWORD=${PASSWORD}"
+
 def imagebuild() { 
     
-    makeMyAnsible().imagebuild(config)
+    makeMyAnsible().imagebuild(configbuild)
 }
 
 def imagepush() { 
     
-    makeMyAnsible().imagebuild(pushconfig)
+    makeMyAnsible().imagebuild(configpush)
 }
