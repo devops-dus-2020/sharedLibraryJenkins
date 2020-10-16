@@ -6,31 +6,30 @@ import groovy.transform.Field
 @Field final Map config = [f: "${WORKSPACE}"]
 
 def makeMyMaven(){
-        Closure logger = {String message -> println message}
-        MavenService service = new MavenService(logger)
-        Maven myMaven = new Maven(service)
-        return myMaven
+    Closure logger = {String message -> println message}
+    MavenService service = new MavenService(logger)
+    Maven myMaven = new Maven(service)
+    return myMaven
 }
 
 def compile() {
-    makeMyMaven().compile(config)
+    return makeMyMaven().compile(config)
 }
 
 def test() {  
-    makeMyMaven().test(config)
+    return makeMyMaven().test(config)
 }
 
 def verify() {
-    makeMyMaven().verify(config)
+    return makeMyMaven().verify(config)
 }
 
 def artifactpackage() {
-    makeMyMaven().artifactpackage(config)
+    return makeMyMaven().artifactpackage(config)
 }
 
 def deploy() {
-    makeMyMaven().deploy(config)
-
+    return makeMyMaven().deploy(config)
 }
 
 // lokaler Test auskommentiert

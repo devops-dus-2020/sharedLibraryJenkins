@@ -1,5 +1,5 @@
 package de.devopsdus2020.ansible
 
 interface InterfaceAnsibleService extends Serializable {
-    String buildImage(config)
+    Integer imagebuild(Map config)
 }

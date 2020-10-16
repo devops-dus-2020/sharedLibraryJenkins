@@ -3,10 +3,19 @@ import de.devopsdus2020.external.*
 import groovy.util.logging.*
 import groovy.transform.Field
 
-def buildImage() { 
+
+@Field final Map config = [f: "${WORKSPACE}/${BUILDYML}"] 
+
+def makeMyAnsible(){
     Closure logger = {String message -> println message}
     AnsibleService service = new AnsibleService(logger)
-    MyAnsible myAnsible = new MyAnsible(service)
+    Ansible myAnsible = new Ansible(service)
+    return myAnsible
+}
+
+//anhang ansible-playbook xxx.yml ...
+//credentialString = "-e USERNAME=${USERNAME} PASSWORD=${PASSWORD}"
+def imagebuild() { 
     
-    logger(myAnsible.buildImage("/var/jenkins_home/workspace/BBROW_Multi_master/buildImage.yml"))
+    makeMyAnsible().imagebuild(config)
 }
