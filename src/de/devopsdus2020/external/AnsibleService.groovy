@@ -31,9 +31,7 @@ class AnsibleService implements InterfaceAnsibleService {
     //value: "${WORKSPACE}/${PUSHYML}" + key + value: "USER=${USER} PASSWORD=${PASSWORD}"
 
     //TODO: ersetzen convertToValueString -> siehe map configpush
-    
-    def convertToValueString = {it.collect { / $it.key $it.value/ } join ""}
-    def csequenceansible = convertToValueString(configpush)
+    def csequenceansible = "ansible-playbook " + configpush.get(f) + " -e " + "\"" + configpush.get(c) + "\""
     logger("cmd: ${csequenceansible}")
     def process = csequenceansible.execute()
     process.waitFor()
