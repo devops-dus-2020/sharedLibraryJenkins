@@ -9,11 +9,7 @@ class Ansible {
         this.service = service
     }
 
-    Integer imagebuild(Map config) {
+    Integer imagebuild(Map configbuild) {
         service.imagebuild(configbuild)
-    }
-
-    Integer imagepush(Map configpush){
-        service.imagepush(configpush)
     }
 }
