@@ -25,5 +25,5 @@ def imagebuild() {
 
 def imagepush() { 
     
-    makeMyAnsible().imagebuild(configpush)
+    makeMyAnsible().imagepush(configpush)
 }
