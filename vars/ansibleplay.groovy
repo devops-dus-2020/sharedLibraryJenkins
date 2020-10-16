@@ -4,7 +4,7 @@ import groovy.util.logging.*
 
 
 
-def makeMyAnsible(BUILDYML){
+def makeMyAnsible(){
     Closure logger = {String message -> println message}
     AnsibleService service = new AnsibleService(logger)
     Ansible myAnsible = new Ansible(service)
