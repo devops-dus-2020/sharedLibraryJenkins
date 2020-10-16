@@ -11,29 +11,24 @@ class AnsibleService implements InterfaceAnsibleService {
     AnsibleService (Closure logger){
         this.logger = logger
     }
-    
 
-    //InputStream  configFile = streamFileFromWorkspace('data/config.yml')
 
-    String executeAnsiblePush(Map config, String credentials) {
-        def convertToValueString = {it.collect { / -$it.key $it.value/ } join ""}
-        def csequenceansible = "ansible-playbook " + convertToValueString(config) + credentials
-        return csequenceansible.execute().text
+    Integer executeAnsibleBuild(Map config) {
+    def convertToValueString = {it.collect { / $it.value/ } join ""}
+    def csequenceansible = "ansible-playbook" + convertToValueString(config)
+    logger("cmd: ${csequenceansible}")
+    def process = csequenceansible.execute()
+    process.waitFor()
+    Integer exitValue = process.exitValue()
+    logger("exitValue: ${exitValue}")
+    logger("err.text: ${process.err.text}")
+    def buffer = process.text
+    logger("text:\n${buffer}")
+    return exitValue 
     }
 
-      String executeAnsibleBuild(Map config) {
-        def convertToValueString = {it.collect { / -$it.key $it.value/ } join ""}
-        def csequenceansible = "ansible-playbook " + convertToValueString(config)
-        return csequenceansible.execute().text
-    }
 
-
-    String imagebuild(Map config) {
+    Integer imagebuild(Map config) {
         return this.executeAnsibleBuild(config)
     }
-
-    String imagepush(Map config, String credentials){
-        return this.executeAnsiblePush(config, credentials)
-    }
-
 }

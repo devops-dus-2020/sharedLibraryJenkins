@@ -20,6 +20,8 @@ Verwendung der Map config bei Eingabe muss folgendermassen erfolgen, wenn Map ve
 compile([flag:Paramter]) z.B. compile([s:settings.xml])
 !!!!Wichtig Minuszeichen bei der Flag weglassen!!!!
 
+Ansible Service (noch ohne push auf azure.io)
+Aktuell muss bei Benutzung von Ansible für den Build von Dockerimages der Name des entsprechenden Yml Files im Jenkinsfile unter Environment angegeben werden - in unserem fall liegen die Yml genau dort, wo auch die pom.xml liegt -> im workspace. Sollten die yml files bei euch in separaten ordnern liegen, dann gebt bitte unter BUILDYML den relativen Pfad (zum Workspace!) ein
 
 
 
