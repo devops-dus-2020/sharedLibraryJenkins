@@ -13,7 +13,7 @@ class Ansible {
         service.imagebuild(configbuild)
     }
 
-    Integer imagepush(String configpush){
+    Integer imagepush(Map configpush){
         service.imagepush(configpush)
     }
 }
