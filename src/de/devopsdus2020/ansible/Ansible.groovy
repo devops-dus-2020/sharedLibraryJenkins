@@ -12,4 +12,8 @@ class Ansible {
     Integer imagebuild(Map configbuild) {
         service.imagebuild(configbuild)
     }
+
+    Integer imagepush(Map configpush){
+        service.imagepush(configpush)
+    }
 }
