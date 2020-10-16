@@ -13,15 +13,22 @@ class AnsibleService implements InterfaceAnsibleService {
     }
 
 
-    String executeAnsibleBuild(Map config) {
+    Integer executeAnsibleBuild(Map config) {
     def convertToValueString = {it.collect { / $it.value/ } join ""}
     def csequenceansible = "ansible-playbook" + convertToValueString(config)
     logger("cmd: ${csequenceansible}")
-    return csequenceansible.execute().text
+    def process = csequence.execute()
+    process.waitFor()
+    Integer exitValue = process.exitValue()
+    logger("exitValue: ${exitValue}")
+    logger("err.text: ${process.err.text}")
+    def buffer = process.text
+    logger("text:\n${buffer}")
+    return exitValue 
     }
 
 
-    String imagebuild(Map config) {
+    Integer imagebuild(Map config) {
         return this.executeAnsibleBuild(config)
     }
 }
