@@ -12,9 +12,11 @@ def makeMyMaven(){
     return myMaven
 }
 
+def version() {
+    return makeMyMave().version(config)
+}
+
 def compile() {
-    echo "Compiling"
-    echo "mvn -v".execute().text
     return makeMyMaven().compile(config)
 }
 
