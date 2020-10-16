@@ -40,7 +40,7 @@ class MavenService implements InterfaceMavenService {
     }
 
     Integer version(Map config){
-        config.put([mvn_args:'-v'])
+        config.mvn_args = "-v"
         return this.executeMaven(config, "")
     }
 
