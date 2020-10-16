@@ -7,7 +7,7 @@ import groovy.transform.Field
 @Field final Map configbuild = [f: "${WORKSPACE}/${BUILDYML}"]
 
 //credentialString = "-e USERNAME=${USERNAME} PASSWORD=${PASSWORD}"
-@Field final Map configpush = [f: "${WORKSPACE}/${PUSHYML}", e: "USERNAME=${USERNAME} PASSWORD=${PASSWORD}"] 
+@Field final Map configpush = [ansible-playbook: "${WORKSPACE}/${PUSHYML}", -e: "USERNAME=${USERNAME} PASSWORD=${PASSWORD}"] 
 
 def makeMyAnsible(){
     Closure logger = {String message -> println message}
