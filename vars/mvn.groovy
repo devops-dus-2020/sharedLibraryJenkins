@@ -33,9 +33,9 @@ def artifactpackage() {
 }
 
 def deploy() {
+    config.workspace = WORKSPACE
     config.nexususer = NEXUS_USER
     config.nexuspassword = NEXUS_PASSWORD
-    config.mvn_args += " -s NexusSettings.xml"
     return makeMyMaven().deploy(config)
 }
 

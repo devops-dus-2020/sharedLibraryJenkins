@@ -65,6 +65,8 @@ class MavenService implements InterfaceMavenService {
     }
 
     Integer deploy(Map config) {
-        return this.executeMaven(config, "clean deploy --settings=${WORKSPACE}/settings.xml -DskipTests")
+        NEXUS_USER = config.nexususer
+        NEXUS_PASSWORD = config.nexuspassword
+        return this.executeMaven(config, "clean deploy --settings=${config.workspace}/NexusSettings.xml -DskipTests")
     }
 }
