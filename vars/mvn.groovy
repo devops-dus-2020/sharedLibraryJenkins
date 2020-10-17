@@ -37,7 +37,7 @@ def deploy() {
     echo "${WORKSPACE}"
     echo "${NEXUS_USER}"
     echo "${NEXUS_PASSWORD}"
-    config.workspace = "${WORKSPACE}"
+    config.workspace = "${MAVEN_GLOBAL_SETTINGS}"
     config.nexususer = "${NEXUS_USER}"
     config.nexuspassword = "${NEXUS_PASSWORD}"
     string result = config.getAt("workspace")
