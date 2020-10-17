@@ -43,6 +43,21 @@ class MavenService implements InterfaceMavenService {
         return exitValue 
     }
 
+    Integer executeMavenDeploy(Map configdeploy, String phase) {
+    
+    def convertToValueString = {it.collect { / $it.key $it.value/ } join ""}
+    def csequence = "mvn " + convertToValueString(configbuild) + " phase"
+    logger("cmd: ${csequence}")
+    def process = csequence.execute()
+    process.waitFor()
+    Integer exitValue = process.exitValue()
+    logger("exitValue: ${exitValue}")
+    logger("err.text: ${process.err.text}")
+    def buffer = process.text
+    logger("text:\n${buffer}")
+    return exitValue 
+    }
+
     Integer version(){
         Map config = [mvn_args: "-v"]
         return this.executeMaven(config, "")
@@ -64,7 +79,7 @@ class MavenService implements InterfaceMavenService {
         return this.executeMaven(config, "clean package -DskipTests")
     }
 
-    Integer deploy(Map config) {
-        return this.executeMaven(config, "clean deploy --settings=${WORKSPACE}/settings.xml -DskipTests")
+    Integer deploy(Map configdeploy) {
+        return this.executeMavenDeploy(configdeploy, "clean deploy")
     }
 }
