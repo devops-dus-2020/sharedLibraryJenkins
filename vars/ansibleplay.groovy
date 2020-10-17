@@ -2,7 +2,7 @@ import de.devopsdus2020.ansible.*
 import de.devopsdus2020.external.*
 import groovy.util.logging.*
 
-
+@Field final Map config
 
 def makeMyAnsible(){
     Closure logger = {String message -> println message}
@@ -12,8 +12,8 @@ def makeMyAnsible(){
 }
 
 
-def imagebuild() { 
-    Map configbuild = [f: "${WORKSPACE}/${BUILDYML}"]
+def imagebuild(YML) { 
+    config.f = "${WORKSPACE}/${BUILDYML}"
     makeMyAnsible().imagebuild(configbuild)
 }
 
