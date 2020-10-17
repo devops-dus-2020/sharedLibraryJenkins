@@ -65,7 +65,7 @@ class MavenService implements InterfaceMavenService {
     }
 
     Integer deploy(Map config) {
-        string phase = "clean deploy " + "--settings=" + config.getAt("workspace") + "/settings.xml -DskipTests"
+        String phase = "clean deploy " + "--settings=" + config.getAt("workspace") + "/settings.xml -DskipTests"
         return this.executeMaven(config,  phase)
     }
 }
