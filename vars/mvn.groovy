@@ -5,6 +5,13 @@ import groovy.transform.Field
 import org.jenkinsci.lib.configprovider.model.Config
 import org.jenkinsci.plugins.configfiles.maven.job.MvnGlobalSettingsProvider
 
+def settingsConfigId = 'default'
+def  c = Config.getByIdOrNull(settingsConfigId);
+assert c != null
+
+def newProvider = new MvnGlobalSettingsProvider(settingsConfigId)
+assert newProvider instanceof org.jenkinsci.plugins.configfiles.maven.job.MvnGlobalSettingsProvider
+
 @Field final Map config = [mvn_args: "-f ${WORKSPACE}"]
 @Field final String configdeploy = "mvn -s ${MAVEN_SETTINGS} clean deploy -DskipTests"
 
