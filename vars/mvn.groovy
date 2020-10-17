@@ -2,6 +2,8 @@ import de.devopsdus2020.maven.*
 import de.devopsdus2020.external.*
 import groovy.util.logging.*
 import groovy.transform.Field
+import org.jenkinsci.lib.configprovider.model.Config
+import org.jenkinsci.plugins.configfiles.maven.job.MvnGlobalSettingsProvider
 
 @Field final Map config = [mvn_args: "-f ${WORKSPACE}"]
 @Field final String configdeploy = "mvn -s ${MAVEN_SETTINGS} clean deploy -DskipTests"
