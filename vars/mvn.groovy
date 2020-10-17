@@ -4,7 +4,7 @@ import groovy.util.logging.*
 import groovy.transform.Field
 
 @Field final Map config = [mvn_args: "-f ${WORKSPACE}"]
-@Field final Map configdeploy = [("-s "): "${mavensettings}"]
+//@Field final Map configdeploy = [("-s "): "${mavensettings}"]
 
 def makeMyMaven(){
     Closure logger = {String message -> println message}
@@ -34,7 +34,7 @@ def artifactpackage() {
 }
 
 def deploy() {
-    return makeMyMaven().deploy(configdeploy)
+    return makeMyMaven().deploy(config)
 }
 
 // lokaler Test auskommentiert
