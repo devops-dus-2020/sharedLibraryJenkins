@@ -33,15 +33,9 @@ def artifactpackage() {
 }
 
 def deploy() {
-    println env.WORKSPACE.getClass()
-    echo "${WORKSPACE}"
-    echo "${NEXUS_USER}"
-    echo "${NEXUS_PASSWORD}"
     config.workspace = "${MAVEN_GLOBAL_SETTINGS}"
-    config.nexususer = "${NEXUS_USER}"
-    config.nexuspassword = "${NEXUS_PASSWORD}"
-    string result = config.getAt("workspace")
-    echo result
+    //config.nexususer = "${NEXUS_USER}"
+    //config.nexuspassword = "${NEXUS_PASSWORD}"
     return makeMyMaven().deploy(config)
 }
 
