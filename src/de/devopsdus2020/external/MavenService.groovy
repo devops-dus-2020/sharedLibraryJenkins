@@ -65,6 +65,7 @@ class MavenService implements InterfaceMavenService {
     }
 
     Integer deploy(Map config) {
-        return this.executeMaven(config, "clean deploy --settings=/settings.xml -DskipTests")
+        string result = config.getAt("workspace")
+        return this.executeMaven(config, "clean deploy --settings=${result}/settings.xml -DskipTests")
     }
 }
