@@ -3,7 +3,7 @@ import de.devopsdus2020.external.*
 import groovy.util.logging.*
 import groovy.transform.Field
 
-@Field final Map config
+@Field final Map config = [:]
 
 def makeMyAnsible(){
     Closure logger = {String message -> println message}
@@ -14,12 +14,13 @@ def makeMyAnsible(){
 
 
 def imagebuild(YML) { 
-    config.f = "${WORKSPACE}/${BUILDYML}"
-    makeMyAnsible().imagebuild(configbuild)
+    config.f = "${WORKSPACE}/${YML}"
+    makeMyAnsible().imagebuild(config)
 }
 
 
-def imagepush() { 
-    Map configpush = [("ansible-playbook"): "${WORKSPACE}/${PUSHYML}", ("-e"): "USER=${AZURECR_USER} -ePASSWORD=${AZURECR_PASSWORD}"]
-    makeMyAnsible().imagepush(configpush)
+def imagepush(YML) { 
+    config.("ansible-playbook") = "${WORKSPACE}/${PUSHYML}"
+    config.("-e"): "USER=${AZURECR_USER} -ePASSWORD=${AZURECR_PASSWORD}"
+    makeMyAnsible().imagepush(config)
 }
