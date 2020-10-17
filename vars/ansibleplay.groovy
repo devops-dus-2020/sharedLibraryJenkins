@@ -19,6 +19,6 @@ def imagebuild(ANSIBLE_YML) {
 def imagepush(ANSIBLE_YML) { 
     Map config = [("ansible-playbook"): "${WORKSPACE}/${ANSIBLE_YML}"]
     config.("-e") = "USER=${AZURECR_USER}"
-    config.("-e") = "PASSWORD=${AZURECR_PASSWORD}"
+    config.get("-e").add("PASSWORD=${AZURECR_PASSWORD}")
     makeMyAnsible().imagepush(config)
 }
