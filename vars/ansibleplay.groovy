@@ -1,6 +1,7 @@
 import de.devopsdus2020.ansible.*
 import de.devopsdus2020.external.*
 import groovy.util.logging.*
+import groovy.transform.Field
 
 @Field final Map config
 
