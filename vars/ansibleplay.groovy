@@ -19,6 +19,6 @@ def imagebuild() {
 
 
 def imagepush() { 
-    Map configpush = [("ansible-playbook"): "${WORKSPACE}/${PUSHYML}", ("-e"): "USER=${AZURECR_USERNAME} -ePASSWORD=${AZURECR_PASSWORD}"]
+    Map configpush = [("ansible-playbook"): "${WORKSPACE}/${PUSHYML}", ("-e"): "USER=${AZURECR_USER} -ePASSWORD=${AZURECR_PASSWORD}"]
     makeMyAnsible().imagepush(configpush)
 }
