@@ -12,9 +12,26 @@ class MavenService implements InterfaceMavenService {
         this.logger = logger
     }
     
+    String assembleMavenCommand(Map config, String phase) {
+        // Build mvn command with configuration and phase
+
+        String csequence = "mvn"
+
+        // Check whether config.mvn_args exists and is a non-empty String (or GString)
+        if (config && config.containsKey('mvn_args') &&
+                config.mvn_args &&
+                (config.mvn_args instanceof String|| config.mvn_args instanceof GString)) {
+            csequence += " " + config.mvn_args
+        }
+        if (phase) { // non-empty string?
+            csequence += " " + phase
+        }        
+        return csequence
+    }
+
     Integer executeMaven(Map config, String phase) {
-        def convertToValueString = {it.collect { / -$it.key $it.value/ } join ""}
-        def csequence = "mvn " + convertToValueString(config) + " " + phase
+        String csequence = assembleMavenCommand(config, phase)
+
         logger("cmd: ${csequence}")
         def process = csequence.execute()
         process.waitFor()
@@ -26,9 +43,24 @@ class MavenService implements InterfaceMavenService {
         return exitValue 
     }
 
-    Integer version(Map config){
-        config.put(['v':''])
-        return this.executeMaven([v:""], "")
+    Integer executeMavenDeploy(Map configdeploy, String phase) {
+    
+    def convertToValueString = {it.collect { / $it.key $it.value/ } join ""}
+    def csequence = "mvn " + convertToValueString(configdeploy) + phase
+    logger("cmd: ${csequence}")
+    def process = csequence.execute()
+    process.waitFor()
+    Integer exitValue = process.exitValue()
+    logger("exitValue: ${exitValue}")
+    logger("err.text: ${process.err.text}")
+    def buffer = process.text
+    logger("text:\n${buffer}")
+    return exitValue 
+    }
+
+    Integer version(){
+        Map config = [mvn_args: "-v"]
+        return this.executeMaven(config, "")
     }
 
     Integer compile(Map config) {
@@ -47,7 +79,7 @@ class MavenService implements InterfaceMavenService {
         return this.executeMaven(config, "clean package -DskipTests")
     }
 
-    Integer deploy(Map config) {
-        return this.executeMaven(config, "clean deploy --settings=${WORKSPACE}/settings.xml -DskipTests")
+    Integer deploy(Map configdeploy) {
+        return this.executeMavenDeploy(configdeploy, " clean deploy")
     }
 }
