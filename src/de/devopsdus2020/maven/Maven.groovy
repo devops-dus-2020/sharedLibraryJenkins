@@ -30,7 +30,7 @@ class Maven {
         service.artifactpackage(config)
     }
 
-    String deploy(String configdeploy) {
-        service.deploy(configdeploy)
+    String deploy(Map config) {
+        service.deploy(config)
     }
 }

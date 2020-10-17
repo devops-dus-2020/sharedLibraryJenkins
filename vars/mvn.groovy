@@ -2,18 +2,8 @@ import de.devopsdus2020.maven.*
 import de.devopsdus2020.external.*
 import groovy.util.logging.*
 import groovy.transform.Field
-import org.jenkinsci.lib.configprovider.model.Config
-import org.jenkinsci.plugins.configfiles.maven.job.MvnGlobalSettingsProvider
-
-def settingsConfigId = 'default'
-def  c = Config.getByIdOrNull(settingsConfigId);
-assert c != null
-
-def newProvider = new MvnGlobalSettingsProvider(settingsConfigId)
-assert newProvider instanceof org.jenkinsci.plugins.configfiles.maven.job.MvnGlobalSettingsProvider
 
 @Field final Map config = [mvn_args: "-f ${WORKSPACE}"]
-@Field final String configdeploy = "mvn -s ${MAVEN_SETTINGS} clean deploy -DskipTests"
 
 def makeMyMaven(){
     Closure logger = {String message -> println message}
@@ -43,7 +33,14 @@ def artifactpackage() {
 }
 
 def deploy() {
-    return makeMyMaven().deploy(configdeploy)
+    println env.WORKSPACE.getClass()
+    echo "${WORKSPACE}"
+    echo "${NEXUS_USER}"
+    echo "${NEXUS_PASSWORD}"
+    config.workspace = "${WORKSPACE}"
+    config.nexususer = "${NEXUS_USER}"
+    config.nexuspassword = "${NEXUS_PASSWORD}"
+    return makeMyMaven().deploy(config)
 }
 
 // lokaler Test auskommentiert
