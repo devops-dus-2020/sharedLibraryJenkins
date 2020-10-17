@@ -10,14 +10,15 @@ def makeMyAnsible(){
 }
 
 
-def imagebuild(YML) { 
-    Map config = [f: "${WORKSPACE}/${YML}"]
+def imagebuild(ANSIBLE_YML) { 
+    Map config = [f: "${WORKSPACE}/${ANSIBLE_YML}"]
     makeMyAnsible().imagebuild(config)
 }
 
 
-def imagepush(YML) { 
-    Map config = [("ansible-playbook"): "${WORKSPACE}/${PUSHYML}"]
-    config.("-e") = "USER=${AZURECR_USER} -e PASSWORD=${AZURECR_PASSWORD}"
+def imagepush(ANSIBLE_YML) { 
+    Map config = [("ansible-playbook"): "${WORKSPACE}/${ANSIBLE_YML}"]
+    config.("-e") = "USER=${AZURECR_USER}"
+    config.("-e") = "PASSWORD=${AZURECR_PASSWORD}"
     makeMyAnsible().imagepush(config)
 }
