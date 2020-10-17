@@ -41,7 +41,7 @@ def deploy() {
     config.nexususer = "${NEXUS_USER}"
     config.nexuspassword = "${NEXUS_PASSWORD}"
     string result = config.get(workspace)
-    echo result
+    echo "result"
     return makeMyMaven().deploy(config)
 }
 
