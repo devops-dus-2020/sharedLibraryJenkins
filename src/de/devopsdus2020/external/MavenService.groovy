@@ -46,7 +46,7 @@ class MavenService implements InterfaceMavenService {
     Integer executeMavenDeploy(Map configdeploy, String phase) {
     
     def convertToValueString = {it.collect { / $it.key $it.value/ } join ""}
-    def csequence = "mvn " + convertToValueString(configdeploy) + " phase"
+    def csequence = "mvn " + convertToValueString(configdeploy) + phase
     logger("cmd: ${csequence}")
     def process = csequence.execute()
     process.waitFor()
@@ -80,6 +80,6 @@ class MavenService implements InterfaceMavenService {
     }
 
     Integer deploy(Map configdeploy) {
-        return this.executeMavenDeploy(configdeploy, "clean deploy")
+        return this.executeMavenDeploy(configdeploy, " clean deploy")
     }
 }

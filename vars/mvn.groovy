@@ -4,7 +4,7 @@ import groovy.util.logging.*
 import groovy.transform.Field
 
 @Field final Map config = [mvn_args: "-f ${WORKSPACE}"]
-@Field final Map configdeploy = [("-s"): "${WORKSPACE}/settings.xml"]
+@Field final Map configdeploy = [("-gs "): "settings.xml"]
 
 def makeMyMaven(){
     Closure logger = {String message -> println message}
