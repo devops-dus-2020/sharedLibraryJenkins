@@ -34,13 +34,13 @@ class MavenService implements InterfaceMavenService {
 
         logger("cmd: ${csequence}")
         def process = csequence.execute()
-        //process.waitFor()
+        process.waitFor()
         Integer exitValue = process.exitValue()
         logger("exitValue: ${exitValue}")
         logger("err.text: ${process.err.text}")
         def buffer = process.text
         logger("text:\n${buffer}")
-        //return exitValue 
+        return exitValue 
     }
 
     Integer version(){
