@@ -37,7 +37,6 @@ def deploy() {
     echo "${WORKSPACE}"
     echo "${NEXUS_USER}"
     echo "${NEXUS_PASSWORD}"
-    echo env
     config.workspace = "${WORKSPACE}"
     config.nexususer = "${NEXUS_USER}"
     config.nexuspassword = "${NEXUS_PASSWORD}"
