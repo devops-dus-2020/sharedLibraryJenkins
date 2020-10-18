@@ -33,7 +33,7 @@ def artifactpackage() {
 }
 
 def deploy() {
-    println env.WORKSPACE.getClass()
+    println env.NEXUS_USER.getClass()
     echo "${WORKSPACE}"
     echo "${NEXUS_USER}"
     echo "${NEXUS_PASSWORD}"
