@@ -37,7 +37,10 @@ def deploy() {
     config.workspace = "${WORKSPACE}"
     config.nexususer = "${NEXUS_USER}"
     config.nexuspassword = "${NEXUS_PASSWORD}"
-    return makeMyMaven().deploy(config)
+    myMaven = makeMyMaven().deploy(config)
+    def returnStatus =  makeMyMaven().deploy(config)
+    echo returnStatus
+    return returnStatus
 }
 
 // lokaler Test auskommentiert
