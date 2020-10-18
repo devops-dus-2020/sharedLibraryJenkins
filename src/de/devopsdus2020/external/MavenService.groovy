@@ -34,7 +34,7 @@ class MavenService implements InterfaceMavenService {
 
         logger("cmd: ${csequence}")
         def process = csequence.execute()
-        process.waitFor()
+        //process.waitFor()
         Integer exitValue = process.exitValue()
         logger("exitValue: ${exitValue}")
         logger("err.text: ${process.err.text}")
@@ -70,7 +70,7 @@ class MavenService implements InterfaceMavenService {
     }
 
     Integer tomcat(Map config) {
-        String phase = "tomcat7:deploy -gs " + config.getAt("workspace") + " -DskipTests"
+        String phase = "tomcat7:redeploy -gs " + config.getAt("workspace") + " -DskipTests"
         return this.executeMaven(config,  phase)
     }
 }
