@@ -40,7 +40,7 @@ class MavenService implements InterfaceMavenService {
         logger("err.text: ${process.err.text}")
         def buffer = process.text
         logger("text:\n${buffer}")
-        return exitValue 
+        //return exitValue 
     }
 
     Integer version(){
