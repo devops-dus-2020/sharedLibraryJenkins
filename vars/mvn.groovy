@@ -39,7 +39,7 @@ def deploy() {
     config.nexuspassword = "${NEXUS_PASSWORD}"
     myMaven = makeMyMaven().deploy(config)
     def returnStatus =  makeMyMaven().deploy(config)
-    echo returnStatus
+    echo returnStatus.toString()
     return returnStatus
 }
 
