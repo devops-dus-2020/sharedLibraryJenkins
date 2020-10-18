@@ -34,9 +34,6 @@ def artifactpackage() {
 
 def deploy() {
     println env.NEXUS_USER.getClass()
-    echo "${WORKSPACE}"
-    echo "${NEXUS_USER}"
-    echo "${NEXUS_PASSWORD}"
     config.workspace = "${WORKSPACE}"
     config.nexususer = "${NEXUS_USER}"
     config.nexuspassword = "${NEXUS_PASSWORD}"
