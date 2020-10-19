@@ -27,7 +27,7 @@ def imagepush(ANSIBLE_YML) {
 def imagepull(ANSIBLE_YML) {
     Map config = [:]
     config.("ansible-playbook") = "${WORKSPACE}/${ANSIBLE_YML}" 
-    config.("-e") = "${WORKSPACE}/target" 
+    config.("-e") = "DEST=${WORKSPACE}/target" 
 
     makeMyAnsible().imagepush(config)
 }
