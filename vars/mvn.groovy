@@ -32,13 +32,13 @@ def artifactpackage() {
     return makeMyMaven().artifactpackage(config)
 }
 
-def deploy() {
+def deploy(String settingsFilename) {
     config.workspace = "${WORKSPACE}"
     config.nexususer = "${NEXUS_USER}"
     config.nexuspassword = "${NEXUS_PASSWORD}"
 
-    // NexusSettings.xml must be provided by SCM in workspace folder
-    return makeMyMaven().deploy(config, "NexusSettings.xml")
+    // A settings.xml wit the name settingsFilename must be provided by SCM in workspace folder
+    return makeMyMaven().deploy(config, settingsFilename)
 }
 
 def tomcat() {

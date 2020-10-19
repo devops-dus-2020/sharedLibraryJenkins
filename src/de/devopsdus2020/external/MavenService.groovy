@@ -65,16 +65,8 @@ class MavenService implements InterfaceMavenService {
     }
 
     Integer deploy(Map config, String settings) {
-        File mySettings = new File(config.workspace, settings)
-
-        if (mySettings.exists() && mySettings.canRead()) {
-            return this.executeMaven(config, "clean deploy -s=${config.workspace}/${settings} " + 
-                                    "-DNEXUS_USER=${config.nexususer} -DNEXUS_PASSWORD=${config.password} -DskipTests")
-        }
-        else {
-            looger("[ERROR] File ${mySettings.getAbsolutPath()} not found.")
-            return 1
-        }                            
+        return this.executeMaven(config, "clean deploy -s=${config.workspace}/${settings} " + 
+                                "-DNEXUS_USER=${config.nexususer} -DNEXUS_PASSWORD=${config.password} -DskipTests")
     }
 
     Integer tomcat(Map config) {

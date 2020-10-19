@@ -30,8 +30,16 @@ class Maven {
         service.artifactpackage(config)
     }
 
-    String deploy(Map config) {
-        service.deploy(config)
+    Integer deploy(Map config, String settingsFilename) {
+        File mySettings = new File(config.workspace, settingsFilename)
+
+        if (mySettings.isFile() && mySettings.canRead()) {
+            return service.deploy(config, settingsFilename)
+        }
+        else {
+            service.looger("[ERROR] File ${mySettings.getAbsolutPath()} not found.")
+            return 1
+        }                            
     }
 
     String tomcat(Map config) {
