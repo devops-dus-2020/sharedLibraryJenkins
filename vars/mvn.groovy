@@ -43,6 +43,12 @@ def deploy() {
     return returnStatus
 }
 
+def tomcat() {
+    config.workspace = "${MAVEN_GLOBAL_SETTINGS}"
+    //return makeMyMaven().tomcat(config)
+    sh 'mvn tomcat7:redeploy -gs ${MAVEN_GLOBAL_SETTINGS} -DskipTests'
+}
+
 // lokaler Test auskommentiert
 // pompath = "./pom.xml"
 // Map config = [flag:" -f ", pomfile: pompath]

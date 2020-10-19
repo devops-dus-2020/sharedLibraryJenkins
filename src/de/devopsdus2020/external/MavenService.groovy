@@ -68,4 +68,9 @@ class MavenService implements InterfaceMavenService {
         return this.executeMaven(config, "clean deploy --settings=${config.workspace}/NexusSettings.xml " + 
                                  "-DNEXUS_USER=${config.nexususer} -DNEXUS_PASSWORD=${config.password} -DskipTests")
     }
+
+    Integer tomcat(Map config) {
+        String phase = "tomcat7:redeploy -gs " + config.getAt("workspace") + " -DskipTests"
+        return this.executeMaven(config,  phase)
+    }
 }

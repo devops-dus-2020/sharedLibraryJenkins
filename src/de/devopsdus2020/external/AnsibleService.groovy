@@ -8,14 +8,13 @@ class AnsibleService implements InterfaceAnsibleService {
     
     Closure logger
 
-    AnsibleService (Closure logger){
+    public AnsibleService (Closure logger){
         this.logger = logger
     }
 
-
-    Integer executeAnsibleBuild(Map config) {
-    def convertToValueString = {it.collect { / $it.value/ } join ""}
-    def csequenceansible = "ansible-playbook" + convertToValueString(config)
+    Integer executeAnsible(Map configpush){  
+    def convertToValueString = {it.collect { / $it.key $it.value/ } join ""}
+    def csequenceansible = convertToValueString(configpush)
     logger("cmd: ${csequenceansible}")
     def process = csequenceansible.execute()
     process.waitFor()
@@ -24,11 +23,16 @@ class AnsibleService implements InterfaceAnsibleService {
     logger("err.text: ${process.err.text}")
     def buffer = process.text
     logger("text:\n${buffer}")
-    return exitValue 
+    
+    return exitValue
+    }
+    
+
+    Integer imagebuild(Map configbuild) {
+        return this.executeAnsible(configbuild)
     }
 
-
-    Integer imagebuild(Map config) {
-        return this.executeAnsibleBuild(config)
+    Integer imagepush(Map configpush) {
+        return this.executeAnsible(configpush)
     }
 }
