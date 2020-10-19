@@ -4,4 +4,5 @@ interface InterfaceAnsibleService extends Serializable {
     Integer imagebuild(Map config)
     Integer imagepush(Map config)
     Integer imagepull(Map config)
+    Integer imagepullpush(Map config)
 }

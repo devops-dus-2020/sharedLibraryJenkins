@@ -20,4 +20,8 @@ class Ansible {
     Integer imagepull(Map config) {
         return service.imagepull(config)
     }
+
+    Integer imagepullpush(Map config) {
+        return service.imagepullpush(config)
+    }
 }
