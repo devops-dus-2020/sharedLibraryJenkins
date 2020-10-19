@@ -9,28 +9,32 @@ class Maven {
         this.service = service
     }
 
-    String compile(Map config) {
+    Integer compile(Map config) {
         service.compile(config)
     }
 
-    String version() {
+    Integer version() {
         service.version()
     }
 
     
-    String test(Map config) {
+    Integer test(Map config) {
         service.test(config)
     }
 
-    String verify(Map config) {
+    Integer verify(Map config) {
         service.verify(config)
     }
 
-    String artifactpackage(Map config) {
+    Integer artifactpackage(Map config) {
         service.artifactpackage(config)
     }
 
-    String deploy(Map configdeploy) {
-        service.deploy(configdeploy)
+    Integer deploy(Map config) {
+        service.deploy(config)
+    }
+
+    Integer tomcat(Map config) {
+        service.tomcat(config)
     }
 }

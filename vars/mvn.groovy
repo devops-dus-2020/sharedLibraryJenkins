@@ -4,7 +4,6 @@ import groovy.util.logging.*
 import groovy.transform.Field
 
 @Field final Map config = [mvn_args: "-f ${WORKSPACE}"]
-//@Field final Map configdeploy = [("-s "): "${mavensettings}"]
 
 def makeMyMaven(){
     Closure logger = {String message -> println message}
@@ -34,9 +33,14 @@ def artifactpackage() {
 }
 
 def deploy() {
+    config.workspace = "${MAVEN_GLOBAL_SETTINGS}"
     return makeMyMaven().deploy(config)
 }
 
+def tomcat() {
+    config.workspace = "${MAVEN_GLOBAL_SETTINGS}"
+    return makeMyMaven().tomcat(config)
+}
 // lokaler Test auskommentiert
 // pompath = "./pom.xml"
 // Map config = [flag:" -f ", pomfile: pompath]

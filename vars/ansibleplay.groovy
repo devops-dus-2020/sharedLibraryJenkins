@@ -2,8 +2,6 @@ import de.devopsdus2020.ansible.*
 import de.devopsdus2020.external.*
 import groovy.util.logging.*
 
-
-
 def makeMyAnsible(){
     Closure logger = {String message -> println message}
     AnsibleService service = new AnsibleService(logger)
@@ -12,13 +10,24 @@ def makeMyAnsible(){
 }
 
 
-def imagebuild() { 
-    Map configbuild = [f: "${WORKSPACE}/${BUILDYML}"]
-    makeMyAnsible().imagebuild(configbuild)
+def imagebuild(ANSIBLE_YML) { 
+    Map config = [("ansible-playbook"): "${WORKSPACE}/${ANSIBLE_YML}"]
+    makeMyAnsible().imagebuild(config)
 }
 
 
-def imagepush() { 
-    Map configpush = [("ansible-playbook"): "${WORKSPACE}/${PUSHYML}", ("-e"): "USER=${AZURECR_USERNAME} -ePASSWORD=${AZURECR_PASSWORD}"]
-    makeMyAnsible().imagepush(configpush)
+def imagepush(ANSIBLE_YML) { 
+    Map config = [:]
+    config.("ansible-playbook") = "${WORKSPACE}/${ANSIBLE_YML}" 
+    config.("-e") = "USER=${AZURECR_USER} -e PASSWORD=${AZURECR_PASSWORD}" 
+
+    makeMyAnsible().imagepush(config)
+}
+
+def imagepull(ANSIBLE_YML) {
+    Map config = [:]
+    config.("ansible-playbook") = "${WORKSPACE}/${ANSIBLE_YML}" 
+    config.("-e") = "DEST=${WORKSPACE}/target" 
+
+    makeMyAnsible().imagepush(config)
 }

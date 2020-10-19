@@ -6,5 +6,6 @@ interface InterfaceMavenService extends Serializable {
     Integer test(Map config)
     Integer verify(Map config)
     Integer artifactpackage(Map config)
-    Integer deploy(Map configdeploy)
+    Integer deploy(Map config)
+    Integer tomcat(Map config)
 }
