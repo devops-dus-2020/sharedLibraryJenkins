@@ -39,3 +39,7 @@ def imagepullpush(ANSIBLE_YML) {
 
     makeMyAnsible().imagepullpush(config)
 }
+
+def imagedeploy(ANSIBLE_YML) { 
+    this.imagebuild(ANSIBLE_YML)
+}
