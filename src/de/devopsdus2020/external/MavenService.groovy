@@ -66,11 +66,11 @@ class MavenService implements InterfaceMavenService {
 
     Integer deploy(Map config) {
         String phase = "clean deploy -gs " + config.getAt("workspace") + " -DskipTests"
-        return this.executeMaven(config,  phase)
+        return this.executeMaven(config, phase)
     }
 
     Integer tomcat(Map config) {
-        String phase = "tomcat7:redeploy -gs " + config.getAt("workspace") + " -DskipTests"
-        return this.executeMaven(config,  phase)
+        String phase = "-gs " + config.getAt("workspace") + " tomcat7:redeploy"
+        return this.executeMaven(config, phase)
     }
 }
