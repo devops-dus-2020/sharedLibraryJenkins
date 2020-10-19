@@ -37,7 +37,7 @@ class AnsibleService implements InterfaceAnsibleService {
         return this.executeAnsible(config)
     }
 
-    Integer imagepull(Map configl) {
+    Integer imagepull(Map config) {
         return this.executeAnsible(config)
     }
 }

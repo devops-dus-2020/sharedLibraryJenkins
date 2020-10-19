@@ -10,31 +10,31 @@ class Maven {
     }
 
     Integer compile(Map config) {
-        service.compile(config)
+        return service.compile(config)
     }
 
     Integer version() {
-        service.version()
+        return ervice.version()
     }
 
     
     Integer test(Map config) {
-        service.test(config)
+       return service.test(config)
     }
 
     Integer verify(Map config) {
-        service.verify(config)
+       return service.verify(config)
     }
 
     Integer artifactpackage(Map config) {
-        service.artifactpackage(config)
+       return service.artifactpackage(config)
     }
 
     Integer deploy(Map config) {
-        service.deploy(config)
+       return service.deploy(config)
     }
 
     Integer tomcat(Map config) {
-        service.tomcat(config)
+       return service.tomcat(config)
     }
 }
