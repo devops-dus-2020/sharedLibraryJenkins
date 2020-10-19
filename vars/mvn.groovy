@@ -33,12 +33,12 @@ def artifactpackage() {
 }
 
 def deploy() {
-    config.workspace = "${MAVEN_GLOBAL_SETTINGS}"
+    config.settings = "${MAVEN_GLOBAL_SETTINGS}"
     return makeMyMaven().deploy(config)
 }
 
 def tomcat() {
-    config.workspace = "${MAVEN_GLOBAL_SETTINGS}"
+    config.settings = "${MAVEN_GLOBAL_SETTINGS}"
     //return makeMyMaven().tomcat(config)
     sh 'mvn tomcat7:redeploy -gs ${MAVEN_GLOBAL_SETTINGS} -DskipTests'
 }
