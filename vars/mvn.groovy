@@ -40,7 +40,7 @@ def deploy() {
 def tomcat() {
     config.workspace = "${MAVEN_GLOBAL_SETTINGS}"
     //return makeMyMaven().tomcat(config)
-    sh 'tomcat7:redeploy -gs  + ${MAVEN_GLOBAL_SETTINGS} +  -DskipTests'
+    sh 'tomcat7:redeploy -gs ${MAVEN_GLOBAL_SETTINGS} -DskipTests'
 }
 
 // lokaler Test auskommentiert
