@@ -12,9 +12,10 @@ class AnsibleService implements InterfaceAnsibleService {
         this.logger = logger
     }
 
-    Integer executeAnsible(Map configpush){  
+    Integer executeAnsible(Map config){ 
     def convertToValueString = {it.collect { / $it.key $it.value/ } join ""}
     def csequenceansible = convertToValueString(configpush)
+    
     logger("cmd: ${csequenceansible}")
     def process = csequenceansible.execute()
     process.waitFor()
@@ -28,11 +29,15 @@ class AnsibleService implements InterfaceAnsibleService {
     }
     
 
-    Integer imagebuild(Map configbuild) {
-        return this.executeAnsible(configbuild)
+    Integer imagebuild(Map config) {
+        return this.executeAnsible(config)
     }
 
-    Integer imagepush(Map configpush) {
-        return this.executeAnsible(configpush)
+    Integer imagepush(Map config) {
+        return this.executeAnsible(config)
+    }
+
+    Integer imagepull(Map configl) {
+        return this.executeAnsible(config)
     }
 }
