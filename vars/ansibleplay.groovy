@@ -11,7 +11,7 @@ def makeMyAnsible(){
 
 
 def imagebuild(ANSIBLE_YML) { 
-    Map config = [f: "${WORKSPACE}/${ANSIBLE_YML}"]
+    Map config = [("ansible-playbook"): "${WORKSPACE}/${ANSIBLE_YML}"]
     makeMyAnsible().imagebuild(config)
 }
 
