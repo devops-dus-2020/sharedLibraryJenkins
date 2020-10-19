@@ -35,7 +35,7 @@ def imagepull(ANSIBLE_YML) {
 def imagepullpush(ANSIBLE_YML) { 
     Map config = [:]
     config.("ansible-playbook") = "${WORKSPACE}/${ANSIBLE_YML}" 
-    config.("-e") = "-e DEST=${WORKSPACE}/target -e USER=${AZURECR_USER} -e PASSWORD=${AZURECR_PASSWORD}" 
+    config.("-e") = "DEST=${WORKSPACE}/target -e USER=${AZURECR_USER} -e PASSWORD=${AZURECR_PASSWORD}" 
 
     makeMyAnsible().imagepullpush(config)
 }
