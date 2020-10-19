@@ -70,7 +70,7 @@ class MavenService implements InterfaceMavenService {
     }
 
     Integer tomcat(Map config) {
-        String phase = " -gs " + config.getAt("workspace") + " tomcat7:redeploy"
+        String phase = "tomcat7:redeploy -gs " + config.getAt("workspace")
         return this.executeMaven(config, phase)
     }
 }
