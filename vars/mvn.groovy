@@ -17,7 +17,10 @@ def version() {
 }
 
 def compile() {
-    return makeMyMaven().compile(config)
+    Integer exitcode = makeMyMaven().compile(config)
+    if (exitcode != 0) {
+        error "Compile step failed! Exit code: ${exitcode}"
+    }
 }
 
 def test() {  
@@ -32,6 +35,11 @@ def artifactpackage() {
     return makeMyMaven().artifactpackage(config)
 }
 
+def deploy() {
+    config.settings = "${MAVEN_GLOBAL_SETTINGS}"
+    return makeMyMaven().deploy(config)
+}
+
 def deploy(String settingsFilename) {
     config.workspace = "${WORKSPACE}"
     config.nexususer = "${NEXUS_USER}"
@@ -42,12 +50,8 @@ def deploy(String settingsFilename) {
 }
 
 def tomcat() {
-    config.workspace = "${MAVEN_GLOBAL_SETTINGS}"
+    config.settings = "${MAVEN_GLOBAL_SETTINGS}"
     //return makeMyMaven().tomcat(config)
     sh 'mvn tomcat7:redeploy -gs ${MAVEN_GLOBAL_SETTINGS} -DskipTests'
-}
 
-// lokaler Test auskommentiert
-// pompath = "./pom.xml"
-// Map config = [flag:" -f ", pomfile: pompath]
-//artifactpackage()
+}

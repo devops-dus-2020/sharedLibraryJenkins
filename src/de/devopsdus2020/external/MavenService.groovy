@@ -64,6 +64,11 @@ class MavenService implements InterfaceMavenService {
         return this.executeMaven(config, "clean package -DskipTests")
     }
 
+    Integer deploy(Map config) {
+        String phase = "clean deploy -gs " + config.settings + " -DskipTests"
+        return this.executeMaven(config,  phase)
+    }
+
     Integer deploy(Map config, String settings) {
         return this.executeMaven(config, "clean deploy -s=${config.workspace}/${settings} " + 
                                 "-DNEXUS_USER=${config.nexususer} -DNEXUS_PASSWORD=${config.password} -DskipTests")
@@ -71,6 +76,5 @@ class MavenService implements InterfaceMavenService {
 
     Integer tomcat(Map config) {
         String phase = "tomcat7:redeploy -gs " + config.getAt("workspace") + " -DskipTests"
-        return this.executeMaven(config,  phase)
-    }
+    }    
 }
