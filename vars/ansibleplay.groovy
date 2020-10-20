@@ -10,13 +10,13 @@ def makeMyAnsible(){
 }
 
 //extra-vars in ansible: -e flag
-//method for simple ansible-playbooks, extra-vars: none
+//simple ansible-playbooks, extra-vars: none
 def execute(ANSIBLE_YML) { 
     Map config = [("ansible-playbook"): "${WORKSPACE}/${ANSIBLE_YML}"]
     makeMyAnsible().execute(config)
 }
 
-//method for push auf container registry, extra-vars: Azurecr creds
+//push auf container registry, extra-vars: Azurecr creds
 def azurecrpush(ANSIBLE_YML) { 
     Map config = [:]
     config.("ansible-playbook") = "${WORKSPACE}/${ANSIBLE_YML}" 
@@ -25,7 +25,7 @@ def azurecrpush(ANSIBLE_YML) {
     makeMyAnsible().azurecrpush(config)
 }
 
-//method for pull from nexus, extra-vars: target dir
+//pull from nexus, extra-vars: target dir
 def nexuspull(ANSIBLE_YML) {
     Map config = [:]
     config.("ansible-playbook") = "${WORKSPACE}/${ANSIBLE_YML}" 
@@ -34,7 +34,7 @@ def nexuspull(ANSIBLE_YML) {
     makeMyAnsible().nexuspull(config)
 }
 
-//method optimized -> special for bbrow-workflow, extra-vars: azure creds & target dir
+//optimized -> special for bbrow-workflow, extra-vars: azure creds & target dir
 def nexuspullazurecrpush(ANSIBLE_YML) { 
     Map config = [:]
     config.("ansible-playbook") = "${WORKSPACE}/${ANSIBLE_YML}" 
@@ -43,7 +43,7 @@ def nexuspullazurecrpush(ANSIBLE_YML) {
     makeMyAnsible().nexuspullazurecrpush(config)
 }
 
-//method for tomcat deploy -> reusing execute() method, extra-vars: none
+//tomcat deploy -> reusing execute() method, extra-vars: none
 def tomcatdeploy(ANSIBLE_YML) { 
     this.execute(ANSIBLE_YML)
 }
