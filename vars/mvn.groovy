@@ -43,7 +43,3 @@ def tomcat() {
     sh 'mvn tomcat7:redeploy -gs ${MAVEN_GLOBAL_SETTINGS} -DskipTests'
 }
 
-// lokaler Test auskommentiert
-// pompath = "./pom.xml"
-// Map config = [flag:" -f ", pomfile: pompath]
-//artifactpackage()
