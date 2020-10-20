@@ -17,7 +17,10 @@ def version() {
 }
 
 def compile() {
-    return makeMyMaven().compile(config)
+    def exitvalue = makeMyMaven().compile(config)
+    if (exitvalue != 0) {
+        error "Compile step failed!"
+    }
 }
 
 def test() {  
