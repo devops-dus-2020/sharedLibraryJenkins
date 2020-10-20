@@ -13,8 +13,12 @@ class Docker {
         service.getDockerVersion(config)
     }
 
-    String workWithDockerOption(Map config) {
-        service.workWithDockerOption(config)
+    String executeWithDockerOption(Map config) {
+        service.executeWithDockerOption(config)
+    }
+
+    String executeWithDockerCompose(Map config) {
+        service.executeWithDockerCompose(config)
     }
 
 }

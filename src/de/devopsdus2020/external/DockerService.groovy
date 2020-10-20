@@ -45,15 +45,50 @@ class DockerService implements InterfaceDockerService {
     }
 
 
+     String assembleComposeCommand(Map config, String command) {
+        // Build mvn command with configuration and phase
+
+        String csequence = "docker-compose"
+
+        // Check whether config.mvn_args exists and is a non-empty String (or GString)
+        if (config && config.containsKey('docker_opt') &&
+                config.docker_opt &&
+                (config.docker_opt instanceof String|| config.docker_opt instanceof GString)) {
+            csequence += " " + config.docker_opt
+        }
+        if (command) { // non-empty string?
+            csequence += " " + command
+        }        
+        return csequence
+    }
+
+    
+    Integer executeDockerCompose(Map config, String command) {
+        String csequence = assembleComposeCommand(config, command)
+
+        logger("cmd: ${csequence}")
+        def process = csequence.execute()
+        process.waitFor()
+        Integer exitValue = process.exitValue()
+        logger("exitValue: ${exitValue}")
+        logger("err.text: ${process.err.text}")
+        def buffer = process.text
+        logger("text:\n${buffer}")
+        return exitValue 
+    }
+
+
     Integer getDockerVersion(Map config){
-        //config.put([:])
         return this.executeDocker(config, "version")
     }
 
-    Integer workWithDockerOption(Map config){
-        //config.put([:])
-        return this.executeDocker(config)
+    Integer executeWithDockerOption(Map config){
+        return this.executeDocker(config,"")
     }
+
+     Integer executeWithDockerCompose(Map config){
+         return this.executeDockerCompose(config, "")
+     }
 
 
 }

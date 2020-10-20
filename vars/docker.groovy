@@ -4,7 +4,7 @@ import groovy.util.logging.*
 import groovy.transform.Field
 
 
-@Field final Map config = [version: ""] 
+@Field final Map config = [docker_opt:"version"] 
 
 
 def makeMyDocker(){
@@ -15,7 +15,7 @@ def makeMyDocker(){
 }
 
 def dockerversion() {  
-    makeMyDocker().getDockerVersion(config)
+    makeMyDocker().executeWithDockerCompose(config)
 }
 
 dockerversion()
