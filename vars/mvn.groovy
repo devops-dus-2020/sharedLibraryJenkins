@@ -41,4 +41,7 @@ def tomcat() {
     config.settings = "${MAVEN_GLOBAL_SETTINGS}"
     //return makeMyMaven().tomcat(config)
     sh 'mvn tomcat7:redeploy -gs ${MAVEN_GLOBAL_SETTINGS} -DskipTests'
+
 }
+
+
