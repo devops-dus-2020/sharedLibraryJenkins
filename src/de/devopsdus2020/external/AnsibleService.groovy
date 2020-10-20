@@ -29,19 +29,19 @@ class AnsibleService implements InterfaceAnsibleService {
     }
     
 
-    Integer imagebuild(Map config) {
+    Integer execute(Map config) {
         return this.executeAnsible(config)
     }
 
-    Integer imagepush(Map config) {
+    Integer azurecrpush(Map config) {
         return this.executeAnsible(config)
     }
 
-    Integer imagepull(Map config) {
+    Integer nexuspull(Map config) {
         return this.executeAnsible(config)
     }
 
-    Integer imagepullpush(Map config) {
+    Integer nexuspullazurecrpush(Map config) {
         return this.executeAnsible(config)
     }
 }

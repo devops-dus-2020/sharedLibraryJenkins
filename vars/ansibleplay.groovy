@@ -9,37 +9,40 @@ def makeMyAnsible(){
     return myAnsible
 }
 
-
-def imagebuild(ANSIBLE_YML) { 
+//method for simple ansible-playbooks without extra-vars
+def execute(ANSIBLE_YML) { 
     Map config = [("ansible-playbook"): "${WORKSPACE}/${ANSIBLE_YML}"]
-    makeMyAnsible().imagebuild(config)
+    makeMyAnsible().execute(config)
 }
 
-
-def imagepush(ANSIBLE_YML) { 
+//method for push auf container registry withCred extra-vars
+def azurecrpush(ANSIBLE_YML) { 
     Map config = [:]
     config.("ansible-playbook") = "${WORKSPACE}/${ANSIBLE_YML}" 
     config.("-e") = "USER=${AZURECR_USER} -e PASSWORD=${AZURECR_PASSWORD}" 
 
-    makeMyAnsible().imagepush(config)
+    makeMyAnsible().azurecrpush(config)
 }
 
-def imagepull(ANSIBLE_YML) {
+//method for pull from nexus withCred target-dir as extra-var
+def nexuspull(ANSIBLE_YML) {
     Map config = [:]
     config.("ansible-playbook") = "${WORKSPACE}/${ANSIBLE_YML}" 
     config.("-e") = "DEST=${WORKSPACE}/target" 
 
-    makeMyAnsible().imagepull(config)
+    makeMyAnsible().nexuspull(config)
 }
 
-def imagepullpush(ANSIBLE_YML) { 
+//method optimized -> special for bbrow-workflow, extra-vars: azure creds and target-dir
+def nexuspullazurecrpush(ANSIBLE_YML) { 
     Map config = [:]
     config.("ansible-playbook") = "${WORKSPACE}/${ANSIBLE_YML}" 
     config.("-e") = "DEST=${WORKSPACE}/target -e USER=${AZURECR_USER} -e PASSWORD=${AZURECR_PASSWORD}" 
 
-    makeMyAnsible().imagepullpush(config)
+    makeMyAnsible().nexuspullazurecrpush(config)
 }
 
-def imagedeploy(ANSIBLE_YML) { 
-    this.imagebuild(ANSIBLE_YML)
+//method for tomcat deploy -> reusing simple execute() method, no extra-vars
+def tomcatdeploy(ANSIBLE_YML) { 
+    this.execute(ANSIBLE_YML)
 }
