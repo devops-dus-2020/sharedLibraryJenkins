@@ -32,9 +32,13 @@ wenn ihr mvn deploy() ausführen wollt, benötigt ihr den configFileProvider (di
 Folgende Methoden stehen aktuell im Ansible Service zur Verfügung: `execute(), nexuspull(),azurecrpush(), nexuspullazurecrpush() und tomcatdeploy()`). Die Befehle, welche die jeweiligen Methoden am ende zusammenbauen sehen dann so aus:
 
 `execute(ANSIBLEYML)` :                 `ansible-playbook WORKSPACE/ANSIBLEYML`
+
 `nexuspull(ANSIBLEYML)` :               `ansible-playbook WORKSPACE/ANSIBLEYML -e DEST=WORKSPACE/target`
+
 `azurecrpush(ANSIBLEYML)` :             `ansible-playbook WORKSPACE/ANSIBLEYML -e USER=**** -e PASSWORD=****`
+
 `nexuspullazurecrpush(ANSIBLEYML)` :    `ansible-playbook WORKSPACE/ANSIBLEYML -e DEST=WORKSPACE/target -e USER=**** -e PASSWORD=****`
+
 `tomcatdeploy(ANSIBLEYML)` :            `ansible-playbook WORKSPACE/ANSIBLEYML`
 
 Wichtige Variablen und extra-Variablen:
