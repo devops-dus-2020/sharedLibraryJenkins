@@ -17,7 +17,7 @@ def version() {
 }
 
 def compile() {
-    def exitcode = makeMyMaven().compile(config)
+    Integer exitcode = makeMyMaven().compile(config)
     if (exitcode != 0) {
         error "Compile step failed! Exit code: ${exitcode}"
     }
