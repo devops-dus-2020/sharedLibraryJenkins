@@ -15,7 +15,7 @@ def makeMyDocker(){
 }
 
 def dockerversion() {  
-    makeMyDocker().dockerversion(config)
+    makeMyDocker().getDockerVersion(config)
 }
 
 dockerversion()

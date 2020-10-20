@@ -9,8 +9,12 @@ class Docker {
         this.service = service
     }
 
-    String dockerversion(Map config) {
-        service.dockerversion(config)
+    String getDockerVersion(Map config) {
+        service.getDockerVersion(config)
+    }
+
+    String workWithDockerOption(Map config) {
+        service.workWithDockerOption(config)
     }
 
 }

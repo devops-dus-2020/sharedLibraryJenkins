@@ -11,10 +11,28 @@ class DockerService implements InterfaceDockerService {
     DockerService (Closure logger){
         this.logger = logger
     }
+
+    String assembleDockerCommand(Map config, String command) {
+        // Build mvn command with configuration and phase
+
+        String csequence = "docker"
+
+        // Check whether config.mvn_args exists and is a non-empty String (or GString)
+        if (config && config.containsKey('docker_opt') &&
+                config.docker_opt &&
+                (config.docker_opt instanceof String|| config.docker_opt instanceof GString)) {
+            csequence += " " + config.docker_opt
+        }
+        if (command) { // non-empty string?
+            csequence += " " + command
+        }        
+        return csequence
+    }
+
     
-    Integer executeDocker(Map config) {
-        def convertToValueString = {it.collect { / $it.key $it.value/ } join ""}
-        def csequence = "docker " + convertToValueString(config) + " "
+    Integer executeDocker(Map config, String command) {
+        String csequence = assembleDockerCommand(config, command)
+
         logger("cmd: ${csequence}")
         def process = csequence.execute()
         process.waitFor()
@@ -26,9 +44,16 @@ class DockerService implements InterfaceDockerService {
         return exitValue 
     }
 
-    Integer dockerversion(Map config){
-        //config.put(['version':''])
-        return this.executeDocker([version:""])
+
+    Integer getDockerVersion(Map config){
+        //config.put([:])
+        return this.executeDocker(config, "version")
     }
+
+    Integer workWithDockerOption(Map config){
+        //config.put([:])
+        return this.executeDocker(config)
+    }
+
 
 }
