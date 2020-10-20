@@ -22,6 +22,6 @@ class Ansible {
     }
 
     Integer nexuspullazurecrpush(Map config) {
-        return service.imagepullpush(config)
+        return service.nexuspullazurecrpush(config)
     }
 }
