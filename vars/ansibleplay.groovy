@@ -9,6 +9,7 @@ def makeMyAnsible(){
     return myAnsible
 }
 
+//extra-vars in ansible: -e flag
 //method for simple ansible-playbooks, extra-vars: none
 def execute(ANSIBLE_YML) { 
     Map config = [("ansible-playbook"): "${WORKSPACE}/${ANSIBLE_YML}"]
