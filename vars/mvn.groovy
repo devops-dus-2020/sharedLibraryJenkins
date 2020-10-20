@@ -18,6 +18,16 @@ def version() {
 
 def compile() {
     def exitvalue = makeMyMaven().compile(config)
+    echo "mvn.compile(): exit value = ${exitvalue}"
+    if (exitvalue != 0) {
+        error "Compile step failed!"
+    }
+}
+
+def failedcompile() {
+    config.mvn_args = ""
+    def exitvalue = makeMyMaven().compile(config)
+    echo "mvn.compile(): exit value = ${exitvalue}"
     if (exitvalue != 0) {
         error "Compile step failed!"
     }
