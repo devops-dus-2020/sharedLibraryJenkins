@@ -27,6 +27,7 @@ class MavenTest {
         def service = [deploy: (String actual) -> {expected = actual}] as InterfaceMavenService
 
         Maven uut = new Maven(service)
+        uut.deploy(filename)
         assert expected == actual
     }
 
@@ -44,6 +45,8 @@ class MavenTest {
 
     @Test
     void checkDeployDoesNotAcceptEmptyFilename() {
+        String actual = "settings.xml"
+        final File tempFile = tempFolder.newFile(actual);
         Map config = [workspace: tempFolder.root()]
         String expected = "[ERROR] File ${config.workspace} not found."
 
@@ -58,9 +61,9 @@ class MavenTest {
 
     @Test
     void checkDeploySuccessful() {
-        Map config = [workspace: tempFolder.root()]
         String actual = "settings.xml"
         final File tempFile = tempFolder.newFile(actual);
+        Map config = [workspace: tempFolder.root()]
 
         // Mock interface
         def service = [deploy: (Map, String) -> {1}] as InterfaceMavenService
