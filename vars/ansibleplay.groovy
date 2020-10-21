@@ -13,7 +13,11 @@ def makeMyAnsible(){
 //simple ansible-playbooks, extra-vars: none
 def execute(ANSIBLE_YML) { 
     Map config = [("ansible-playbook"): "${WORKSPACE}/${ANSIBLE_YML}"]
-    makeMyAnsible().execute(config)
+    
+
+    Integer exitcode = makeMyAnsible().execute(config)
+    if (exitcode != 0) {
+        error "Execute step failed! Exit code: ${exitcode}"
 }
 
 //push auf container registry, extra-vars: Azurecr creds
