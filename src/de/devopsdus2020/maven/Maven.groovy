@@ -41,7 +41,8 @@ class Maven {
             return service.deploy(config, settingsFilename)
         }
         else {
-            service.looger("[ERROR] File ${mySettings.getAbsolutePath()} not found.".toString())
+            service.looger("[ERROR] File not found.")
+  //            service.looger("[ERROR] File ${mySettings.getAbsolutePath()} not found.".toString())
             return 1
         }
     }
