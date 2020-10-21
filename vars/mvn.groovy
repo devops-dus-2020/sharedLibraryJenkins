@@ -50,7 +50,6 @@ def deploy(String settingsFilename) {
     if (exitcode != 0) {
         error "Deploy to Nexus failed! Exit code: ${exitcode}"
     }
-
 }
 
 def tomcat() {
