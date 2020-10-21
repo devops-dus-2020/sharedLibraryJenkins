@@ -14,23 +14,27 @@ class Maven {
     }
 
     Integer version() {
-        return ervice.version()
+        return service.version()
     }
 
     
     Integer test(Map config) {
-       return service.test(config)
+        return service.test(config)
     }
 
     Integer verify(Map config) {
-       return service.verify(config)
+        return service.verify(config)
     }
 
     Integer artifactpackage(Map config) {
-       return service.artifactpackage(config)
+        return service.artifactpackage(config)
     }
 
     Integer deploy(Map config) {
-       return service.deploy(config)
+        return service.deploy(config)
+    }
+
+    Integer tomcat(Map config) {
+        return service.tomcat(config)
     }
 }
