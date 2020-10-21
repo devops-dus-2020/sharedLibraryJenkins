@@ -6,7 +6,7 @@ import groovy.transform.Field
 @Field final Map config = [mvn_args: "-f ${WORKSPACE}"]
 
 def makeMyMaven(){
-    Closure logger = {message -> println message.toString()}
+    Closure logger = {String message -> println message}
     MavenService service = new MavenService(logger)
     Maven myMaven = new Maven(service)
     return myMaven
