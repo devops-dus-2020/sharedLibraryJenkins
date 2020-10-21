@@ -46,7 +46,11 @@ def deploy(String settingsFilename) {
     config.nexuspassword = "${NEXUS_PASSWORD}"
 
     // A settings.xml wit the name settingsFilename must be provided by SCM in workspace folder
-    return makeMyMaven().deploy(config, settingsFilename)
+    Integer exitcode = makeMyMaven().deploy(config, settingsFilename)
+    if (exitcode != 0) {
+        error "Deploy to Nexus failed! Exit code: ${exitcode}"
+    }
+
 }
 
 def tomcat() {
