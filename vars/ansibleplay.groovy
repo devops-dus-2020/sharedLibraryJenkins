@@ -34,7 +34,7 @@ def nexuspull(ANSIBLE_YML) {
     makeMyAnsible().nexuspull(config)
 }
 
-//optimized -> special for bbrow-workflow, extra-vars: azure creds & target dir
+//optimized -> special for bbrow-workflow, extra-vars: azure,mysql creds & target dir
 def nexuspullazurecrpush(ANSIBLE_YML) { 
     Map config = [:]
     config.("ansible-playbook") = "${WORKSPACE}/${ANSIBLE_YML}" 
