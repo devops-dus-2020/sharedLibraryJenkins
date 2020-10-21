@@ -38,7 +38,7 @@ def nexuspull(ANSIBLE_YML) {
 def nexuspullazurecrpush(ANSIBLE_YML) { 
     Map config = [:]
     config.("ansible-playbook") = "${WORKSPACE}/${ANSIBLE_YML}" 
-    config.("-e") = "DEST=${WORKSPACE}/target -e USER=${AZURECR_USER} -e PASSWORD=${AZURECR_PASSWORD}" 
+    config.("-e") = "DEST=${WORKSPACE}/target -e USER=${AZURECR_USER} -e PASSWORD=${AZURECR_PASSWORD} -e MYSQLUSER=${MYSQL_USER} -e MYSQLPASSWORD=${MYSQL_PASSWORD}" 
 
     makeMyAnsible().nexuspullazurecrpush(config)
 }
