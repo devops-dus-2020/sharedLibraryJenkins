@@ -18,6 +18,7 @@ def execute(ANSIBLE_YML) {
     Integer exitcode = makeMyAnsible().execute(config)
     if (exitcode != 0) {
         error "Execute step failed! Exit code: ${exitcode}"
+    }
 }
 
 //push auf container registry, extra-vars: Azurecr creds
