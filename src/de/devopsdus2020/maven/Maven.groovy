@@ -41,13 +41,13 @@ class Maven {
             return service.deploy(config, settingsFilename)
         }
         else {
-            if (settingsFilename.isEmpty()) {
-                service.printToLogger("[ERROR] File ${mySettings.getAbsolutePath()} not found.".toString())
+            if (settingsFilename.isEmpty() || settingsFilename == null) {
+                service.printToLogger("[ERROR] No filename given.")
                 return 1
             } 
             else {
                 service.printToLogger("[ERROR] File ${mySettings.getAbsolutePath()} not found.".toString())
-                return 1
+                return 2
             }    
         }
     }
