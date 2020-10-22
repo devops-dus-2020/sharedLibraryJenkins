@@ -75,7 +75,7 @@ class MavenService implements InterfaceMavenService {
     }
 
     Integer tomcat(Map config) {
-        String phase = "tomcat7:redeploy -gs " + config.getAt("workspace") + " -DskipTests"
+        String phase = "tomcat7:redeploy -gs " + config.settings + " -DskipTests"
     }
 
     void printToLogger(String message) {
