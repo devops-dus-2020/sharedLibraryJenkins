@@ -35,21 +35,19 @@ class Maven {
     }
 
     Integer deploy(Map config, String settingsFilename) {
-        File mySettings = new File(config.workspace, settingsFilename)
+        if (settingsFilename.isEmpty() || settingsFilename == null) {
+            service.printToLogger("[ERROR] No filename given.")
+            return 1
+        }
 
+        File mySettings = new File(config.workspace, settingsFilename)
         if (mySettings.isFile() && mySettings.canRead()) {
             return service.deploy(config, settingsFilename)
         }
         else {
-            if (settingsFilename.isEmpty() || settingsFilename == null) {
-                service.printToLogger("[ERROR] No filename given.")
-                return 1
-            } 
-            else {
-                service.printToLogger("[ERROR] File ${mySettings.getAbsolutePath()} not found.".toString())
-                return 2
-            }    
-        }
+            service.printToLogger("[ERROR] File ${mySettings.getAbsolutePath()} not found.".toString())
+            return 2
+        }        
     }
                                     
     Integer tomcat(Map config) {

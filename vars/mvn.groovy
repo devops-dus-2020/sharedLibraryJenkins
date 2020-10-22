@@ -41,8 +41,7 @@ def deploy() {
 }
 
 def deploy(String settingsFilename) {
-    config.workspace = "${WORKSPACE}"
-    
+    config.workspace = "${WORKSPACE}"    
     config.nexususer = "${NEXUS_USER}"
     config.nexuspassword = "${NEXUS_PASSWORD}"
 
